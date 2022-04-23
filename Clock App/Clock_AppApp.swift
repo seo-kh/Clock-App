@@ -13,7 +13,7 @@ struct Clock_AppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TimerView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
