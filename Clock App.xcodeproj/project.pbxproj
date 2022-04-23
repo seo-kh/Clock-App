@@ -57,9 +57,9 @@
 		6F710CEC2812965E0058AE66 /* Clock App */ = {
 			isa = PBXGroup;
 			children = (
-				6FD49E882813A61300A58385 /* Helpers */,
 				6F710CED2812965E0058AE66 /* Clock_AppApp.swift */,
-				6F710CEF2812965E0058AE66 /* TimerView.swift */,
+				6FD49E882813A61300A58385 /* Helpers */,
+				6FD49E8B2813AA0900A58385 /* View */,
 				6F710CF1281296600058AE66 /* Assets.xcassets */,
 				6FD49E872813A5FF00A58385 /* Data */,
 				6F710CF3281296600058AE66 /* Preview Content */,
@@ -90,6 +90,14 @@
 				6FD49E892813A62000A58385 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6FD49E8B2813AA0900A58385 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F710CEF2812965E0058AE66 /* TimerView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
