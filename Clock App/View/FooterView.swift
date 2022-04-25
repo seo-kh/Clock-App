@@ -11,6 +11,7 @@ struct FooterView: View {
     
     // MARK: - PROPERTIES
     
+    @AppStorage("currentSoundIndex") var currentSoundIndex: Int = 0
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var soundControl: SoundControl
     @State private var isPresented: Bool = false
@@ -28,7 +29,7 @@ struct FooterView: View {
                         
                         Spacer()
                         
-                        Text("Radar")
+                        Text(soundControl.soundPack[currentSoundIndex].name)
                             .font(.body)
                             .fontWeight(.semibold)
                             .foregroundColor(.secondary)

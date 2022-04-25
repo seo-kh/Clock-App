@@ -14,20 +14,8 @@ struct SoundFooterView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var soundControl: SoundControl
-    
-    var currentIndex: Int? {
-        return soundControl.soundPack.firstIndex { $0.isSelected }
-    }
-    
-    var filteredSounds: [SoundData]  = [SoundData]()
-    
-    // MARK: - FUNCTIONS
-    
-    private func save() {
-        // 1. cancel, set, dismiss 시 데이터 저장.
-    }
+    @State private var prevSoundIndex: Int = 0
 
-    
     // MARK: - BODY
     
     var body: some View {
@@ -35,42 +23,81 @@ struct SoundFooterView: View {
             List {
                 
                 ForEach(0..<soundControl.soundPack.count, id: \.self) { index in
-                    Button {
-                        withAnimation(.linear(duration: 0.2)) {
+                    if index == soundControl.soundPack.count - 1 {
+//                        Button {
+//
+//                            withAnimation(.linear(duration: 0.2)) {
+//                                currentSoundIndex = index
+//                            }
+//
+//                        } label: {
+//                            NavigationLink {
+//                                Text("Classic Sounds!")
+//                            } label: {
+//                                HStack {
+//                                    if currentSoundIndex == index {
+//                                        Image(systemName: "checkmark")
+//                                            .frame(width: 16, height: 16)
+//                                    } else {
+//                                        Color.clear.frame(width: 16, height: 16)
+//                                    }
+//
+//                                    Text(soundControl.soundPack[index].name)
+//                                        .font(.body)
+//                                        .foregroundColor(.white)
+//                                }
+//                            }
+//                        }
+                        NavigationLink {
+                            Text("Classic Sounds")
+                                .onDisappear {
+                                    
+                                        currentSoundIndex = index
+                                    
+                                }
+                        } label: {
+                                HStack {
+                                    if currentSoundIndex == index {
+                                        Image(systemName: "checkmark")
+                                            .frame(width: 16, height: 16)
+                                            .foregroundColor(Color.accentColor))
+                                    } else {
+                                        Color.clear.frame(width: 16, height: 16)
+                                    }
+                                    
+                                    Text(soundControl.soundPack[index].name)
+                                        .font(.body)
+                                        .foregroundColor(.white)
+                                }
+                            }
+
+                    } else {
+                        Button {
                             
-                            /// Prev Sound
-                            guard let currentIndex = currentIndex else {return}
-                            soundControl.prevIndex = currentIndex
-                            soundControl.soundPack[currentIndex].isSelected.toggle()
-                            
-                            
-                            /// New Sound
-                            soundControl.currentIndex = index
-                            soundControl.soundPack[index].isSelected.toggle()
-                        }
-                        
-                    } label: {
-                        HStack {
-                            if soundControl.soundPack[index].isSelected {
-                                Image(systemName: "checkmark")
-                                    .frame(width: 16, height: 16)
-                            } else {
-                                Color.clear.frame(width: 16, height: 16)
+                            withAnimation(.linear(duration: 0.2)) {
+                                currentSoundIndex = index
                             }
                             
-                            Text(soundControl.soundPack[index].name)
-                                .font(.body)
-                                .foregroundColor(.white)
+                        } label: {
+                            HStack {
+                                if currentSoundIndex == index {
+                                    Image(systemName: "checkmark")
+                                        .frame(width: 16, height: 16)
+                                } else {
+                                    Color.clear.frame(width: 16, height: 16)
+                                }
+                                
+                                Text(soundControl.soundPack[index].name)
+                                    .font(.body)
+                                    .foregroundColor(.white)
+                            }
                         }
-                    }
-                }
-            } // LIST
+                    } //: SELECTOR
+                } //: LOOP
+            } //: LIST
             .onAppear(perform: {
-                if let currentIndex = currentIndex {
-                    soundControl.prevIndex = currentIndex
-                    currentSoundIndex = currentIndex
-                }
-                print("Appear 될때 current Index값 : \(currentSoundIndex)")
+                
+                prevSoundIndex = currentSoundIndex
                 
             })
             .interactiveDismissDisabled()
@@ -83,28 +110,28 @@ struct SoundFooterView: View {
                     Button {
                         
                         self.presentationMode.wrappedValue.dismiss()
-                        currentSoundIndex = soundControl.prevIndex
-                        soundControl.soundPack[soundControl.prevIndex].isSelected.toggle()
-                        soundControl.soundPack[soundControl.currentIndex].isSelected.toggle()
-                        print("취소 될때 current Index값 : \(currentSoundIndex)")
+                        withAnimation(.linear(duration: 0.2)) {
+                            
+                            currentSoundIndex = prevSoundIndex
+                        }
+
                         
                     } label: {
                         Text("Cancel")
                     }
-                }
+                } //: CANCEL
                 
                 /// Set Button: 선택 버튼
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         
                         self.presentationMode.wrappedValue.dismiss()
-                        currentSoundIndex = soundControl.currentIndex
-                        print("세팅 될때 current Index값 : \(currentSoundIndex)")
+                        
                     } label: {
                         Text("Set")
                     }
                     
-                }
+                } //: SET
             } //: TOOLBAR
         } // NAVIGATION
                       
