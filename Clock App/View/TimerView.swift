@@ -18,27 +18,31 @@ struct TimerView: View {
         VStack(alignment: .center, spacing: 0) {
             // MARK: - HEADER
 
-            Rectangle()
-                .fill(.red)
+            HeaderView()
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
-                .frame(minHeight: headerFrame.min.height, maxHeight: headerFrame.min.height)
-            
-            // MARK: - CENTER
+                .frame(minHeight: headerFrame.min.height, maxHeight: headerFrame.max.height)
+                .overlay(
+                    
+                    // MARK: - CENTER
 
-            Rectangle()
-                .fill(.green)
-                .padding(.horizontal ,horizontalPadding)
-                .padding(.vertical, verticalPadding)
-                .frame(minHeight: centerFrame.min.height, maxHeight: centerFrame.min.height)
+                    CenterView()
+                        .padding(.horizontal ,horizontalPadding)
+                        .padding(.vertical, verticalPadding)
+                        .frame(minHeight: centerFrame.min.height, maxHeight: centerFrame.max.height)
+                        .offset(y: screenHeight * 0.1)
+                        .padding(.top, -screenHeight * 0.1)
+                    , alignment: .bottom
+                )
+            
+           
             
             // MARK: - FOOTER
 
-            Rectangle()
-                .fill(.blue)
+            FooterView()
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
-                .frame(minHeight: footerFrame.min.height, maxHeight: footerFrame.min.height)
+                .frame(minHeight: footerFrame.min.height, maxHeight: footerFrame.max.height)
             
             Spacer()
         } //: VSTACK

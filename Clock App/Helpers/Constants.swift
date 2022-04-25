@@ -44,3 +44,8 @@ let footerFrame = FrameConstant(
     max: .init(width: 0, height: screenHeight * footerHeightRatio.1)
 )
 
+/// corner radius 레이아웃 값
+let myCornerRadius: CGFloat = 9.0
+
+/// button size 레이아웃 값
+let buttonSize: CGFloat = 90.0
