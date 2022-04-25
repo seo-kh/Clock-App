@@ -14,9 +14,8 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for i in 0..<10 {
-            let newItem = ProgrammingLanguage(context: viewContext)
-            newItem.name = "Example Language. \(i)"
-            newItem.creator = "Programmer \(i)"
+            var newItem = Clock(context: viewContext)
+            newItem.soundIndex = 0
         }
         
         do {

@@ -9,7 +9,10 @@ import SwiftUI
 
 struct TimerView: View {
     // MARK: - PORPERTIES
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var timerControl: TimerControl
+    @EnvironmentObject var soundControl: SoundControl
     
     
     // MARK: - BODY
@@ -39,6 +42,8 @@ struct TimerView: View {
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
                 .frame(maxWidth: .infinity, minHeight: footerFrame.min.height, maxHeight: footerFrame.max.height)
+                .environmentObject(soundControl)
+                .environment(\.managedObjectContext, managedObjectContext)
             
             Spacer()
         } //: VSTACK
@@ -52,5 +57,6 @@ struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
             .environmentObject(TimerControl())
+            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }

@@ -11,12 +11,14 @@ import SwiftUI
 struct Clock_AppApp: App {
     let persistenceController = PersistenceController.shared
     var timerControl = TimerControl()
+    var soundControl = SoundControl()
 
     var body: some Scene {
         WindowGroup {
             TimerView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(timerControl)
+                .environmentObject(soundControl)
         }
     }
 }

@@ -17,6 +17,8 @@ struct TimeHeaderView: View {
     
     // MARK: - PROPERTIES
     @EnvironmentObject var timerControl: TimerControl
+    
+    // INITIAL PROPERTY
     let seconds: Double
     
     init(seconds: Double) {
@@ -37,6 +39,7 @@ struct TimeHeaderView: View {
         let currentTime = currentDateFormatter.string(from: currentDate)
         return currentTime
     } ()
+    
     @State private var endAngle: Angle = .degrees(-90)
     
     private var remainingTime: RemainigTime {

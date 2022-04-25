@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     // MARK: - PROPERTIES
+    
     @EnvironmentObject var timerControl: TimerControl
     
     
@@ -16,8 +17,12 @@ struct HeaderView: View {
 
     var body: some View {
             if !timerControl.isStart {
+                
+                /// Time Selection
                 PickerHeaderView(duration: $timerControl.timeInterval)
             } else {
+                
+                /// Time Display
                 TimeHeaderView(seconds: timerControl.timeInterval)
             }
     }
