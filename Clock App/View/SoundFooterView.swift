@@ -22,45 +22,30 @@ struct SoundFooterView: View {
         NavigationView {
             List {
                 
-                ForEach(0..<soundControl.soundPack.count, id: \.self) { index in
-                    if index == soundControl.soundPack.count - 1 {
-//                        Button {
-//
-//                            withAnimation(.linear(duration: 0.2)) {
-//                                currentSoundIndex = index
-//                            }
-//
-//                        } label: {
-//                            NavigationLink {
-//                                Text("Classic Sounds!")
-//                            } label: {
-//                                HStack {
-//                                    if currentSoundIndex == index {
-//                                        Image(systemName: "checkmark")
-//                                            .frame(width: 16, height: 16)
-//                                    } else {
-//                                        Color.clear.frame(width: 16, height: 16)
-//                                    }
-//
-//                                    Text(soundControl.soundPack[index].name)
-//                                        .font(.body)
-//                                        .foregroundColor(.white)
-//                                }
-//                            }
-//                        }
-                        NavigationLink {
-                            Text("Classic Sounds")
-                                .onDisappear {
-                                    
-                                        currentSoundIndex = index
-                                    
-                                }
-                        } label: {
+                // MARK: - SOUND SECTION
+
+                Section {
+                    ForEach(0..<soundControl.soundPack.count, id: \.self) { index in
+                        
+                        /// Classic 버튼
+                        if index == soundControl.soundPack.count - 1 {
+                            NavigationLink {
+                                // Classic Detail
+            
+                                Text("Classic Sounds")
+                                    .onAppear {
+                                        withAnimation(.linear(duration: 0.2)) {
+                                            currentSoundIndex = index
+                                        }
+                                    }
+                                
+                                
+                            } label: {
                                 HStack {
                                     if currentSoundIndex == index {
                                         Image(systemName: "checkmark")
                                             .frame(width: 16, height: 16)
-                                            .foregroundColor(Color.accentColor))
+                                            .foregroundColor(Color.accentColor)
                                     } else {
                                         Color.clear.frame(width: 16, height: 16)
                                     }
@@ -71,34 +56,61 @@ struct SoundFooterView: View {
                                 }
                             }
 
-                    } else {
-                        Button {
-                            
-                            withAnimation(.linear(duration: 0.2)) {
-                                currentSoundIndex = index
-                            }
-                            
-                        } label: {
-                            HStack {
-                                if currentSoundIndex == index {
-                                    Image(systemName: "checkmark")
-                                        .frame(width: 16, height: 16)
-                                } else {
-                                    Color.clear.frame(width: 16, height: 16)
+                        }
+                        
+                        /// Sounds 버튼
+                        else {
+                            Button {
+                                
+                                withAnimation(.linear(duration: 0.2)) {
+                                    currentSoundIndex = index
                                 }
                                 
-                                Text(soundControl.soundPack[index].name)
-                                    .font(.body)
-                                    .foregroundColor(.white)
+                            } label: {
+                                HStack {
+                                    if currentSoundIndex == index {
+                                        Image(systemName: "checkmark")
+                                            .frame(width: 16, height: 16)
+                                    } else {
+                                        Color.clear.frame(width: 16, height: 16)
+                                    }
+                                    
+                                    Text(soundControl.soundPack[index].name)
+                                        .font(.body)
+                                        .foregroundColor(.white)
+                                }
                             }
+                        } //: SELECTOR
+                    } //: LOOP
+                } //: SECTION 1
+                
+                // MARK: - NO SOUND SECTION
+
+                Section {
+                    Button {
+                        
+                        withAnimation(.linear(duration: 0.2)) {
+                            currentSoundIndex = -1
+                        }
+                        
+                    } label: {
+                        HStack {
+                            if currentSoundIndex == -1 {
+                                Image(systemName: "checkmark")
+                                    .frame(width: 16, height: 16)
+                            } else {
+                                Color.clear.frame(width: 16, height: 16)
+                            }
+                            
+                            Text("Stop Playing")
+                                .font(.body)
+                                .foregroundColor(.white)
                         }
                     } //: SELECTOR
-                } //: LOOP
+                } //: SECTION 2
             } //: LIST
             .onAppear(perform: {
-                
                 prevSoundIndex = currentSoundIndex
-                
             })
             .interactiveDismissDisabled()
             .navigationTitle("When Timer Ends")

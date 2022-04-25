@@ -16,6 +16,14 @@ struct FooterView: View {
     @EnvironmentObject var soundControl: SoundControl
     @State private var isPresented: Bool = false
     
+    var soundTitle: String {
+        if currentSoundIndex == -1 {
+            return "Stop Playing"
+        } else {
+            return soundControl.soundPack[currentSoundIndex].name
+        }
+    }
+    
     // MARK: - BODY
 
     var body: some View {
@@ -29,7 +37,7 @@ struct FooterView: View {
                         
                         Spacer()
                         
-                        Text(soundControl.soundPack[currentSoundIndex].name)
+                        Text(soundTitle)
                             .font(.body)
                             .fontWeight(.semibold)
                             .foregroundColor(.secondary)
