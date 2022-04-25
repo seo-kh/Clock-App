@@ -10,21 +10,21 @@ import SwiftUI
 struct SoundFooterView: View {
     // MARK: - PROPERTIES
     
-    @AppStorage("currentSoundIndex") var currentSoundIndex: Int?
+    @AppStorage("currentSoundIndex") var currentSoundIndex: Int = 0
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var soundControl: SoundControl
     
-//    @FetchRequest(entity: Clock.entity(), sortDescriptors: [NSSortDescriptor(key: \, ascending: <#T##Bool#>)])
-    
-    var prevIndex: Int? {
+    var currentIndex: Int? {
         return soundControl.soundPack.firstIndex { $0.isSelected }
     }
+    
+    var filteredSounds: [SoundData]  = [SoundData]()
     
     // MARK: - FUNCTIONS
     
     private func save() {
-        currentSoundIndex = prevIndex
+        // 1. cancel, set, dismiss 시 데이터 저장.
     }
 
     
@@ -39,9 +39,9 @@ struct SoundFooterView: View {
                         withAnimation(.linear(duration: 0.2)) {
                             
                             /// Prev Sound
-                            guard let prevIndex = prevIndex else {return}
-                            soundControl.prevIndex = prevIndex
-                            soundControl.soundPack[prevIndex].isSelected.toggle()
+                            guard let currentIndex = currentIndex else {return}
+                            soundControl.prevIndex = currentIndex
+                            soundControl.soundPack[currentIndex].isSelected.toggle()
                             
                             
                             /// New Sound
@@ -63,24 +63,30 @@ struct SoundFooterView: View {
                                 .foregroundColor(.white)
                         }
                     }
-
                 }
-                
             } // LIST
             .onAppear(perform: {
-                //
+                if let currentIndex = currentIndex {
+                    soundControl.prevIndex = currentIndex
+                    currentSoundIndex = currentIndex
+                }
+                print("Appear 될때 current Index값 : \(currentSoundIndex)")
+                
             })
-            .onDisappear {
-                //
-            }
+            .interactiveDismissDisabled()
             .navigationTitle("When Timer Ends")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                
                 /// Cancel Button: 취소 버튼
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
+                        
                         self.presentationMode.wrappedValue.dismiss()
-                        //
+                        currentSoundIndex = soundControl.prevIndex
+                        soundControl.soundPack[soundControl.prevIndex].isSelected.toggle()
+                        soundControl.soundPack[soundControl.currentIndex].isSelected.toggle()
+                        print("취소 될때 current Index값 : \(currentSoundIndex)")
                         
                     } label: {
                         Text("Cancel")
@@ -90,7 +96,10 @@ struct SoundFooterView: View {
                 /// Set Button: 선택 버튼
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        //
+                        
+                        self.presentationMode.wrappedValue.dismiss()
+                        currentSoundIndex = soundControl.currentIndex
+                        print("세팅 될때 current Index값 : \(currentSoundIndex)")
                     } label: {
                         Text("Set")
                     }
@@ -98,7 +107,7 @@ struct SoundFooterView: View {
                 }
             } //: TOOLBAR
         } // NAVIGATION
-        
+                      
     }
 }
 

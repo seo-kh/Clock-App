@@ -56,6 +56,7 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
+            .environmentObject(SoundControl())
             .environmentObject(TimerControl())
             .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
