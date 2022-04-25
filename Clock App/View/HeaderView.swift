@@ -9,14 +9,17 @@ import SwiftUI
 
 struct HeaderView: View {
     // MARK: - PROPERTIES
+    @EnvironmentObject var timerControl: TimerControl
     
-    @State private var timeInterval: TimeInterval = 0.0
     
     // MARK: - BODY
 
     var body: some View {
-        PickerHeaderView(duration: $timeInterval)
-        
+            if !timerControl.isStart {
+                PickerHeaderView(duration: $timerControl.timeInterval)
+            } else {
+                TimeHeaderView(seconds: timerControl.timeInterval)
+            }
     }
 }
 
@@ -25,5 +28,6 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderView()
+            .environmentObject(TimerControl())
     }
 }

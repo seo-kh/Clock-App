@@ -9,31 +9,34 @@ import SwiftUI
 
 struct TimerView: View {
     // MARK: - PORPERTIES
-    
+    @EnvironmentObject var timerControl: TimerControl
     
     
     // MARK: - BODY
 
     var body: some View {
-        VStack(alignment: .center, spacing: 0) {
+        VStack(alignment: .center, spacing: 20) {
             // MARK: - HEADER
 
             HeaderView()
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
-                .frame(minHeight: headerFrame.min.height, maxHeight: headerFrame.max.height)
+                .frame(minHeight: headerFrame.min.height, maxHeight: headerFrame.max.height * 1.1)
                 .overlay(
                     
                     // MARK: - CENTER
 
-                    CenterView()
+                    CenterView(isStart: $timerControl.isStart)
                         .padding(.horizontal ,horizontalPadding)
                         .padding(.vertical, verticalPadding)
                         .frame(minHeight: centerFrame.min.height, maxHeight: centerFrame.max.height)
-                        .offset(y: screenHeight * 0.1)
-                        .padding(.top, -screenHeight * 0.1)
+                        .offset(y: screenHeight * 0.15)
+                        .padding(.top, screenHeight * 0.15)
+                        
+                        
                     , alignment: .bottom
                 )
+                .environmentObject(timerControl)
             
            
             
@@ -55,5 +58,6 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
+            .environmentObject(TimerControl())
     }
 }

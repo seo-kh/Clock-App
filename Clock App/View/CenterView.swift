@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct CenterView: View {
+    @Binding var isStart: Bool
+    
     var body: some View {
         HStack {
             Button {
-                //
+                isStart = false
             } label: {
                 Circle()
                     .fill(Color("GrayColor"))
@@ -31,7 +33,7 @@ struct CenterView: View {
             Spacer()
             
             Button {
-                //
+                isStart = true
             } label: {
                 Circle()
                     .fill(Color("GreenColor"))
@@ -50,12 +52,13 @@ struct CenterView: View {
             
 
         } //: HSTACK
+        .fixedSize(horizontal: false, vertical: true)
     }
 }
 
 struct CenterView_Previews: PreviewProvider {
     static var previews: some View {
-        CenterView()
+        CenterView(isStart: .constant(true))
             .previewLayout(.sizeThatFits)
             .padding()
     }

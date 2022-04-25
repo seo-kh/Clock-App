@@ -49,3 +49,17 @@ let myCornerRadius: CGFloat = 9.0
 
 /// button size 레이아웃 값
 let buttonSize: CGFloat = 90.0
+
+/// dateFormatter 설정
+let countdownDateFormatter: DateFormatter = {
+    var dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "mm:ss"
+    return dateFormatter
+} ()
+
+let currentDateFormatter: DateFormatter = {
+    var dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm a"
+    dateFormatter.locale = Locale(identifier: "ko_KR")
+    return dateFormatter
+} ()
