@@ -20,6 +20,7 @@
 		6FD49E952813CA4800A58385 /* PickerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E942813CA4800A58385 /* PickerHeaderView.swift */; };
 		6FD49E99281675E200A58385 /* TimeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E98281675E200A58385 /* TimeHeaderView.swift */; };
 		6FD49E9D2816B20C00A58385 /* TimerControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */; };
+		6FD49EA02816CBE600A58385 /* TimerRIngView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		6FD49E942813CA4800A58385 /* PickerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerHeaderView.swift; sourceTree = "<group>"; };
 		6FD49E98281675E200A58385 /* TimeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHeaderView.swift; sourceTree = "<group>"; };
 		6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControlModel.swift; sourceTree = "<group>"; };
+		6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRIngView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				6FD49E902813B49100A58385 /* HeaderView.swift */,
 				6FD49E942813CA4800A58385 /* PickerHeaderView.swift */,
 				6FD49E98281675E200A58385 /* TimeHeaderView.swift */,
+				6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			files = (
 				6FD49E952813CA4800A58385 /* PickerHeaderView.swift in Sources */,
 				6FD49E8A2813A62000A58385 /* Constants.swift in Sources */,
+				6FD49EA02816CBE600A58385 /* TimerRIngView.swift in Sources */,
 				6FD49E99281675E200A58385 /* TimeHeaderView.swift in Sources */,
 				6FD49E8F2813B1EC00A58385 /* FooterView.swift in Sources */,
 				6FD49E8D2813AFA900A58385 /* CenterView.swift in Sources */,

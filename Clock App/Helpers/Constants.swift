@@ -19,7 +19,7 @@ let screenHeight = UIScreen.main.bounds.height
 let screenWidth = UIScreen.main.bounds.width
 
 let headerHeightRatio = (0.4, 0.5)
-let centerHeightRatio = (0.2, 0.3)
+let centerHeightRatio = (0.1, 0.2)
 let footerHeightRatio = (0.1, 0.2)
 
 struct FrameConstant {

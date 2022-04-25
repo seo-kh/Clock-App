@@ -13,32 +13,10 @@ private struct RemainigTime {
     var title: String
 }
 
-struct TimerRing: Shape {
-    var endAngle: Angle
-    
-    var animatableData: Angle {
-        get { endAngle }
-        set { endAngle = newValue}
-    }
-    
-    func path(in rect: CGRect) -> Path {
-        var p = Path()
-        
-        p.addArc(
-            center: CGPoint(x: rect.width / 2.0, y: rect.height / 2.0),
-            radius: rect.width / 2.0,
-            startAngle: Angle(degrees: -90),
-            endAngle: endAngle,
-            clockwise: false
-        )
-        
-        return p
-    }
-}
-
 struct TimeHeaderView: View {
     
     // MARK: - PROPERTIES
+    @EnvironmentObject var timerControl: TimerControl
     let seconds: Double
     
     init(seconds: Double) {
@@ -71,11 +49,6 @@ struct TimeHeaderView: View {
     private var deltaAngle: Double {
         return 360.0 / self.seconds
     }
-    
-//    private var deltaEndAngle: Angle {
-//        let computedDegree: Double = -(90.0 + deltaAngle * secondsElapsed)
-//        return Angle(degrees: computedDegree)
-//    }
     
     // MARK: - FUNCTIONS
 
@@ -140,6 +113,18 @@ struct TimeHeaderView: View {
                 self.cancelTimer()
             }
         }
+        .onChange(of: timerControl.timerStatus) { status in
+            if timerControl.isStart {
+                switch status {
+                case .pause:
+                    self.cancelTimer()
+                case.resume:
+                    self.instantiateTimer()
+                case .start:
+                    self.instantiateTimer()
+                }
+            }
+        }
         
         
     }
@@ -153,6 +138,7 @@ struct TimeHeaderView_Previews: PreviewProvider {
             TimeHeaderView(seconds: 20)
                 .previewLayout(.sizeThatFits)
                 .padding()
+                .environmentObject(TimerControl())
         }
     }
 }

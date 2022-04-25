@@ -37,6 +37,7 @@ struct CenterView: View {
             
             Spacer()
             
+            /// initial State
             if !timerControl.isStart && timerControl.timerStatus == .pause {
                 Button {
                     timerControl.isStart = true
@@ -56,43 +57,10 @@ struct CenterView: View {
                                 .foregroundColor(Color("GreenTextColor"))
                         )
                 }
-            } else if timerControl.isStart && timerControl.timerStatus == .start {
-                Button {
-                    timerControl.timerStatus = .pause
-                } label: {
-                    Circle()
-                        .fill(Color("YellowColor"))
-                        .frame(width: buttonSize, height: buttonSize, alignment: .center)
-                        .overlay(
-                            Circle()
-                                .stroke(Color.black, lineWidth: 2)
-                                .frame(width: buttonSize * 0.9, height: buttonSize * 0.9, alignment: .center)
-                        )
-                        .overlay(
-                            Text("Pause")
-                                .fontWeight(.medium)
-                                .foregroundColor(Color("YellowTextColor"))
-                        )
-                }
-            } else if timerControl.isStart && timerControl.timerStatus == .pause {
-                Button {
-                    timerControl.timerStatus = .resume
-                } label: {
-                    Circle()
-                        .fill(Color("GreenColor"))
-                        .frame(width: buttonSize, height: buttonSize, alignment: .center)
-                        .overlay(
-                            Circle()
-                                .stroke(Color.black, lineWidth: 2)
-                                .frame(width: buttonSize * 0.9, height: buttonSize * 0.9, alignment: .center)
-                        )
-                        .overlay(
-                            Text("Resume")
-                                .fontWeight(.medium)
-                                .foregroundColor(Color("GreenTextColor"))
-                        )
-                }
-            } else if timerControl.isStart && timerControl.timerStatus == .resume {
+            }
+            
+            /// Start State ( Start, Pause, Resume)
+            else if timerControl.isStart && timerControl.timerStatus == .start {
                 Button {
                     timerControl.timerStatus = .pause
                 } label: {
@@ -111,7 +79,44 @@ struct CenterView: View {
                         )
                 }
             }
-            
+            else if timerControl.isStart && timerControl.timerStatus == .pause {
+                Button {
+                    timerControl.timerStatus = .resume
+                } label: {
+                    Circle()
+                        .fill(Color("GreenColor"))
+                        .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                        .overlay(
+                            Circle()
+                                .stroke(Color.black, lineWidth: 2)
+                                .frame(width: buttonSize * 0.9, height: buttonSize * 0.9, alignment: .center)
+                        )
+                        .overlay(
+                            Text("Resume")
+                                .fontWeight(.medium)
+                                .foregroundColor(Color("GreenTextColor"))
+                        )
+                }
+            }
+            else if timerControl.isStart && timerControl.timerStatus == .resume {
+                Button {
+                    timerControl.timerStatus = .pause
+                } label: {
+                    Circle()
+                        .fill(Color("YellowColor"))
+                        .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                        .overlay(
+                            Circle()
+                                .stroke(Color.black, lineWidth: 2)
+                                .frame(width: buttonSize * 0.9, height: buttonSize * 0.9, alignment: .center)
+                        )
+                        .overlay(
+                            Text("Pause")
+                                .fontWeight(.medium)
+                                .foregroundColor(Color("YellowTextColor"))
+                        )
+                }
+            }
 
         } //: HSTACK
         .fixedSize(horizontal: false, vertical: true)

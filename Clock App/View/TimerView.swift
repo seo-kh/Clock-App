@@ -15,35 +15,30 @@ struct TimerView: View {
     // MARK: - BODY
 
     var body: some View {
-        VStack(alignment: .center, spacing: 20) {
+        VStack(alignment: .center, spacing: 0) {
+            
             // MARK: - HEADER
 
             HeaderView()
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
-                .frame(minHeight: headerFrame.min.height, maxHeight: headerFrame.max.height * 1.1)
-                .overlay(
-                    
-                    // MARK: - CENTER
-
-                    CenterView()
-                        .padding(.horizontal ,horizontalPadding / 0.8)
-                        .padding(.vertical, verticalPadding)
-                        .frame(minHeight: centerFrame.min.height, maxHeight: centerFrame.max.height)
-                        .offset(y: screenHeight * 0.15)
-                        .padding(.top, screenHeight * 0.15)
-                    , alignment: .bottom
-                )
+                .frame(maxWidth: .infinity ,minHeight: headerFrame.min.height, maxHeight: headerFrame.max.height)
                 .environmentObject(timerControl)
             
-           
+            // MARK: - CENTER
+            
+            CenterView()
+                .padding(.horizontal, horizontalPadding)
+                .padding(.vertical, verticalPadding)
+                .frame(maxWidth: .infinity, minHeight: centerFrame.min.height, maxHeight: centerFrame.min.height)
+                .environmentObject(timerControl)
             
             // MARK: - FOOTER
 
             FooterView()
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
-                .frame(minHeight: footerFrame.min.height, maxHeight: footerFrame.max.height)
+                .frame(maxWidth: .infinity, minHeight: footerFrame.min.height, maxHeight: footerFrame.max.height)
             
             Spacer()
         } //: VSTACK
