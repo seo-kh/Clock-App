@@ -26,14 +26,12 @@ struct TimerView: View {
                     
                     // MARK: - CENTER
 
-                    CenterView(isStart: $timerControl.isStart)
-                        .padding(.horizontal ,horizontalPadding)
+                    CenterView()
+                        .padding(.horizontal ,horizontalPadding / 0.8)
                         .padding(.vertical, verticalPadding)
                         .frame(minHeight: centerFrame.min.height, maxHeight: centerFrame.max.height)
                         .offset(y: screenHeight * 0.15)
                         .padding(.top, screenHeight * 0.15)
-                        
-                        
                     , alignment: .bottom
                 )
                 .environmentObject(timerControl)
