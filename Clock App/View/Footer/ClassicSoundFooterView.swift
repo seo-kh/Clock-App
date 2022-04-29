@@ -19,6 +19,13 @@ struct ClassicSoundFooterView: View {
             ForEach(0..<soundControl.classicSoundPack.count, id: \.self) {
                 index in
                 Button {
+                    if !soundControl.isClick || classicSoundIndex != index {
+                        play(file: soundControl.classicSoundPack[index].soundPath)
+                        soundControl.isClick = true
+                    } else {
+                        stop()
+                        soundControl.isClick = false
+                    }
                     
                     withAnimation(.linear(duration: 0.2)) {
                         classicSoundIndex = index
@@ -43,6 +50,11 @@ struct ClassicSoundFooterView: View {
         }
         .navigationTitle("클래식")
         .navigationBarTitleDisplayMode(.inline)
+        .onDisappear {
+            // sound play stop
+            stop()
+            soundControl.isClick = false
+        }
     }
 }
 

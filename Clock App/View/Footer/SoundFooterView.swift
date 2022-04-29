@@ -40,6 +40,10 @@ struct SoundFooterView: View {
                                             currentSoundIndex = index
                                             tmpIndex = prevSoundIndex
                                             isNavWent.toggle()
+                                            
+                                            // sound paly stop
+                                            stop()
+                                            soundControl.isClick = false
                                         }
                                     }
                                     .environmentObject(soundControl)
@@ -66,6 +70,13 @@ struct SoundFooterView: View {
                         /// Sounds 버튼
                         else {
                             Button {
+                                if !soundControl.isClick || currentSoundIndex != index {
+                                    play(file: soundControl.soundPack[index].soundPath)
+                                    soundControl.isClick = true
+                                } else {
+                                    stop()
+                                    soundControl.isClick = false
+                                }
                                 
                                 withAnimation(.linear(duration: 0.2)) {
                                     currentSoundIndex = index
@@ -93,6 +104,8 @@ struct SoundFooterView: View {
 
                 Section {
                     Button {
+                        stop()
+                        soundControl.isClick = false
                         
                         withAnimation(.linear(duration: 0.2)) {
                             currentSoundIndex = -1

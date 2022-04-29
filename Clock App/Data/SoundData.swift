@@ -10,6 +10,5 @@ import SwiftUI
 struct SoundData: Identifiable {
     var id = UUID()
     var name: String
-    var isSelected: Bool
-    var soundPath: String?
+    var soundPath: String? = nil
 }
