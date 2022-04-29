@@ -15,6 +15,8 @@ struct SoundFooterView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var soundControl: SoundControl
     @State private var prevSoundIndex: Int = 0
+    @State private var tmpIndex: Int = 0
+    @State private var isNavWent: Bool = false
 
     // MARK: - BODY
     
@@ -36,7 +38,12 @@ struct SoundFooterView: View {
                                     .onAppear {
                                         withAnimation(.linear(duration: 0.2)) {
                                             currentSoundIndex = index
+                                            tmpIndex = prevSoundIndex
+                                            isNavWent.toggle()
                                         }
+                                    }
+                                    .onDisappear {
+                                        //
                                     }
                                 
                                 
@@ -124,7 +131,11 @@ struct SoundFooterView: View {
                         self.presentationMode.wrappedValue.dismiss()
                         withAnimation(.linear(duration: 0.2)) {
                             
-                            currentSoundIndex = prevSoundIndex
+                            if isNavWent {
+                                currentSoundIndex = tmpIndex
+                            } else {
+                                currentSoundIndex = prevSoundIndex
+                            }
                         }
 
                         
@@ -136,7 +147,6 @@ struct SoundFooterView: View {
                 /// Set Button: 선택 버튼
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
                         self.presentationMode.wrappedValue.dismiss()
                         
                     } label: {
@@ -146,6 +156,7 @@ struct SoundFooterView: View {
                 } //: SET
             } //: TOOLBAR
         } // NAVIGATION
+        
                       
     }
 }
