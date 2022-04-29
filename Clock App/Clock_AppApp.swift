@@ -10,15 +10,14 @@ import SwiftUI
 @main
 struct Clock_AppApp: App {
     let persistenceController = PersistenceController.shared
-    var timerControl = TimerControl()
-    var soundControl = SoundControl()
+    @StateObject var timerModel = TimerModel()
+    
 
     var body: some Scene {
         WindowGroup {
             TimerView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(timerControl)
-                .environmentObject(soundControl)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(timerModel)
         }
     }
 }

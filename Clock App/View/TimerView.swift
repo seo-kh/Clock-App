@@ -10,9 +10,7 @@ import SwiftUI
 struct TimerView: View {
     // MARK: - PORPERTIES
     
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @EnvironmentObject var timerControl: TimerControl
-    @EnvironmentObject var soundControl: SoundControl
+    @EnvironmentObject var timerModel: TimerModel
     
     
     // MARK: - BODY
@@ -26,7 +24,7 @@ struct TimerView: View {
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
                 .frame(maxWidth: .infinity ,minHeight: headerFrame.min.height, maxHeight: headerFrame.max.height)
-                .environmentObject(timerControl)
+                .environmentObject(timerModel.timerControl)
             
             // MARK: - CENTER
             
@@ -34,7 +32,7 @@ struct TimerView: View {
                 .padding(.horizontal, horizontalPadding)
                 .padding(.vertical, verticalPadding)
                 .frame(maxWidth: .infinity, minHeight: centerFrame.min.height, maxHeight: centerFrame.min.height)
-                .environmentObject(timerControl)
+                .environmentObject(timerModel.timerControl)
             
             // MARK: - FOOTER
 
@@ -42,8 +40,7 @@ struct TimerView: View {
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
                 .frame(maxWidth: .infinity, minHeight: footerFrame.min.height, maxHeight: footerFrame.max.height)
-                .environmentObject(soundControl)
-                .environment(\.managedObjectContext, managedObjectContext)
+                .environmentObject(timerModel.soundControl)
             
             Spacer()
         } //: VSTACK
@@ -56,8 +53,7 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
-            .environmentObject(SoundControl())
-            .environmentObject(TimerControl())
-            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+            .environmentObject(TimerModel())
+            
     }
 }

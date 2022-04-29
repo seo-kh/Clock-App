@@ -12,7 +12,6 @@ struct FooterView: View {
     // MARK: - PROPERTIES
     
     @AppStorage("currentSoundIndex") var currentSoundIndex: Int = 0
-    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var soundControl: SoundControl
     @State private var isPresented: Bool = false
     
@@ -55,7 +54,6 @@ struct FooterView: View {
                 .sheet(isPresented: $isPresented) {
                     SoundFooterView()
                         .environmentObject(soundControl)
-                        .environment(\.managedObjectContext, managedObjectContext)
             }
         }
         
@@ -70,6 +68,5 @@ struct FooterView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .padding()
             .environmentObject(SoundControl())
-            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }
