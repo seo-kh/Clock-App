@@ -1,5 +1,5 @@
 //
-//  PickerHeaderView.swift
+//  TimerPickerView.swift
 //  Clock App
 //
 //  Created by 서광현 on 2022/04/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PickerHeaderView: UIViewRepresentable {
+struct TimerPickerView: UIViewRepresentable {
     @Binding var duration: TimeInterval
 
     func makeUIView(context: Context) -> UIDatePicker {
@@ -26,9 +26,9 @@ struct PickerHeaderView: UIViewRepresentable {
     }
 
     class Coordinator: NSObject {
-        let parent: PickerHeaderView
+        let parent: TimerPickerView
 
-        init(_ parent: PickerHeaderView) {
+        init(_ parent: TimerPickerView) {
             self.parent = parent
         }
 
@@ -40,6 +40,6 @@ struct PickerHeaderView: UIViewRepresentable {
 
 struct PickerHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PickerHeaderView(duration: .constant(10))
+        TimerPickerView(duration: .constant(10))
     }
 }

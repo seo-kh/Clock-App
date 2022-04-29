@@ -1,5 +1,5 @@
 //
-//  CenterView.swift
+//  TImerCenterView.swift
 //  Clock App
 //
 //  Created by 서광현 on 2022/04/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CenterView: View {
+struct TImerCenterView: View {
     @EnvironmentObject var timerControl: TimerControl
     
     var body: some View {
@@ -125,7 +125,7 @@ struct CenterView: View {
 
 struct CenterView_Previews: PreviewProvider {
     static var previews: some View {
-        CenterView()
+        TImerCenterView()
             .previewLayout(.sizeThatFits)
             .padding()
             .environmentObject(TimerControl())

@@ -20,7 +20,7 @@ struct TimerView: View {
             
             // MARK: - HEADER
 
-            HeaderView()
+            TimerHeaderView()
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
                 .frame(maxWidth: .infinity ,minHeight: headerFrame.min.height, maxHeight: headerFrame.max.height)
@@ -28,7 +28,7 @@ struct TimerView: View {
             
             // MARK: - CENTER
             
-            CenterView()
+            TImerCenterView()
                 .padding(.horizontal, horizontalPadding)
                 .padding(.vertical, verticalPadding)
                 .frame(maxWidth: .infinity, minHeight: centerFrame.min.height, maxHeight: centerFrame.min.height)
@@ -36,7 +36,7 @@ struct TimerView: View {
             
             // MARK: - FOOTER
 
-            FooterView()
+            TimerFooterView()
                 .padding(.horizontal ,horizontalPadding)
                 .padding(.vertical, verticalPadding)
                 .frame(maxWidth: .infinity, minHeight: footerFrame.min.height, maxHeight: footerFrame.max.height)

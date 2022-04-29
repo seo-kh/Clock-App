@@ -1,5 +1,5 @@
 //
-//  FooterView.swift
+//  TimerFooterView.swift
 //  Clock App
 //
 //  Created by 서광현 on 2022/04/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FooterView: View {
+struct TimerFooterView: View {
     
     // MARK: - PROPERTIES
     
@@ -64,7 +64,7 @@ struct FooterView: View {
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        FooterView()
+        TimerFooterView()
             .previewLayout(.sizeThatFits)
             .padding()
             .environmentObject(SoundControl())

@@ -14,11 +14,11 @@
 		6F710CF7281296600058AE66 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F710CF6281296600058AE66 /* Persistence.swift */; };
 		6F710CFA281296600058AE66 /* Clock_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F710CF8281296600058AE66 /* Clock_App.xcdatamodeld */; };
 		6FD49E8A2813A62000A58385 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E892813A62000A58385 /* Constants.swift */; };
-		6FD49E8D2813AFA900A58385 /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E8C2813AFA900A58385 /* CenterView.swift */; };
-		6FD49E8F2813B1EC00A58385 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E8E2813B1EC00A58385 /* FooterView.swift */; };
-		6FD49E912813B49100A58385 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E902813B49100A58385 /* HeaderView.swift */; };
-		6FD49E952813CA4800A58385 /* PickerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E942813CA4800A58385 /* PickerHeaderView.swift */; };
-		6FD49E99281675E200A58385 /* TimeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E98281675E200A58385 /* TimeHeaderView.swift */; };
+		6FD49E8D2813AFA900A58385 /* TImerCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E8C2813AFA900A58385 /* TImerCenterView.swift */; };
+		6FD49E8F2813B1EC00A58385 /* TimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E8E2813B1EC00A58385 /* TimerFooterView.swift */; };
+		6FD49E912813B49100A58385 /* TimerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E902813B49100A58385 /* TimerHeaderView.swift */; };
+		6FD49E952813CA4800A58385 /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E942813CA4800A58385 /* TimerPickerView.swift */; };
+		6FD49E99281675E200A58385 /* TimerDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E98281675E200A58385 /* TimerDisplayView.swift */; };
 		6FD49E9D2816B20C00A58385 /* TimerControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */; };
 		6FD49EA02816CBE600A58385 /* TimerRIngView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */; };
 		6FD49EA42816D93300A58385 /* SoundFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49EA32816D93300A58385 /* SoundFooterView.swift */; };
@@ -38,11 +38,11 @@
 		6F710CF6281296600058AE66 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6F710CF9281296600058AE66 /* Clock_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clock_App.xcdatamodel; sourceTree = "<group>"; };
 		6FD49E892813A62000A58385 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6FD49E8C2813AFA900A58385 /* CenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
-		6FD49E8E2813B1EC00A58385 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
-		6FD49E902813B49100A58385 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		6FD49E942813CA4800A58385 /* PickerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerHeaderView.swift; sourceTree = "<group>"; };
-		6FD49E98281675E200A58385 /* TimeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHeaderView.swift; sourceTree = "<group>"; };
+		6FD49E8C2813AFA900A58385 /* TImerCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TImerCenterView.swift; sourceTree = "<group>"; };
+		6FD49E8E2813B1EC00A58385 /* TimerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFooterView.swift; sourceTree = "<group>"; };
+		6FD49E902813B49100A58385 /* TimerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHeaderView.swift; sourceTree = "<group>"; };
+		6FD49E942813CA4800A58385 /* TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
+		6FD49E98281675E200A58385 /* TimerDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplayView.swift; sourceTree = "<group>"; };
 		6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControlModel.swift; sourceTree = "<group>"; };
 		6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRIngView.swift; sourceTree = "<group>"; };
 		6FD49EA32816D93300A58385 /* SoundFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFooterView.swift; sourceTree = "<group>"; };
@@ -128,8 +128,7 @@
 				6F710CEF2812965E0058AE66 /* TimerView.swift */,
 				6FD49EA12816D8F900A58385 /* Header */,
 				6FD49EA22816D90900A58385 /* Center */,
-				6FD49E8E2813B1EC00A58385 /* FooterView.swift */,
-				6FD49EA32816D93300A58385 /* SoundFooterView.swift */,
+				6FE13A20281BE02E00411A3F /* Footer */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -137,9 +136,7 @@
 		6FD49E9E2816B21500A58385 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */,
-				6FD49EA82816E32300A58385 /* SoundControlModel.swift */,
-				6FE13A19281BD62800411A3F /* TimerModel.swift */,
+				6FE13A1F281BDF6600411A3F /* TimerModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,9 +144,9 @@
 		6FD49EA12816D8F900A58385 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				6FD49E902813B49100A58385 /* HeaderView.swift */,
-				6FD49E942813CA4800A58385 /* PickerHeaderView.swift */,
-				6FD49E98281675E200A58385 /* TimeHeaderView.swift */,
+				6FD49E902813B49100A58385 /* TimerHeaderView.swift */,
+				6FD49E942813CA4800A58385 /* TimerPickerView.swift */,
+				6FD49E98281675E200A58385 /* TimerDisplayView.swift */,
 				6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */,
 			);
 			path = Header;
@@ -158,9 +155,28 @@
 		6FD49EA22816D90900A58385 /* Center */ = {
 			isa = PBXGroup;
 			children = (
-				6FD49E8C2813AFA900A58385 /* CenterView.swift */,
+				6FD49E8C2813AFA900A58385 /* TImerCenterView.swift */,
 			);
 			path = Center;
+			sourceTree = "<group>";
+		};
+		6FE13A1F281BDF6600411A3F /* TimerModel */ = {
+			isa = PBXGroup;
+			children = (
+				6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */,
+				6FD49EA82816E32300A58385 /* SoundControlModel.swift */,
+				6FE13A19281BD62800411A3F /* TimerModel.swift */,
+			);
+			path = TimerModel;
+			sourceTree = "<group>";
+		};
+		6FE13A20281BE02E00411A3F /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				6FD49E8E2813B1EC00A58385 /* TimerFooterView.swift */,
+				6FD49EA32816D93300A58385 /* SoundFooterView.swift */,
+			);
+			path = Footer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,14 +250,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FD49EA92816E32300A58385 /* SoundControlModel.swift in Sources */,
-				6FD49E952813CA4800A58385 /* PickerHeaderView.swift in Sources */,
+				6FD49E952813CA4800A58385 /* TimerPickerView.swift in Sources */,
 				6FE13A1C281BD96F00411A3F /* LocalNotificationManager.swift in Sources */,
 				6FD49E8A2813A62000A58385 /* Constants.swift in Sources */,
 				6FD49EA02816CBE600A58385 /* TimerRIngView.swift in Sources */,
-				6FD49E99281675E200A58385 /* TimeHeaderView.swift in Sources */,
-				6FD49E8F2813B1EC00A58385 /* FooterView.swift in Sources */,
+				6FD49E99281675E200A58385 /* TimerDisplayView.swift in Sources */,
+				6FD49E8F2813B1EC00A58385 /* TimerFooterView.swift in Sources */,
 				6FD49EA42816D93300A58385 /* SoundFooterView.swift in Sources */,
-				6FD49E8D2813AFA900A58385 /* CenterView.swift in Sources */,
+				6FD49E8D2813AFA900A58385 /* TImerCenterView.swift in Sources */,
 				6F710CF7281296600058AE66 /* Persistence.swift in Sources */,
 				6F710CF02812965E0058AE66 /* TimerView.swift in Sources */,
 				6FD49EA72816DCF000A58385 /* SoundData.swift in Sources */,
@@ -250,7 +266,7 @@
 				6FD49E9D2816B20C00A58385 /* TimerControlModel.swift in Sources */,
 				6FE13A1A281BD62800411A3F /* TimerModel.swift in Sources */,
 				6F710CEE2812965E0058AE66 /* Clock_AppApp.swift in Sources */,
-				6FD49E912813B49100A58385 /* HeaderView.swift in Sources */,
+				6FD49E912813B49100A58385 /* TimerHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

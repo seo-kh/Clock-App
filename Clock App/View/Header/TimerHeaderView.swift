@@ -1,5 +1,5 @@
 //
-//  HeaderView.swift
+//  TimerHeaderView.swift
 //  Clock App
 //
 //  Created by 서광현 on 2022/04/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeaderView: View {
+struct TimerHeaderView: View {
     // MARK: - PROPERTIES
     
     @EnvironmentObject var timerControl: TimerControl
@@ -19,11 +19,11 @@ struct HeaderView: View {
             if !timerControl.isStart {
                 
                 /// Time Selection
-                PickerHeaderView(duration: $timerControl.timeInterval)
+                TimerPickerView(duration: $timerControl.timeInterval)
             } else {
                 
                 /// Time Display
-                TimeHeaderView(seconds: timerControl.timeInterval)
+                TimerDisplayView(seconds: timerControl.timeInterval)
             }
     }
 }
@@ -32,7 +32,7 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        TimerHeaderView()
             .environmentObject(TimerControl())
     }
 }

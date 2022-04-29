@@ -1,5 +1,5 @@
 //
-//  TimeHeaderView.swift
+//  TimerDisplayView.swift
 //  Clock App
 //
 //  Created by 서광현 on 2022/04/25.
@@ -13,7 +13,7 @@ private struct RemainigTime {
     var title: String
 }
 
-struct TimeHeaderView: View {
+struct TimerDisplayView: View {
     
     // MARK: - PROPERTIES
     @EnvironmentObject var timerControl: TimerControl
@@ -146,7 +146,7 @@ struct TimeHeaderView: View {
 struct TimeHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TimeHeaderView(seconds: 20)
+            TimerDisplayView(seconds: 20)
                 .previewLayout(.sizeThatFits)
                 .padding()
                 .environmentObject(TimerControl())
