@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct Clock_AppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     let persistenceController = PersistenceController.shared
     @StateObject var timerModel = TimerModel()
     
@@ -18,6 +20,9 @@ struct Clock_AppApp: App {
             TimerView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(timerModel)
+                .onAppear {
+                    LocalNotificationManager.requestPermission()
+                }
         }
     }
 }

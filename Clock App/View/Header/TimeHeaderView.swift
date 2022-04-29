@@ -85,6 +85,11 @@ struct TimeHeaderView: View {
         endAngle = Angle(degrees: computedDegree)
     }
     
+    private func setNotification() {
+        let manager = LocalNotificationManager()
+        manager.addNotification(title: "Clock", subTitle: "Timer")
+        manager.schedule()
+    }
     // MARK: - BODY
 
     var body: some View {
@@ -116,6 +121,7 @@ struct TimeHeaderView: View {
                 self.cancelTimer()
                 timerControl.isStart = false
                 timerControl.timerStatus = .pause
+                self.setNotification()
             }
         }
         .onChange(of: timerControl.timerStatus) { status in
