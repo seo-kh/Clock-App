@@ -114,6 +114,8 @@ struct TimeHeaderView: View {
                 }
             } else {
                 self.cancelTimer()
+                timerControl.isStart = false
+                timerControl.timerStatus = .pause
             }
         }
         .onChange(of: timerControl.timerStatus) { status in
