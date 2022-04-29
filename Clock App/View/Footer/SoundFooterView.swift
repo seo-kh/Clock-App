@@ -37,11 +37,12 @@ struct SoundFooterView: View {
                                 ClassicSoundFooterView()
                                     .onAppear {
                                         withAnimation(.linear(duration: 0.2)) {
+                                            // 취소버튼 활성화시, 오류 해결을 위한 코드
                                             currentSoundIndex = index
                                             tmpIndex = prevSoundIndex
                                             isNavWent.toggle()
                                             
-                                            // sound paly stop
+                                            // sound paly - off
                                             stop()
                                             soundControl.isClick = false
                                         }
@@ -70,6 +71,8 @@ struct SoundFooterView: View {
                         /// Sounds 버튼
                         else {
                             Button {
+                                
+                                // sound play - on
                                 if !soundControl.isClick || currentSoundIndex != index {
                                     play(file: soundControl.soundPack[index].soundPath)
                                     soundControl.isClick = true
@@ -104,6 +107,8 @@ struct SoundFooterView: View {
 
                 Section {
                     Button {
+                        
+                        // sound play - off
                         stop()
                         soundControl.isClick = false
                         
@@ -129,6 +134,11 @@ struct SoundFooterView: View {
             } //: LIST
             .onAppear(perform: {
                 prevSoundIndex = currentSoundIndex
+            })
+            .onDisappear(perform: {
+                // sound play - off
+                stop()
+                soundControl.isClick = false
             })
             .interactiveDismissDisabled()
             .navigationTitle("When Timer Ends")
