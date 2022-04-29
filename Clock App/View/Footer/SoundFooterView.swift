@@ -34,7 +34,7 @@ struct SoundFooterView: View {
                             NavigationLink {
                                 // Classic Detail
             
-                                Text("Classic Sounds")
+                                ClassicSoundFooterView()
                                     .onAppear {
                                         withAnimation(.linear(duration: 0.2)) {
                                             currentSoundIndex = index
@@ -42,9 +42,7 @@ struct SoundFooterView: View {
                                             isNavWent.toggle()
                                         }
                                     }
-                                    .onDisappear {
-                                        //
-                                    }
+                                    .environmentObject(soundControl)
                                 
                                 
                             } label: {

@@ -22,4 +22,18 @@ class SoundControl: ObservableObject {
         SoundData(name: "Hillside", isSelected: false),
         SoundData(name: "Classic", isSelected: false),
     ]
+    
+    @Published var classicSoundPack: [SoundData] = [
+        SoundData(name: "개 짓는 소리", isSelected: true),
+        SoundData(name: "경보기", isSelected: true),
+        SoundData(name: "공 튀기는 소리", isSelected: true),
+        SoundData(name: "공상과학", isSelected: true),
+        SoundData(name: "구식 자동차 경적", isSelected: true),
+        SoundData(name: "귀뚜라미 소리", isSelected: true),
+        SoundData(name: "기계음", isSelected: true),
+        SoundData(name: "기타", isSelected: true),
+        SoundData(name: "로보트 소리", isSelected: true),
+        SoundData(name: "마림바", isSelected: true),
+        SoundData(name: "블루스", isSelected: true),
+    ]
 }

@@ -12,13 +12,16 @@ struct TimerFooterView: View {
     // MARK: - PROPERTIES
     
     @AppStorage("currentSoundIndex") var currentSoundIndex: Int = 0
+    @AppStorage("classicSoundIndex") var classicSoundIndex: Int = 0
     @EnvironmentObject var soundControl: SoundControl
     @State private var isPresented: Bool = false
     
     var soundTitle: String {
         if currentSoundIndex == -1 {
             return "Stop Playing"
-        } else {
+        } else if currentSoundIndex == soundControl.soundPack.count - 1 {
+            return soundControl.classicSoundPack[classicSoundIndex].name
+        } else  {
             return soundControl.soundPack[currentSoundIndex].name
         }
     }
