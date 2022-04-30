@@ -26,11 +26,11 @@ struct TimerDisplayView: View {
     }
     
     // TIMER PROPERTIES
-
+    
     @State private var secondsElapsed = 0.0
     @State private var timer: Timer.TimerPublisher = Timer.publish(every: 1, on: .main, in: .common)
     @State private var connectedTimer: Cancellable? = nil
-
+    
     // CUSTOM PROPERTIES
     
     @State private var isTimerOn: Bool = false
@@ -54,7 +54,7 @@ struct TimerDisplayView: View {
     }
     
     // MARK: - FUNCTIONS
-
+    
     private func instantiateTimer() {
         self.timer = Timer.publish(every: 1, on: .main, in: .common)
         self.connectedTimer = self.timer.connect()
@@ -91,56 +91,62 @@ struct TimerDisplayView: View {
         manager.schedule()
     }
     // MARK: - BODY
-
+    
     var body: some View {
-        TimerRing(endAngle: endAngle)
-            .stroke(
-                Color.accentColor,
-                style: StrokeStyle(lineWidth: 6.0, lineCap: .round, lineJoin: .round)
-            )
-            .overlay(
-                VStack(alignment: .center, spacing: 16, content: {
-                    Text(remainingTime.title)
-                        .font(.system(size: 80, weight: .thin, design: .default))
+        ZStack {
+            
+            // Background Ring.
+            BackgroundRingView()
+                .stroke(Color("GrayColor"), lineWidth: 6.0)
+            
+            // Main Ring.
+            TimerRing(endAngle: endAngle)
+                .stroke(
+                    Color.accentColor,
+                    style: StrokeStyle(lineWidth: 6.0, lineCap: .round, lineJoin: .round)
+                )
+                .overlay(
+                    VStack(alignment: .center, spacing: 16, content: {
+                        Text(remainingTime.title)
+                            .font(.system(size: 80, weight: .thin, design: .default))
+                        
+                        Label(currentTime, systemImage: "bell.fill")
+                            .font(.title3)
+                            .foregroundColor(isTimerOn ? Color.white : Color.secondary)
+                    })
+                )
+                .onAppear {
+                    self.instantiateTimer()
                     
-                    Label(currentTime, systemImage: "bell.fill")
-                        .font(.title3)
-                        .foregroundColor(isTimerOn ? Color.white : Color.secondary)
-                })
-            )
-        .onAppear {
-            self.instantiateTimer()
-            
-        }.onDisappear {
-            self.cancelTimer()
-            
-        }.onReceive(timer) { _ in
-            if self.remainingTime.value > 0 {
-                self.secondsElapsed += 1.0
-                withAnimation(.linear(duration: 1)) {
-                    calcDegree()
-                }
-            } else {
-                self.cancelTimer()
-                timerControl.isStart = false
-                timerControl.timerStatus = .pause
-                self.setNotification()
-            }
-        }
-        .onChange(of: timerControl.timerStatus) { status in
-            if timerControl.isStart {
-                switch status {
-                case .pause:
+                }.onDisappear {
                     self.cancelTimer()
-                case.resume:
-                    self.instantiateTimer()
-                case .start:
-                    self.instantiateTimer()
+                    
+                }.onReceive(timer) { _ in
+                    if self.remainingTime.value > 0 {
+                        self.secondsElapsed += 1.0
+                        withAnimation(.linear(duration: 1)) {
+                            calcDegree()
+                        }
+                    } else {
+                        self.cancelTimer()
+                        timerControl.isStart = false
+                        timerControl.timerStatus = .pause
+                        self.setNotification()
+                    }
                 }
-            }
-        }
-        
-        
+                .onChange(of: timerControl.timerStatus) { status in
+                    if timerControl.isStart {
+                        switch status {
+                        case .pause:
+                            self.cancelTimer()
+                        case.resume:
+                            self.instantiateTimer()
+                        case .start:
+                            self.instantiateTimer()
+                        }
+                    }
+                }
+        } //: ZSTACK
     }
 }
 
