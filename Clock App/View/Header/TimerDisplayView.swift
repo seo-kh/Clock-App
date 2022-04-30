@@ -40,7 +40,7 @@ struct TimerDisplayView: View {
         return currentTime
     } ()
     
-    @State private var endAngle: Angle = .degrees(-90)
+    @State private var endAngle: Double = -90.0
     
     private var remainingTime: RemainigTime {
         let remainingTime: Double = seconds - secondsElapsed
@@ -82,7 +82,7 @@ struct TimerDisplayView: View {
     
     private func calcDegree() {
         let computedDegree: Double = -(90.0 + deltaAngle * secondsElapsed)
-        endAngle = Angle(degrees: computedDegree)
+        endAngle = computedDegree
     }
     
     private func setNotification() {
@@ -94,7 +94,10 @@ struct TimerDisplayView: View {
 
     var body: some View {
         TimerRing(endAngle: endAngle)
-            .stroke(Color.accentColor, lineWidth: 6)
+            .stroke(
+                Color.accentColor,
+                style: StrokeStyle(lineWidth: 6.0, lineCap: .round, lineJoin: .round)
+            )
             .overlay(
                 VStack(alignment: .center, spacing: 16, content: {
                     Text(remainingTime.title)
@@ -114,7 +117,7 @@ struct TimerDisplayView: View {
         }.onReceive(timer) { _ in
             if self.remainingTime.value > 0 {
                 self.secondsElapsed += 1.0
-                withAnimation {
+                withAnimation(.linear(duration: 1)) {
                     calcDegree()
                 }
             } else {

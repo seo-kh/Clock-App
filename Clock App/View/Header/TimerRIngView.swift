@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct TimerRing: Shape {
-    var endAngle: Angle
+    var endAngle: Double
     
-    var animatableData: Angle {
+    var animatableData: Double {
         get { endAngle }
         set { endAngle = newValue}
     }
@@ -21,8 +21,8 @@ struct TimerRing: Shape {
         p.addArc(
             center: CGPoint(x: rect.width / 2.0, y: rect.height / 2.0),
             radius: rect.width / 2.0,
-            startAngle: Angle(degrees: -90),
-            endAngle: endAngle,
+            startAngle: Angle.degrees(-90.0),
+            endAngle: Angle.degrees(endAngle),
             clockwise: false
         )
         
