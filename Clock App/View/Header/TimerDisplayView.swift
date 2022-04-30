@@ -17,12 +17,27 @@ struct TimerDisplayView: View {
     
     // MARK: - PROPERTIES
     @EnvironmentObject var timerControl: TimerControl
+    @EnvironmentObject var soundControl: SoundControl
     
     // INITIAL PROPERTY
     let seconds: Double
     
     init(seconds: Double) {
         self.seconds = seconds
+    }
+    
+    // SOUND PROPERTIES
+    @AppStorage("currentSoundIndex") var currentSoundIndex: Int = 0
+    @AppStorage("classicSoundIndex") var classicSoundIndex: Int = 0
+    
+    var soundString: String? {
+        if currentSoundIndex == -1 {
+            return nil
+        } else if currentSoundIndex == soundControl.soundPack.count - 1 {
+            return soundControl.classicSoundPack[classicSoundIndex].soundPath
+        } else {
+            return soundControl.soundPack[currentSoundIndex].soundPath
+        }
     }
     
     // TIMER PROPERTIES
@@ -39,7 +54,6 @@ struct TimerDisplayView: View {
         let currentTime = currentDateFormatter.string(from: currentDate)
         return currentTime
     } ()
-    
     @State private var endAngle: Double = -90.0
     
     private var remainingTime: RemainigTime {
@@ -86,7 +100,7 @@ struct TimerDisplayView: View {
     }
     
     private func setNotification() {
-        let manager = LocalNotificationManager()
+        let manager = LocalNotificationManager(soundString)
         manager.addNotification(title: "Clock", subTitle: "Timer")
         manager.schedule()
     }
@@ -117,11 +131,13 @@ struct TimerDisplayView: View {
                 )
                 .onAppear {
                     self.instantiateTimer()
-                    
-                }.onDisappear {
-                    self.cancelTimer()
-                    
-                }.onReceive(timer) { _ in
+
+                }
+                .onDisappear {
+                    self.instantiateTimer()
+
+                }
+                .onReceive(timer) { _ in
                     if self.remainingTime.value > 0 {
                         self.secondsElapsed += 1.0
                         withAnimation(.linear(duration: 1)) {
@@ -159,6 +175,7 @@ struct TimeHeaderView_Previews: PreviewProvider {
                 .previewLayout(.sizeThatFits)
                 .padding()
                 .environmentObject(TimerControl())
+                .environmentObject(SoundControl())
         }
     }
 }

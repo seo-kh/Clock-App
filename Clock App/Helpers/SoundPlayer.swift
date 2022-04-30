@@ -29,9 +29,6 @@ var audioPlayer: AVAudioPlayer?
 func play(file: String?) {
     if let fileString = file,
        let url = Bundle.main.url(forResource: fileString, withExtension: nil) {
-        print("fileString: \(fileString)")
-        print("url : \(url)")
-
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.prepareToPlay()

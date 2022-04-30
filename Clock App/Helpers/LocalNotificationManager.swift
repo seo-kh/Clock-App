@@ -14,9 +14,15 @@ struct Notification {
     var subTitle: String
 }
 
+
 class LocalNotificationManager {
-    
     var notifications = [Notification]()
+    
+    var soundString: String?
+    
+    init(_ soundString: String?) {
+        self.soundString = soundString
+    }
     
     static func requestPermission() {
         UNUserNotificationCenter
@@ -40,7 +46,11 @@ class LocalNotificationManager {
             let content = UNMutableNotificationContent()
             content.title = notification.title
             content.subtitle = notification.subTitle
-            content.sound = UNNotificationSound.default
+            
+            if let soundString = soundString {
+                let notificationSoundName = UNNotificationSoundName(soundString)
+                content.sound = UNNotificationSound(named: notificationSoundName)
+            }
             
             // trigger Setting
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)

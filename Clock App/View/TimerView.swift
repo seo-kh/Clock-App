@@ -25,6 +25,7 @@ struct TimerView: View {
                 .padding(.vertical, verticalPadding)
                 .frame(maxWidth: .infinity ,minHeight: headerFrame.min.height, maxHeight: headerFrame.max.height)
                 .environmentObject(timerModel.timerControl)
+                .environmentObject(timerModel.soundControl)
             
             // MARK: - CENTER
             
