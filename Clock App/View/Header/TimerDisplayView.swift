@@ -40,6 +40,13 @@ struct TimerDisplayView: View {
         }
     }
     
+    var soundDuration: TimeInterval? {
+        if currentSoundIndex == -1 {
+            return nil
+        } else {
+            return audioPlayer?.duration
+        }
+    }
     // TIMER PROPERTIES
     
     @State private var secondsElapsed = 0.0
@@ -100,9 +107,10 @@ struct TimerDisplayView: View {
     }
     
     private func setNotification() {
-        let manager = LocalNotificationManager(soundString)
+        let manager = LocalNotificationManager(soundString, soundDuration)
         manager.addNotification(title: "Clock", subTitle: "Timer")
-        manager.schedule()
+//        manager.schedule()
+        manager.startTimer()
     }
     // MARK: - BODY
     

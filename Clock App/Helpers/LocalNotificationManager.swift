@@ -19,9 +19,28 @@ class LocalNotificationManager {
     var notifications = [Notification]()
     
     var soundString: String?
+    var soundDuration: TimeInterval?
+    var timer = Timer()
     
-    init(_ soundString: String?) {
+    init(_ soundString: String?, _ soundDuration: TimeInterval?) {
         self.soundString = soundString
+        self.soundDuration = soundDuration
+    }
+    
+    func startTimer() {
+        let timeInterval = soundDuration ?? 10.0
+        if !timer.isValid {
+            timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { timer in
+                self.scheduleNotifications()
+            })
+        }
+    }
+    
+    func stopTimer() {
+        timer.invalidate()
+        
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
     static func requestPermission() {
