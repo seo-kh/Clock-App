@@ -17,12 +17,13 @@ struct Clock_AppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TimerView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(timerModel)
-                .onAppear {
-                    LocalNotificationManager.requestPermission()
-                }
+//            TimerView()
+////                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                .environmentObject(timerModel)
+//                .onAppear {
+//                    LocalNotificationManager.requestPermission()
+//                }
+            CustomTimerPickerView()
         }
     }
 }
