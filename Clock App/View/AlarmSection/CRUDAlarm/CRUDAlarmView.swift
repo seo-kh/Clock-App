@@ -33,7 +33,7 @@ struct CRUDAlarmView: View {
                 
                 List {
                     //: 1. 반복 여부
-                    NavigationLink(destination: Text("안함")) {
+                    NavigationLink(destination: RepeatAlarmView()) {
                         HStack {
                             Text("반복")
                             Spacer()
@@ -42,7 +42,7 @@ struct CRUDAlarmView: View {
                     }
                     
                     //: 2. 레이블
-                    NavigationLink(destination: Text("알람")) {
+                    NavigationLink(destination: LabelAlarmView()) {
                         HStack {
                             Text("레이블")
                             Spacer()
