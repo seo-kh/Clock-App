@@ -11,6 +11,7 @@ struct AlarmView: View {
     // MARK: - PROPERTIES
     @Environment(\.dismiss) var dismiss
     @State private var isSetting: Bool = false
+    @State private var crudAlarm: Bool = false
     
     
     // MARK: - BODY
@@ -67,24 +68,21 @@ struct AlarmView: View {
                 }
                 
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button {
-                        //
-                    } label: {
-                        Image(systemName: "plus")
-                    }
+                    Button(action: createButton) { Image(systemName: "plus") }
                 }
             }
         } //: NAVIGATION
         //: ALARM SETTING
-        .sheet(isPresented: $isSetting) {
-            AlarmSettingView(isSetting: $isSetting)
-        }
+        .sheet(isPresented: $isSetting) { AlarmSettingView(isSetting: $isSetting) }
+        //: CREATE ALARM
+        .sheet(isPresented: $crudAlarm) { CRUDAlarmView(crudAlarm: $crudAlarm) }
         
     }
     
     // MARK: - FUNCTIONS
     
     private func settingButton() { isSetting = true }
+    private func createButton() { crudAlarm = true }
     
 }
 
