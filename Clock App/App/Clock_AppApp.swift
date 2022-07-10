@@ -23,7 +23,8 @@ struct Clock_AppApp: App {
 //                .onAppear {
 //                    LocalNotificationManager.requestPermission()
 //                }
-            CustomTimerPickerView()
+//            TimerView()
+            AlarmView()
         }
     }
 }
