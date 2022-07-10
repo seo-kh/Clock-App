@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F17B32F287B1A5800682CD5 /* CRUDAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F17B32E287B1A5700682CD5 /* CRUDAlarmView.swift */; };
+		6F17B331287B263200682CD5 /* AlarmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F17B330287B263200682CD5 /* AlarmCellView.swift */; };
 		6F2AFEC5281CF30F007305DB /* BackgroundRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2AFEC4281CF30F007305DB /* BackgroundRingView.swift */; };
 		6F5B7C7B2878088A00BDC929 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B7C7A2878088A00BDC929 /* AlarmView.swift */; };
 		6F5B7C7D287815B300BDC929 /* AlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B7C7C287815B300BDC929 /* AlarmSettingView.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		6F17B32E287B1A5700682CD5 /* CRUDAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDAlarmView.swift; sourceTree = "<group>"; };
+		6F17B330287B263200682CD5 /* AlarmCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCellView.swift; sourceTree = "<group>"; };
 		6F2AFEC4281CF30F007305DB /* BackgroundRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRingView.swift; sourceTree = "<group>"; };
 		6F5B7C7A2878088A00BDC929 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		6F5B7C7C287815B300BDC929 /* AlarmSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSettingView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				6F5B7C792878083D00BDC929 /* TimerSection */,
 				6F5B7C7A2878088A00BDC929 /* AlarmView.swift */,
+				6F17B330287B263200682CD5 /* AlarmCellView.swift */,
 				6F17B32E287B1A5700682CD5 /* CRUDAlarmView.swift */,
 				6F5B7C7C287815B300BDC929 /* AlarmSettingView.swift */,
 			);
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F17B331287B263200682CD5 /* AlarmCellView.swift in Sources */,
 				6FD49EA92816E32300A58385 /* SoundControlModel.swift in Sources */,
 				6FD49E952813CA4800A58385 /* TimerPickerView.swift in Sources */,
 				6F17B32F287B1A5800682CD5 /* CRUDAlarmView.swift in Sources */,

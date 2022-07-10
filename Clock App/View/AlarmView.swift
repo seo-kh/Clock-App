@@ -7,12 +7,27 @@
 
 import SwiftUI
 
+struct Info: Identifiable {
+    let id = UUID().uuidString
+    let ampm: String
+    let time: String
+    let noticeAgain: Bool
+    let label: String
+}
+
 struct AlarmView: View {
     // MARK: - PROPERTIES
     @Environment(\.dismiss) var dismiss
     @State private var isSetting: Bool = false
     @State private var crudAlarm: Bool = false
-    
+    @State private var infos = [
+        Info(ampm: "오전", time: "4:00", noticeAgain: true, label: "알람"),
+        Info(ampm: "오전", time: "5:00", noticeAgain: true, label: "알람"),
+        Info(ampm: "오전", time: "8:00", noticeAgain: true, label: "카페"),
+        Info(ampm: "오후", time: "5:00", noticeAgain: false, label: "수면"),
+        Info(ampm: "오후", time: "6:00", noticeAgain: false, label: "알람"),
+    ]
+        
     
     // MARK: - BODY
     
@@ -46,7 +61,15 @@ struct AlarmView: View {
                 Group {
                     Section {
                         // ALARMCELL
-                        Text("Hello")
+                        ForEach(infos) { info in
+                            AlarmCellView(
+                                ampm: info.ampm,
+                                time: info.time,
+                                noticeAgain: info.noticeAgain,
+                                label: info.label
+                            )
+                        } //: LOOP
+                        .onDelete(perform: delete)
                     } header: {
                         Text("기타")
                             .foregroundColor(.primary)
@@ -83,6 +106,9 @@ struct AlarmView: View {
     
     private func settingButton() { isSetting = true }
     private func createButton() { crudAlarm = true }
+    private func delete(at offset: IndexSet) {
+        infos.remove(atOffsets: offset)
+    }
     
 }
 
