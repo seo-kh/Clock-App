@@ -13,6 +13,7 @@ struct Clock_AppApp: App {
     
     let persistenceController = PersistenceController.shared
     @StateObject var timerModel = TimerModel()
+    @Environment(\.scenePhase) var scenePhase
     
 
     var body: some Scene {
@@ -25,6 +26,10 @@ struct Clock_AppApp: App {
 //                }
 //            TimerView()
             AlarmView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        }
+        .onChange(of: scenePhase) { _ in
+            persistenceController.save()
         }
     }
 }

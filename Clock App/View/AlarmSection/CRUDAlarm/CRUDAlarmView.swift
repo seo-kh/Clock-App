@@ -10,7 +10,7 @@ import SwiftUI
 struct CRUDAlarmView: View {
     
     // MARK: - PROPERTIES
-    
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var crudAlarm: Bool
     @State private var date: Date = Date()
     @State private var noticeAgain: Bool = false
@@ -81,13 +81,29 @@ struct CRUDAlarmView: View {
                     Button(action: saveAction) {Text("저장")}
                 }
             }
+            
         } //: NAVIGATATION
     }
     
     // MARK: - FUNCTIONS
     
     private func cancelAction() {crudAlarm = false}
-    private func saveAction() {}
+    private func saveAction() {
+        let alarm = Alarm(context: managedObjectContext)
+        alarm.time = date
+        alarm.repeatDay = "월요일마다"
+        alarm.label = "알람"
+        alarm.sound = "전파탐지기"
+        alarm.notice = true
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error)
+        }
+        
+        crudAlarm = false
+    }
 }
 
 

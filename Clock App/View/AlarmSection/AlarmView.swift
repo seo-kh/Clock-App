@@ -18,15 +18,18 @@ struct Info: Identifiable {
 struct AlarmView: View {
     // MARK: - PROPERTIES
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var managedOjbectContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.time)]) var alarms: FetchedResults<Alarm>
     @State private var isSetting: Bool = false
     @State private var crudAlarm: Bool = false
-    @State private var infos = [
-        Info(ampm: "오전", time: "4:00", noticeAgain: true, label: "알람"),
-        Info(ampm: "오전", time: "5:00", noticeAgain: true, label: "알람"),
-        Info(ampm: "오전", time: "8:00", noticeAgain: true, label: "카페"),
-        Info(ampm: "오후", time: "5:00", noticeAgain: false, label: "수면"),
-        Info(ampm: "오후", time: "6:00", noticeAgain: false, label: "알람"),
-    ]
+    
+    //@State private var infos = [
+//        Info(ampm: "오전", time: "4:00", noticeAgain: true, label: "알람"),
+//        Info(ampm: "오전", time: "5:00", noticeAgain: true, label: "알람"),
+//        Info(ampm: "오전", time: "8:00", noticeAgain: true, label: "카페"),
+//        Info(ampm: "오후", time: "5:00", noticeAgain: false, label: "수면"),
+//        Info(ampm: "오후", time: "6:00", noticeAgain: false, label: "알람"),
+//    ]
         
     
     // MARK: - BODY
@@ -61,12 +64,14 @@ struct AlarmView: View {
                 Group {
                     Section {
                         // ALARMCELL
-                        ForEach(infos) { info in
+                        ForEach(alarms) { (alarm: Alarm) in
+                            let ampm: String = merediemDateFormatter.string(from: alarm.time ?? .now)
+                            let time: String = alarmTimeFormatter.string(from: alarm.time ?? .now)
                             AlarmCellView(
-                                ampm: info.ampm,
-                                time: info.time,
-                                noticeAgain: info.noticeAgain,
-                                label: info.label
+                                ampm: ampm,
+                                time: time,
+                                noticeAgain: alarm.notice,
+                                label: alarm.label ?? "알람"
                             )
                         } //: LOOP
                         .onDelete(perform: delete)
@@ -98,7 +103,10 @@ struct AlarmView: View {
         //: ALARM SETTING
         .sheet(isPresented: $isSetting) { AlarmSettingView(isSetting: $isSetting) }
         //: CREATE ALARM
-        .sheet(isPresented: $crudAlarm) { CRUDAlarmView(crudAlarm: $crudAlarm) }
+        .sheet(isPresented: $crudAlarm) { CRUDAlarmView(crudAlarm: $crudAlarm)
+                .environment(\.managedObjectContext, managedOjbectContext)
+            
+        }
         
     }
     
@@ -107,7 +115,16 @@ struct AlarmView: View {
     private func settingButton() { isSetting = true }
     private func createButton() { crudAlarm = true }
     private func delete(at offset: IndexSet) {
-        infos.remove(atOffsets: offset)
+        for index in offset {
+            let alarm = alarms[index]
+            managedOjbectContext.delete(alarm)
+        }
+        
+        do {
+            try managedOjbectContext.save()
+        } catch {
+            print(error)
+        }
     }
     
 }
@@ -116,6 +133,8 @@ struct AlarmView: View {
 
 struct AlarmView_Previews: PreviewProvider {
     static var previews: some View {
+        let persistantController = PersistenceController.shared
         AlarmView()
+            .environment(\.managedObjectContext, persistantController.container.viewContext)
     }
 }

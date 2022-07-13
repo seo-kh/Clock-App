@@ -63,3 +63,17 @@ let currentDateFormatter: DateFormatter = {
     dateFormatter.locale = Locale(identifier: "ko_KR")
     return dateFormatter
 } ()
+
+/// Alarm을 위한 DateFormatter
+let merediemDateFormatter: DateFormatter = {
+    var dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "a"
+    dateFormatter.locale = Locale(identifier: "ko_KR")
+    return dateFormatter
+}()
+
+let alarmTimeFormatter: DateFormatter = {
+    var dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    return dateFormatter
+}()

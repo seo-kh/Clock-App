@@ -8,28 +8,40 @@
 import CoreData
 
 struct PersistenceController {
+    // A singleton for our entire app to use
     static let shared = PersistenceController()
 
+    // Storage for Core Data
+    let container: NSPersistentContainer
+    
+    // A test configuration for SwiftUI previews
     static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for i in 0..<10 {
-            var newItem = Clock(context: viewContext)
-            newItem.soundIndex = 0
+        let controller = PersistenceController(inMemory: true)
+        let viewContext = controller.container.viewContext
+        // Create 5 example alarms.
+        for _ in 0..<5 {
+            let alarm = Alarm(context: viewContext)
+            alarm.time = Date.now
+            alarm.repeatDay = "everyMon"
+            alarm.label = "alarm"
+            alarm.notice = true
+            alarm.sound = "ship"
         }
         
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
+        return controller
     }()
 
-    let container: NSPersistentContainer
+    func save() {
+        let context = container.viewContext
+        
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
+    }
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Clock_App")
