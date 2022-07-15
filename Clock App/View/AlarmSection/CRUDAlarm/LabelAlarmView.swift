@@ -19,28 +19,61 @@ struct LabelAlarmView: View {
     
     var body: some View {
         TextField(label, text: $label)
-        .padding(10)
-        .background(Color.secondary.opacity(0.3))
-        .cornerRadius(15.0)
-        .padding()
-        .textInputAutocapitalization(.never)
-        .disableAutocorrection(true)
-        .submitLabel(.done)
-        .focused($focus, equals: .field)
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                /// Anything over 0.5 seems to work
-                self.focus = .field
+            //: LABEL CANCEL BUTTON
+            .overlay(content: {
+                Button {
+                    label = ""
+                } label: {
+                    Image(systemName: "x.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.secondary.opacity(0.6))
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                }
+                .disabled(label.isEmpty)
+                .opacity(label.isEmpty ? 0 : 1)
+            })
+            .padding(10)
+            .background(Color.secondary.opacity(0.3))
+            .cornerRadius(15.0)
+            .padding()
+            .textInputAutocapitalization(.never)
+            .disableAutocorrection(true)
+            .submitLabel(.done)
+            .focused($focus, equals: .field)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    /// Anything over 0.5 seems to work
+                    self.focus = .field
+                }
             }
-        }
-        .onSubmit {
-            switch focus {
-            case .field:
-                dismiss()
-            default:
-                focus = nil
+            .onDisappear(perform: {
+                label = label.isEmpty ? "알람" : label
+            })
+            .onSubmit {
+                switch focus {
+                case .field:
+                    dismiss()
+                default:
+                    focus = nil
+                }
             }
-        }
+            .navigationTitle("레이블")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.left")
+                            Text("뒤로")
+                        }
+                    }
+                    
+                }
+            }
         
     }
 }

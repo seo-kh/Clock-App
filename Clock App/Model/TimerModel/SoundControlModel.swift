@@ -39,4 +39,12 @@ class SoundControl: ObservableObject {
         SoundData(name: "sci-fi", soundPath: "mixkit-scanning-sci-fi-alarm-905.wav"),
         SoundData(name: "security", soundPath: "mixkit-security-facility-breach-alarm-994.wav"),
     ]
+    
+    var soundCount: Int {
+        soundPack.count
+    }
+    
+    var classiCount: Int {
+        classicSoundPack.count
+    }
 }

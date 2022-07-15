@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RepeatAlarmView: View {
+    @Environment(\.dismiss) var dismiss
     @Binding var repeatDay: [RepeatDays]
     
     var body: some View {
@@ -27,6 +28,20 @@ struct RepeatAlarmView: View {
         }
         .navigationTitle("반복")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("뒤로")
+                    }
+                }
+
+            }
+        }
     }
 }
 

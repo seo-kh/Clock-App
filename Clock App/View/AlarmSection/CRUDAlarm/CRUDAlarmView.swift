@@ -15,6 +15,8 @@ struct RepeatDays {
 struct CRUDAlarmView: View {
     
     // MARK: - PROPERTIES
+    // SOUND DATA
+    @StateObject var soundControlModel: SoundControl = SoundControl()
     
     //: CORE DATA
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -22,11 +24,10 @@ struct CRUDAlarmView: View {
     //: CORE DATA ALARM, PROPERTIES
     @Binding var crudAlarm: Bool
     @State private var time: Date = Date()
-    @State private var repeatDay: [RepeatDays] = (0..<7).map { i in
-        RepeatDays(day: AlarmPeriodEnum.allCases[i].rawValue, isRepeat: false)
+    @State private var repeatDay: [RepeatDays] = (0..<7).map { RepeatDays(day: AlarmPeriodEnum.allCases[$0].rawValue, isRepeat: false)
     }
     @State private var label: String = "알람"
-    @State private var sound: String = "전파탐지기"
+    @StateObject var alarmSoundModel: AlarmSoundModel = AlarmSoundModel()
     @State private var notice: Bool = false
     
     //: COMPUTED PROPERTIES
@@ -43,6 +44,20 @@ struct CRUDAlarmView: View {
             return parsingDays(fileteredDay)
         }
     }
+    var sound: String {
+        switch alarmSoundModel.soundNum {
+        case -1:
+            return "곡"
+        case soundControlModel.soundCount:
+            return "없음"
+        case soundControlModel.soundCount-1:
+            if alarmSoundModel.classicNum == -1 { return "" }
+            else { return soundControlModel.classicSoundPack[alarmSoundModel.classicNum].name }
+        default:
+            return soundControlModel.soundPack[alarmSoundModel.soundNum].name
+        }
+    }
+    
     // MARK: - BODY
     
     var body: some View {
@@ -79,11 +94,14 @@ struct CRUDAlarmView: View {
                     }
                     
                     //: 3. 사운드
-                    NavigationLink(destination: Text("전파 탐지기")) {
+                    NavigationLink(destination: SoundAlarmView(soundControlModel: soundControlModel)
+                        .environmentObject(alarmSoundModel)
+                    )
+                    {
                         HStack {
                             Text("사운드")
                             Spacer()
-                            Text("전파 탐지기").foregroundColor(.secondary)
+                            Text(sound).foregroundColor(.secondary)
                         }
                     }
                     
@@ -109,7 +127,6 @@ struct CRUDAlarmView: View {
                     Button(action: saveAction) {Text("저장")}
                 }
             }
-            
         } //: NAVIGATATION
     }
     
@@ -122,7 +139,7 @@ struct CRUDAlarmView: View {
         alarm.time = time
         alarm.repeatDay = repeatDays
         alarm.label = label
-        alarm.sound = "전파탐지기"
+        alarm.sound = sound
         alarm.notice = notice
         
         do {
@@ -141,7 +158,7 @@ struct CRUDAlarmView: View {
     private func parsingDays(_ fileteredDay: [RepeatDays]) -> String {
         var days: String = ""
         for chosenDay in fileteredDay {
-                days += "\(chosenDay.day.first!) "
+            days += "\(chosenDay.day.first!) "
         }
         return days
     }
