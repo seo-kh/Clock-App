@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-struct Info: Identifiable {
-    let id = UUID().uuidString
-    let ampm: String
-    let time: String
-    let noticeAgain: Bool
-    let label: String
-}
-
 struct AlarmView: View {
     // MARK: - PROPERTIES
     @Environment(\.dismiss) var dismiss
@@ -23,28 +15,19 @@ struct AlarmView: View {
     @State private var isSetting: Bool = false
     @State private var crudAlarm: Bool = false
     
-    //@State private var infos = [
-//        Info(ampm: "오전", time: "4:00", noticeAgain: true, label: "알람"),
-//        Info(ampm: "오전", time: "5:00", noticeAgain: true, label: "알람"),
-//        Info(ampm: "오전", time: "8:00", noticeAgain: true, label: "카페"),
-//        Info(ampm: "오후", time: "5:00", noticeAgain: false, label: "수면"),
-//        Info(ampm: "오후", time: "6:00", noticeAgain: false, label: "알람"),
-//    ]
-        
-    
     // MARK: - BODY
     
     var body: some View {
         NavigationView {
             List {
-                // INFO SECTION
+                // MARK: - INFO SECTION
                 HStack {
                     Image(systemName: "bed.double.fill")
                     Text("수면 | 기상").fontWeight(.bold)
                 } //: HSTACK
                 .font(.title3)
                 
-                // SETTING SECTION
+                // MARK: - SETTING SECTION
                 HStack {
                     Text("알람 없음")
                         .font(.body)
@@ -60,18 +43,20 @@ struct AlarmView: View {
                 } //: HSTACK
                 .frame(maxWidth: .infinity)
                 
-                // ALARM SECTION
+                // MARK: - ALARM SECTION
                 Group {
                     Section {
                         // ALARMCELL
                         ForEach(alarms) { (alarm: Alarm) in
                             let ampm: String = merediemDateFormatter.string(from: alarm.time ?? .now)
                             let time: String = alarmTimeFormatter.string(from: alarm.time ?? .now)
+                            let formattedRepeatDay: String = alarm.repeatDay! == "안함" ? "" : ", \(alarm.repeatDay!)"
+                            
                             AlarmCellView(
                                 ampm: ampm,
                                 time: time,
                                 noticeAgain: alarm.notice,
-                                label: alarm.label ?? "알람"
+                                label: (alarm.label! + formattedRepeatDay)
                             )
                         } //: LOOP
                         .onDelete(perform: delete)
@@ -89,7 +74,7 @@ struct AlarmView: View {
             .listStyle(.inset)
             .listRowSeparatorTint(.primary)
             .listRowInsets(.init(top: 0, leading: 15.0, bottom: 0, trailing: 0))
-            //: TOOLBAR
+            // MARK: - TOOLBAR
             .toolbar {
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                     EditButton()
@@ -100,6 +85,7 @@ struct AlarmView: View {
                 }
             }
         } //: NAVIGATION
+        // MARK: SHEET
         //: ALARM SETTING
         .sheet(isPresented: $isSetting) { AlarmSettingView(isSetting: $isSetting) }
         //: CREATE ALARM

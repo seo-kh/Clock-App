@@ -12,7 +12,7 @@ fileprivate enum FocusField: Hashable {
 }
 
 struct LabelAlarmView: View {
-    @State private var label: String = "알람"
+    @Binding var label: String
     @FocusState private var focus: FocusField?
     @Environment(\.dismiss) var dismiss
     
@@ -47,6 +47,6 @@ struct LabelAlarmView: View {
 
 struct LabelAlarmView_Previews: PreviewProvider {
     static var previews: some View {
-        LabelAlarmView()
+        LabelAlarmView(label: .constant("안함"))
     }
 }

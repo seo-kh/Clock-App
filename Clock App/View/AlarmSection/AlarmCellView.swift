@@ -19,15 +19,15 @@ struct AlarmCellView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(alignment: .center, spacing: 0) {
+            HStack(alignment: .center, spacing: 5) {
                 // MARK: - AM | PM
                 Text(ampm)
-                    .font(.system(size: 35, weight: .light, design: .default))
+                    .font(.system(size: 25, weight: .light, design: .default))
                     .offset(y: 10)
                 
                 // MARK: - TIME
                 Text(time)
-                    .font(.system(size: 60, weight: .light, design: .default))
+                    .font(.system(size: 40, weight: .light, design: .default))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // MARK: - NOTIFICATION AGAIN

@@ -7,14 +7,42 @@
 
 import SwiftUI
 
+struct RepeatDays {
+    let day: String
+    var isRepeat: Bool
+}
+
 struct CRUDAlarmView: View {
     
     // MARK: - PROPERTIES
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @Binding var crudAlarm: Bool
-    @State private var date: Date = Date()
-    @State private var noticeAgain: Bool = false
     
+    //: CORE DATA
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    //: CORE DATA ALARM, PROPERTIES
+    @Binding var crudAlarm: Bool
+    @State private var time: Date = Date()
+    @State private var repeatDay: [RepeatDays] = (0..<7).map { i in
+        RepeatDays(day: AlarmPeriodEnum.allCases[i].rawValue, isRepeat: false)
+    }
+    @State private var label: String = "알람"
+    @State private var sound: String = "전파탐지기"
+    @State private var notice: Bool = false
+    
+    //: COMPUTED PROPERTIES
+    var repeatDays: String {
+        let fileteredDay = repeatDay.filter { $0.isRepeat }
+        switch fileteredDay.count {
+        case 0:
+            return "안함"
+        case 1:
+            return parsingOneDay(fileteredDay)
+        case 7:
+            return "매일"
+        default:
+            return parsingDays(fileteredDay)
+        }
+    }
     // MARK: - BODY
     
     var body: some View {
@@ -22,7 +50,7 @@ struct CRUDAlarmView: View {
             VStack {
                 DatePicker(
                     "Alarm",
-                    selection: $date,
+                    selection: $time,
                     displayedComponents: [.hourAndMinute]
                 ) //: DATEPICKER
                 .datePickerStyle(.wheel)
@@ -33,20 +61,20 @@ struct CRUDAlarmView: View {
                 
                 List {
                     //: 1. 반복 여부
-                    NavigationLink(destination: RepeatAlarmView()) {
+                    NavigationLink(destination: RepeatAlarmView(repeatDay: $repeatDay)) {
                         HStack {
                             Text("반복")
                             Spacer()
-                            Text("안함").foregroundColor(.secondary)
+                            Text(repeatDays).foregroundColor(.secondary)
                         }
                     }
                     
                     //: 2. 레이블
-                    NavigationLink(destination: LabelAlarmView()) {
+                    NavigationLink(destination: LabelAlarmView(label: $label)) {
                         HStack {
                             Text("레이블")
                             Spacer()
-                            Text("알람").foregroundColor(.secondary)
+                            Text(label).foregroundColor(.secondary)
                         }
                     }
                     
@@ -63,7 +91,7 @@ struct CRUDAlarmView: View {
                     HStack {
                         Text("다시 알림")
                         Spacer()
-                        Toggle(isOn: $noticeAgain) {
+                        Toggle(isOn: $notice) {
                             Text("다시 알림").opacity(0)
                         }.toggleStyle(DefaultToggleStyle())
                     }
@@ -87,14 +115,15 @@ struct CRUDAlarmView: View {
     
     // MARK: - FUNCTIONS
     
+    // CORE DATA ACTIONs
     private func cancelAction() {crudAlarm = false}
     private func saveAction() {
         let alarm = Alarm(context: managedObjectContext)
-        alarm.time = date
-        alarm.repeatDay = "월요일마다"
-        alarm.label = "알람"
+        alarm.time = time
+        alarm.repeatDay = repeatDays
+        alarm.label = label
         alarm.sound = "전파탐지기"
-        alarm.notice = true
+        alarm.notice = notice
         
         do {
             try managedObjectContext.save()
@@ -103,6 +132,18 @@ struct CRUDAlarmView: View {
         }
         
         crudAlarm = false
+    }
+    
+    // PARSING REPEAT LABELS
+    private func parsingOneDay(_ fileteredDay: [RepeatDays]) -> String {
+        return fileteredDay[0].day
+    }
+    private func parsingDays(_ fileteredDay: [RepeatDays]) -> String {
+        var days: String = ""
+        for chosenDay in fileteredDay {
+                days += "\(chosenDay.day.first!) "
+        }
+        return days
     }
 }
 

@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct RepeatAlarmView: View {
+    @Binding var repeatDay: [RepeatDays]
+    
     var body: some View {
         List(AlarmPeriodEnum.allCases) { alarmPeriod in
-            Text(alarmPeriod.rawValue)
+            Button {
+                repeatDay[AlarmPeriodEnum.allCases.firstIndex(of: alarmPeriod)!].isRepeat.toggle()
+            } label: {
+                HStack{
+                    Text(alarmPeriod.rawValue).foregroundColor(.primary)
+                    Spacer()
+                    if repeatDay[AlarmPeriodEnum.allCases.firstIndex(of: alarmPeriod)!].isRepeat {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+
         }
         .navigationTitle("반복")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-struct RepeatAlarmView_Previews: PreviewProvider {
-    static var previews: some View {
-        RepeatAlarmView()
-    }
-}

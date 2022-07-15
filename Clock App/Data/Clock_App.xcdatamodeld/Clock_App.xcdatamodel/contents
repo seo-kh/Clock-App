@@ -8,6 +8,6 @@
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Alarm" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Alarm" positionX="-36" positionY="-9" width="128" height="104"/>
     </elements>
 </model>
