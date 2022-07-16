@@ -17,4 +17,27 @@ enum AlarmPeriodEnum: String, Identifiable, CaseIterable {
     case everySat = "토요일마다"
     
     var id: String { return self.rawValue }
+    static let count: Int = AlarmPeriodEnum.allCases.count
+    
+    static func getName(index: Int) -> String {
+        return AlarmPeriodEnum.allCases[index].rawValue
+    }
+}
+
+enum AlarmVibrationEnum: String, Identifiable, CaseIterable {
+    case fastRepeat = "고속반복"
+    case stacato = "스타카토"
+    case heartBeat = "심장박동"
+    case symphony = "심포니"
+    case accent = "악센트"
+    case notices = "알림"
+    case quick = "퀵"
+    case sos = "S.O.S"
+    
+    var id: String { return self.rawValue}
+    static let count: Int = AlarmVibrationEnum.allCases.count
+    
+    static func getName(index: Int) -> String {
+        return AlarmVibrationEnum.allCases[index].rawValue
+    }
 }

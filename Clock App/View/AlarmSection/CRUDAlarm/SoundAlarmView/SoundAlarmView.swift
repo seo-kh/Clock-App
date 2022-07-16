@@ -14,7 +14,19 @@ struct SoundAlarmView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var soundControlModel: SoundControl
     
-    
+    @State private var songSelect: Bool = false
+    var vibration: String {
+        switch alarmSoundModel.vibrationNum {
+        case -1:
+            return "동기화됨 (기본 설정)"
+        case AlarmVibrationEnum.count:
+            return "새로운 진동 패턴"
+        case -2:
+            return "없음"
+        default:
+            return AlarmVibrationEnum.getName(index: alarmSoundModel.vibrationNum)
+        }
+    }
     
     // MARK: - BODY
     
@@ -23,12 +35,13 @@ struct SoundAlarmView: View {
             // MARK: - 진동 선택
             Section {
                 NavigationLink {
-                    Text("Vibration")
+                    VibrationAlarmView()
+                        .environmentObject(alarmSoundModel)
                 } label: {
                     HStack {
                         Text("진동")
                         Spacer()
-                        Text("동기화됨")
+                        Text(vibration)
                             .foregroundColor(.secondary)
                     }
                 }
@@ -36,22 +49,24 @@ struct SoundAlarmView: View {
             
             // MARK: - 노래 선택
             Section {
-                NavigationLink {
-                    Text("To be continue..")
+                Button {
+                    songSelect = true
+                    alarmSoundModel.soundNum = -1
                 } label: {
                     HStack {
                         Image(systemName: "checkmark")
                             .foregroundColor(.accentColor)
                             .frame(width: 30, height: 30)
-                            .opacity(0)
+                            .opacity(alarmSoundModel.soundNum == -1 ? 1 : 0)
                         Text("노래 선택")
-                        
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .imageScale(.small)
+                            .foregroundColor(.secondary.opacity(0.5))
+                            .frame(width: 7, height: 7)
+                            .padding(3)
                     }
                     .tint(.primary)
-                    .onTapGesture {
-                        alarmSoundModel.soundNum = -1
-                    }
-                    
                 }
             } header: {
                 Text("노래")
@@ -120,6 +135,9 @@ struct SoundAlarmView: View {
         .listStyle(.insetGrouped)
         .navigationTitle("사운드")
         .navigationBarBackButtonHidden(true)
+        .fullScreenCover(isPresented: $songSelect, content: {
+            SongAlarmView()
+        })
         .toolbar {
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                 Button {
