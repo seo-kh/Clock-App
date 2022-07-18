@@ -20,17 +20,29 @@ struct Clock_AppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TimerView()
-                .environmentObject(timerControl)
-                .environmentObject(soundControl)
-                .onAppear {
-                    LocalNotificationManager.requestPermission()
-                }
-//            AlarmView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                    .onChange(of: scenePhase) { _ in
-//                        persistenceController.save()
-//                    }
+            TabView {
+                
+                TimerView() //: TIMER
+                    .tabItem({
+                        Label("타이머", systemImage: "timer")
+                    })
+                    .environmentObject(timerControl)
+                    .environmentObject(soundControl)
+                    .onAppear {
+                        LocalNotificationManager.requestPermission()
+                    }
+                
+                AlarmView() //: ALARM
+                    .tabItem({
+                        Label("알람", systemImage: "alarm.fill")
+                    })
+                    .environmentObject(soundControl)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .onChange(of: scenePhase) { _ in
+                        persistenceController.save()
+                    }
+                
+            } //: TAB
         }
     }
 }
