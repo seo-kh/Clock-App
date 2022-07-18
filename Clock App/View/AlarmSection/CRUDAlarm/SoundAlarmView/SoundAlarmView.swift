@@ -36,7 +36,6 @@ struct SoundAlarmView: View {
             Section {
                 NavigationLink {
                     VibrationAlarmView()
-                        .environmentObject(alarmSoundModel)
                 } label: {
                     HStack {
                         Text("진동")

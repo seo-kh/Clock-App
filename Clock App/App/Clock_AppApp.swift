@@ -12,24 +12,25 @@ struct Clock_AppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     let persistenceController = PersistenceController.shared
-    @StateObject var timerModel = TimerModel()
+    
     @Environment(\.scenePhase) var scenePhase
+    @StateObject var timerControl = TimerControl()
+    @StateObject var soundControl = SoundControl()
     
 
     var body: some Scene {
         WindowGroup {
-//            TimerView()
-////                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                .environmentObject(timerModel)
-//                .onAppear {
-//                    LocalNotificationManager.requestPermission()
-//                }
-//            TimerView()
-            AlarmView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
-        .onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            TimerView()
+                .environmentObject(timerControl)
+                .environmentObject(soundControl)
+                .onAppear {
+                    LocalNotificationManager.requestPermission()
+                }
+//            AlarmView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                    .onChange(of: scenePhase) { _ in
+//                        persistenceController.save()
+//                    }
         }
     }
 }

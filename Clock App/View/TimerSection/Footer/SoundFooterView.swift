@@ -47,7 +47,6 @@ struct SoundFooterView: View {
                                             soundControl.isClick = false
                                         }
                                     }
-                                    .environmentObject(soundControl)
                                 
                                 
                             } label: {

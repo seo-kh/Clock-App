@@ -30,7 +30,7 @@ class LocalNotificationManager {
     func startTimer() {
         let timeInterval = soundDuration ?? 10.0
         if !timer.isValid {
-            timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { timer in
+            timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { timer in
                 self.scheduleNotifications()
             })
         }

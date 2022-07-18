@@ -56,7 +56,6 @@ struct TimerFooterView: View {
                 .navigationBarHidden(true)
                 .sheet(isPresented: $isPresented) {
                     SoundFooterView()
-                        .environmentObject(soundControl)
             }
         }
         
