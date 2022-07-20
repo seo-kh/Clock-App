@@ -22,7 +22,7 @@ struct PersistenceController {
         for _ in 0..<5 {
             let alarm = Alarm(context: viewContext)
             alarm.time = Date.now
-            alarm.repeatDay = "everyMon"
+            alarm.repeatDay = Array<Bool>.init(repeating: false, count: 7)
             alarm.label = "alarm"
             alarm.notice = true
             alarm.sound = "ship"

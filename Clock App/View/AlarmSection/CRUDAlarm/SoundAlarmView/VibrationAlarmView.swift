@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VibrationAlarmView: View {
-    @EnvironmentObject var alarmSoundModel: AlarmSoundModel
+    @EnvironmentObject var alarmSoundModel: AlarmViewModel
     
     var body: some View {
         List {

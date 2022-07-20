@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ClassicSoundAlarmView: View {
     @ObservedObject var soundControlModel: SoundControl
-    @EnvironmentObject var alarmSoundModel: AlarmSoundModel
+    @EnvironmentObject var alarmSoundModel: AlarmViewModel
 
     var body: some View {
         List(0..<soundControlModel.classiCount, id: \.self) {

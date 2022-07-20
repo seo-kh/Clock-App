@@ -22,6 +22,10 @@ enum AlarmPeriodEnum: String, Identifiable, CaseIterable {
     static func getName(index: Int) -> String {
         return AlarmPeriodEnum.allCases[index].rawValue
     }
+    
+    func getIndex() -> Int {
+        return AlarmPeriodEnum.allCases.firstIndex(of: self)!
+    }
 }
 
 enum AlarmVibrationEnum: String, Identifiable, CaseIterable {

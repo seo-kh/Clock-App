@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+enum CRUDState: Int, Identifiable {
+    case create
+    case edit
+    var id: Int {
+        self.rawValue
+    }
+}
+
 struct AlarmView: View {
     // MARK: - PROPERTIES
     @Environment(\.dismiss) var dismiss
@@ -14,6 +22,7 @@ struct AlarmView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.time)]) var alarms: FetchedResults<Alarm>
     @State private var isSetting: Bool = false
     @State private var crudAlarm: Bool = false
+    @State private var crudState: CRUDState? = nil
     
     // MARK: - BODY
     
@@ -48,15 +57,10 @@ struct AlarmView: View {
                     Section {
                         // ALARMCELL
                         ForEach(alarms) { (alarm: Alarm) in
-                            let ampm: String = merediemDateFormatter.string(from: alarm.time ?? .now)
-                            let time: String = alarmTimeFormatter.string(from: alarm.time ?? .now)
-                            let formattedRepeatDay: String = alarm.repeatDay! == "안함" ? "" : ", \(alarm.repeatDay!)"
-                            
                             AlarmCellView(
-                                ampm: ampm,
-                                time: time,
-                                noticeAgain: alarm.notice,
-                                label: (alarm.label! + formattedRepeatDay)
+                                alarm: alarm,
+//                                crudAlarm: $crudAlarm,
+                                crudState: $crudState
                             )
                         } //: LOOP
                         .onDelete(perform: delete)
@@ -89,9 +93,11 @@ struct AlarmView: View {
         //: ALARM SETTING
         .sheet(isPresented: $isSetting) { AlarmSettingView(isSetting: $isSetting) }
         //: CREATE ALARM
-        .sheet(isPresented: $crudAlarm) { CRUDAlarmView(crudAlarm: $crudAlarm)
-                .environment(\.managedObjectContext, managedOjbectContext)
-            
+//        .sheet(isPresented: $crudAlarm) { CRUDAlarmView(crudState: crudState, crudAlarm: $crudAlarm)
+//                .environment(\.managedObjectContext, managedOjbectContext)
+//        }
+        .sheet(item: $crudState) { crudState in
+            CRUDAlarmView(crudState: $crudState)
         }
         
     }
@@ -99,7 +105,10 @@ struct AlarmView: View {
     // MARK: - FUNCTIONS
     
     private func settingButton() { isSetting = true }
-    private func createButton() { crudAlarm = true }
+    private func createButton() {
+        crudAlarm = true
+        crudState = .create
+    }
     private func delete(at offset: IndexSet) {
         for index in offset {
             let alarm = alarms[index]

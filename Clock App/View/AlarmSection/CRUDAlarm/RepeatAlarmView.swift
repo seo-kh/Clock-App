@@ -9,23 +9,22 @@ import SwiftUI
 
 struct RepeatAlarmView: View {
     @Environment(\.dismiss) var dismiss
-    @Binding var repeatDay: [RepeatDays]
+    @Binding var repeatDay: [Bool]
     
     var body: some View {
         List(AlarmPeriodEnum.allCases) { alarmPeriod in
             Button {
-                repeatDay[AlarmPeriodEnum.allCases.firstIndex(of: alarmPeriod)!].isRepeat.toggle()
+                repeatDay[alarmPeriod.getIndex()].toggle()
             } label: {
                 HStack{
                     Text(alarmPeriod.rawValue).foregroundColor(.primary)
                     Spacer()
-                    if repeatDay[AlarmPeriodEnum.allCases.firstIndex(of: alarmPeriod)!].isRepeat {
+                    if repeatDay[alarmPeriod.getIndex()] {
                         Image(systemName: "checkmark")
                     }
                 }
-            }
-
-        }
+            } //: BUTTON
+        } //: LIST
         .navigationTitle("반복")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -39,9 +38,8 @@ struct RepeatAlarmView: View {
                         Text("뒤로")
                     }
                 }
-
+                
             }
         }
     }
 }
-

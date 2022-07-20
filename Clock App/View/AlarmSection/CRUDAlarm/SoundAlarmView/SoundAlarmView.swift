@@ -10,9 +10,9 @@ import SwiftUI
 struct SoundAlarmView: View {
     // MARK: - PROPERTIES
     
-    @EnvironmentObject var alarmSoundModel: AlarmSoundModel
+    @EnvironmentObject var alarmSoundModel: AlarmViewModel
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var soundControlModel: SoundControl
+    @EnvironmentObject var soundControlModel: SoundControl
     
     @State private var songSelect: Bool = false
     var vibration: String {

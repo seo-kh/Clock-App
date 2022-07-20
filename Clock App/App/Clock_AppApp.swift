@@ -16,27 +16,29 @@ struct Clock_AppApp: App {
     @Environment(\.scenePhase) var scenePhase
     @StateObject var timerControl = TimerControl()
     @StateObject var soundControl = SoundControl()
+    @StateObject var alarmSoundModel = AlarmViewModel()
     
 
     var body: some Scene {
         WindowGroup {
             TabView {
                 
-                TimerView() //: TIMER
-                    .tabItem({
-                        Label("타이머", systemImage: "timer")
-                    })
-                    .environmentObject(timerControl)
-                    .environmentObject(soundControl)
-                    .onAppear {
-                        LocalNotificationManager.requestPermission()
-                    }
+//                TimerView() //: TIMER
+//                    .tabItem({
+//                        Label("타이머", systemImage: "timer")
+//                    })
+//                    .environmentObject(timerControl)
+//                    .environmentObject(soundControl)
+//                    .onAppear {
+//                        LocalNotificationManager.requestPermission()
+//                    }
                 
                 AlarmView() //: ALARM
                     .tabItem({
                         Label("알람", systemImage: "alarm.fill")
                     })
                     .environmentObject(soundControl)
+                    .environmentObject(alarmSoundModel)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .onChange(of: scenePhase) { _ in
                         persistenceController.save()

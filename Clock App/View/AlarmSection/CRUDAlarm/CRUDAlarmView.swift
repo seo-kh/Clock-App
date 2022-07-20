@@ -7,41 +7,38 @@
 
 import SwiftUI
 
-struct RepeatDays {
-    let day: String
-    var isRepeat: Bool
-}
-
 struct CRUDAlarmView: View {
     
     // MARK: - PROPERTIES
+    @Binding var crudState: CRUDState?
+    
     // SOUND DATA
-    @StateObject var soundControlModel: SoundControl = SoundControl()
+    @EnvironmentObject var soundControlModel: SoundControl
+    @EnvironmentObject var alarmSoundModel: AlarmViewModel
     
     //: CORE DATA
     @Environment(\.managedObjectContext) var managedObjectContext
     
     //: CORE DATA ALARM, PROPERTIES
-    @Binding var crudAlarm: Bool
+    
     @State private var time: Date = Date()
-    @State private var repeatDay: [RepeatDays] = (0..<7).map { RepeatDays(day: AlarmPeriodEnum.allCases[$0].rawValue, isRepeat: false)
-    }
+    @State private var repeatDay: [Bool] = .init(repeating: false, count: 7)
     @State private var label: String = "알람"
-    @StateObject var alarmSoundModel: AlarmSoundModel = AlarmSoundModel()
     @State private var notice: Bool = false
     
     //: COMPUTED PROPERTIES
     var repeatDays: String {
-        let fileteredDay = repeatDay.filter { $0.isRepeat }
-        switch fileteredDay.count {
+        let dayCount: Int = repeatDay.filter { $0 }.count
+        
+        switch dayCount {
         case 0:
             return "안함"
         case 1:
-            return parsingOneDay(fileteredDay)
+            return parsingOneDay()
         case 7:
             return "매일"
         default:
-            return parsingDays(fileteredDay)
+            return parsingDays()
         }
     }
     var sound: String {
@@ -94,9 +91,7 @@ struct CRUDAlarmView: View {
                     }
                     
                     //: 3. 사운드
-                    NavigationLink(destination: SoundAlarmView(soundControlModel: soundControlModel)
-                        .environmentObject(alarmSoundModel)
-                    )
+                    NavigationLink(destination: SoundAlarmView())
                     {
                         HStack {
                             Text("사운드")
@@ -112,6 +107,19 @@ struct CRUDAlarmView: View {
                         Toggle(isOn: $notice) {
                             Text("다시 알림").opacity(0)
                         }.toggleStyle(DefaultToggleStyle())
+                    }
+                    
+                    if crudState == .edit {
+                        Section {
+                            Button(role: ButtonRole.destructive) {
+                                //
+                            } label: {
+                                Text("알람 삭제")
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                            }
+                        }
+                        
+                        
                     }
                 } //: LIST
             } //: VSTACK
@@ -133,11 +141,11 @@ struct CRUDAlarmView: View {
     // MARK: - FUNCTIONS
     
     // CORE DATA ACTIONs
-    private func cancelAction() {crudAlarm = false}
+    private func cancelAction() {crudState = nil}
     private func saveAction() {
         let alarm = Alarm(context: managedObjectContext)
         alarm.time = time
-        alarm.repeatDay = repeatDays
+        alarm.repeatDay = repeatDay
         alarm.label = label
         alarm.sound = sound
         alarm.notice = notice
@@ -148,17 +156,23 @@ struct CRUDAlarmView: View {
             print(error)
         }
         
-        crudAlarm = false
+        crudState = nil
     }
     
     // PARSING REPEAT LABELS
-    private func parsingOneDay(_ fileteredDay: [RepeatDays]) -> String {
-        return fileteredDay[0].day
+    private func parsingOneDay() -> String {
+        var newDay: String = ""
+        for (day, selected) in zip(AlarmPeriodEnum.allCases, repeatDay) {
+            if selected { newDay = day.rawValue }
+        }
+        return newDay
     }
-    private func parsingDays(_ fileteredDay: [RepeatDays]) -> String {
+    private func parsingDays() -> String {
         var days: String = ""
-        for chosenDay in fileteredDay {
-            days += "\(chosenDay.day.first!) "
+        for (day, selected) in zip(AlarmPeriodEnum.allCases, repeatDay) {
+            if selected {
+                days += "\(day.rawValue.first!) "
+            }
         }
         return days
     }
@@ -166,9 +180,3 @@ struct CRUDAlarmView: View {
 
 
 // MARK: - PREVIEW
-
-struct CRUDAlarmView_Previews: PreviewProvider {
-    static var previews: some View {
-        CRUDAlarmView(crudAlarm: .constant(false))
-    }
-}

@@ -3,7 +3,7 @@
     <entity name="Alarm" representedClassName="Alarm" syncable="YES" codeGenerationType="class">
         <attribute name="label" optional="YES" attributeType="String"/>
         <attribute name="notice" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="repeatDay" optional="YES" attributeType="String"/>
+        <attribute name="repeatDay" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[Bool]"/>
         <attribute name="sound" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
