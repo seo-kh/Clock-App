@@ -136,6 +136,7 @@ struct CRUDAlarmView: View {
             }
         } //: NAVIGATATION
         .onAppear(perform: readAction)
+        .onDisappear { editableAlarm = nil }
     }
     
     // MARK: - FUNCTIONS
@@ -185,8 +186,15 @@ struct CRUDAlarmView: View {
             self.notice = editableAlarm.notice
         }
     }
+}
+
+
+// MARK: - EXTENTION
+
+extension CRUDAlarmView {
     
-    // PARSING REPEAT LABELS
+    /// "~요일마다" 파싱 함수
+    /// - Returns: String
     private func parsingOneDay() -> String {
         var newDay: String = ""
         for (day, selected) in zip(AlarmPeriodEnum.allCases, repeatDay) {
@@ -194,6 +202,8 @@ struct CRUDAlarmView: View {
         }
         return newDay
     }
+    /// 각 요일을 합친 문자열을 반환하는 함수
+    /// - Returns: ex) "월 화 목", "월 화 수 목 토"
     private func parsingDays() -> String {
         var days: String = ""
         for (day, selected) in zip(AlarmPeriodEnum.allCases, repeatDay) {
@@ -204,6 +214,3 @@ struct CRUDAlarmView: View {
         return days
     }
 }
-
-
-// MARK: - PREVIEW

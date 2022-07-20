@@ -57,7 +57,7 @@ struct AlarmView: View {
                         // ALARMCELL
                         ForEach(alarms) { (alarm: Alarm) in
                             AlarmCellView(
-                                alarm: alarm,
+                                alarm:alarm,
                                 crudState: $crudState,
                                 editableAlarm: $editableAlarm
                             )

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct AlarmCellView: View {
     // MARK: - PROPERTIES
-
+    
     @ObservedObject var alarm: Alarm
     @Binding var crudState: CRUDState?
     @Binding var editableAlarm: Alarm?
+    @Environment(\.editMode) var editMode
     
     var repeatDays: String {
         let dayCount: Int = alarm.repeatDay?.filter { $0 }.count ?? 0
@@ -29,10 +30,10 @@ struct AlarmCellView: View {
             return label + ", " + parsingDays()
         }
     }
-
+    
     
     // MARK: - BODY
-
+    
     var body: some View {
         Button {
             crudState = .edit
@@ -51,20 +52,33 @@ struct AlarmCellView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     // MARK: - NOTIFICATION AGAIN
-                    Toggle(isOn: $alarm.notice)
-                    {
-                        //
-                    }.fixedSize(horizontal: false, vertical: true)
+                    HStack {
+                        Toggle(isOn: $alarm.notice) {
+                          //
+                        }
+                        .opacity(editMode?.wrappedValue == .inactive ? 1 : 0)
+                        
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.secondary)
+                            .transition(.move(edge: .trailing))
+                            .opacity(editMode?.wrappedValue != .inactive ? 1 : 0)
+                    } //: HSTACK
                 } //: HSTACK
+                .fixedSize(horizontal: false, vertical: true)
                 
                 // MARK: - LABEL
-                Text(repeatDays).offset(y: -10).fixedSize()
+                Text(repeatDays).offset(y: -5).fixedSize()
             } //: VSTACK
+        }
+        
+        
             .foregroundColor(alarm.notice ? .primary : .secondary)
-        } //: BUTTON
-
-    }
+    } //: BUTTON
     
+}
+
+
+extension AlarmCellView {
     private func parsingOneDay() -> String {
         var newDay: String = ""
         for (day, selected) in zip(AlarmPeriodEnum.allCases, alarm.repeatDay!) {
@@ -81,6 +95,4 @@ struct AlarmCellView: View {
         }
         return days
     }
-
 }
-
