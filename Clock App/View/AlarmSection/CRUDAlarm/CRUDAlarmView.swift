@@ -11,6 +11,7 @@ struct CRUDAlarmView: View {
     
     // MARK: - PROPERTIES
     @Binding var crudState: CRUDState?
+    @Binding var editableAlarm: Alarm?
     
     // SOUND DATA
     @EnvironmentObject var soundControlModel: SoundControl
@@ -111,9 +112,7 @@ struct CRUDAlarmView: View {
                     
                     if crudState == .edit {
                         Section {
-                            Button(role: ButtonRole.destructive) {
-                                //
-                            } label: {
+                            Button(role: ButtonRole.destructive, action: deleteAction) {
                                 Text("알람 삭제")
                                     .frame(maxWidth: .infinity, alignment: .center)
                             }
@@ -123,7 +122,7 @@ struct CRUDAlarmView: View {
                     }
                 } //: LIST
             } //: VSTACK
-            .navigationTitle("알람 추가")
+            .navigationTitle(crudState == .create ? "알람 추가" : "알람 편집")
             .navigationBarTitleDisplayMode(.inline)
             //: TOOLBAR
             .toolbar {
@@ -132,10 +131,11 @@ struct CRUDAlarmView: View {
                 }
                 
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button(action: saveAction) {Text("저장")}
+                    Button(action: crudState == .create ? saveAction : editAction) {Text("저장")}
                 }
             }
         } //: NAVIGATATION
+        .onAppear(perform: readAction)
     }
     
     // MARK: - FUNCTIONS
@@ -156,7 +156,34 @@ struct CRUDAlarmView: View {
             print(error)
         }
         
-        crudState = nil
+        cancelAction()
+    }
+    private func deleteAction() {
+        if let editableAlarm = editableAlarm {
+            managedObjectContext.delete(editableAlarm)
+        
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print(error)
+            }
+        } else { print("alarm is nil") }
+        
+        cancelAction()
+    }
+    private func editAction() {
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
+            deleteAction()
+            saveAction()
+        }
+    }
+    private func readAction() {
+        if let editableAlarm = editableAlarm {
+            self.time = editableAlarm.time ?? .now
+            self.repeatDay = editableAlarm.repeatDay ?? .init(repeating: false, count: 7)
+            self.label = editableAlarm.label ?? "알람"
+            self.notice = editableAlarm.notice
+        }
     }
     
     // PARSING REPEAT LABELS

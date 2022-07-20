@@ -21,9 +21,8 @@ struct AlarmView: View {
     @Environment(\.managedObjectContext) var managedOjbectContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.time)]) var alarms: FetchedResults<Alarm>
     @State private var isSetting: Bool = false
-    @State private var crudAlarm: Bool = false
     @State private var crudState: CRUDState? = nil
-    
+    @State private var editableAlarm: Alarm? = nil
     // MARK: - BODY
     
     var body: some View {
@@ -59,8 +58,8 @@ struct AlarmView: View {
                         ForEach(alarms) { (alarm: Alarm) in
                             AlarmCellView(
                                 alarm: alarm,
-//                                crudAlarm: $crudAlarm,
-                                crudState: $crudState
+                                crudState: $crudState,
+                                editableAlarm: $editableAlarm
                             )
                         } //: LOOP
                         .onDelete(perform: delete)
@@ -92,12 +91,8 @@ struct AlarmView: View {
         // MARK: SHEET
         //: ALARM SETTING
         .sheet(isPresented: $isSetting) { AlarmSettingView(isSetting: $isSetting) }
-        //: CREATE ALARM
-//        .sheet(isPresented: $crudAlarm) { CRUDAlarmView(crudState: crudState, crudAlarm: $crudAlarm)
-//                .environment(\.managedObjectContext, managedOjbectContext)
-//        }
         .sheet(item: $crudState) { crudState in
-            CRUDAlarmView(crudState: $crudState)
+            CRUDAlarmView(crudState: $crudState, editableAlarm: $editableAlarm)
         }
         
     }
@@ -106,7 +101,6 @@ struct AlarmView: View {
     
     private func settingButton() { isSetting = true }
     private func createButton() {
-        crudAlarm = true
         crudState = .create
     }
     private func delete(at offset: IndexSet) {
