@@ -9,11 +9,21 @@ import SwiftUI
 
 class AlarmViewModel: ObservableObject {
     /// Sound Control and Vibration Control
+    @Published var isClick: Bool = false
     @Published var soundNum: Int = 0
     @Published var classicNum: Int = -1
     @Published var vibrationNum: Int = -1
-    @Published var alarmPeriod = AlarmPeriodEnum.allCases
     @Published var alarmVibration = AlarmVibrationEnum.allCases
+    /// Alarm Repeat control
+    @Published var alarmPeriod = AlarmPeriodEnum.allCases
+    
+    /// Alarm View Control
+    @Published var isSetting: Bool = false
+    @Published var crudState: CRUDState? = nil
+    @Published var editableAlarm: Alarm? = nil
+    
+    func settingButton() { isSetting = true }
+    func createButton() { crudState = .create }
     
     /// Alarm
     

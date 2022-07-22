@@ -24,7 +24,7 @@ enum SoundModel: String, Identifiable, CaseIterable {
     case facilityAlarm2 = "facility-alarm2"
     case hall = "hall"
     case space = "space"
-    case spaceShip = "spaceShip"
+    case spaceShip = "spaceship"
     case street = "street"
     case vintage = "vintage"
 }

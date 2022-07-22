@@ -42,7 +42,7 @@
 		6F80D256288A43A300C1955E /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D22E288A43A300C1955E /* AlarmViewModel.swift */; };
 		6F80D257288A43A300C1955E /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D230288A43A300C1955E /* SoundModel.swift */; };
 		6F80D258288A43A300C1955E /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D231288A43A300C1955E /* TimerViewModel.swift */; };
-		6F80D259288A43A300C1955E /* AlarmDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D232288A43A300C1955E /* AlarmDataModel.swift */; };
+		6F80D259288A43A300C1955E /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D232288A43A300C1955E /* AlarmModel.swift */; };
 		6F80D25A288A43A300C1955E /* TimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D236288A43A300C1955E /* TimerFooterView.swift */; };
 		6F80D25B288A43A300C1955E /* ClassicSoundFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D237288A43A300C1955E /* ClassicSoundFooterView.swift */; };
 		6F80D25C288A43A300C1955E /* SoundFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D238288A43A300C1955E /* SoundFooterView.swift */; };
@@ -64,6 +64,7 @@
 		6F80D26C288A43A300C1955E /* AlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24D288A43A300C1955E /* AlarmSettingView.swift */; };
 		6F80D26D288A43A300C1955E /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24E288A43A300C1955E /* AlarmView.swift */; };
 		6F80D26E288A43A300C1955E /* AlarmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24F288A43A300C1955E /* AlarmCellView.swift */; };
+		6FAC41E7288B072600FD2A48 /* BackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC41E6288B072600FD2A48 /* BackButtonModifier.swift */; };
 		6FEEFA9F288A450F0055CD00 /* Clock_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEFA9E288A450F0055CD00 /* Clock_App.swift */; };
 		6FEEFAA1288A45390055CD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEFAA0288A45390055CD00 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -105,7 +106,7 @@
 		6F80D22E288A43A300C1955E /* AlarmViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
 		6F80D230288A43A300C1955E /* SoundModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
 		6F80D231288A43A300C1955E /* TimerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
-		6F80D232288A43A300C1955E /* AlarmDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDataModel.swift; sourceTree = "<group>"; };
+		6F80D232288A43A300C1955E /* AlarmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		6F80D236288A43A300C1955E /* TimerFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerFooterView.swift; sourceTree = "<group>"; };
 		6F80D237288A43A300C1955E /* ClassicSoundFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicSoundFooterView.swift; sourceTree = "<group>"; };
 		6F80D238288A43A300C1955E /* SoundFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFooterView.swift; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		6F80D24D288A43A300C1955E /* AlarmSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSettingView.swift; sourceTree = "<group>"; };
 		6F80D24E288A43A300C1955E /* AlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		6F80D24F288A43A300C1955E /* AlarmCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCellView.swift; sourceTree = "<group>"; };
+		6FAC41E6288B072600FD2A48 /* BackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonModifier.swift; sourceTree = "<group>"; };
 		6FEEFA9E288A450F0055CD00 /* Clock_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_App.swift; sourceTree = "<group>"; };
 		6FEEFAA0288A45390055CD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				6FEEFA9D288A45000055CD00 /* App */,
-				6F80D228288A43A300C1955E /* Data */,
+				6F80D228288A43A300C1955E /* CoreData */,
 				6F80D224288A43A300C1955E /* Helpers */,
 				6F80D22F288A43A300C1955E /* Models */,
 				6F80D22C288A43A300C1955E /* ViewModels */,
@@ -224,14 +226,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		6F80D228288A43A300C1955E /* Data */ = {
+		6F80D228288A43A300C1955E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				6F80D229288A43A300C1955E /* Persistence.swift */,
 				6F80D22A288A43A300C1955E /* Clock_App.xcdatamodeld */,
 			);
-			name = Data;
-			path = "../../../Desktop/Clock App/Data";
+			name = CoreData;
+			path = "../../../Desktop/Clock App/CoreData";
 			sourceTree = "<group>";
 		};
 		6F80D22C288A43A300C1955E /* ViewModels */ = {
@@ -248,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				6F80D230288A43A300C1955E /* SoundModel.swift */,
-				6F80D232288A43A300C1955E /* AlarmDataModel.swift */,
+				6F80D232288A43A300C1955E /* AlarmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,10 +267,10 @@
 		6F80D234288A43A300C1955E /* TimerSection */ = {
 			isa = PBXGroup;
 			children = (
-				6F80D235288A43A300C1955E /* Footer */,
-				6F80D239288A43A300C1955E /* Center */,
 				6F80D23B288A43A300C1955E /* TimerView.swift */,
 				6F80D23C288A43A300C1955E /* Header */,
+				6F80D239288A43A300C1955E /* Center */,
+				6F80D235288A43A300C1955E /* Footer */,
 			);
 			path = TimerSection;
 			sourceTree = "<group>";
@@ -307,10 +309,10 @@
 		6F80D243288A43A300C1955E /* AlarmSection */ = {
 			isa = PBXGroup;
 			children = (
-				6F80D244288A43A300C1955E /* CRUDAlarm */,
-				6F80D24D288A43A300C1955E /* AlarmSettingView.swift */,
 				6F80D24E288A43A300C1955E /* AlarmView.swift */,
+				6F80D24D288A43A300C1955E /* AlarmSettingView.swift */,
 				6F80D24F288A43A300C1955E /* AlarmCellView.swift */,
+				6F80D244288A43A300C1955E /* CRUDAlarm */,
 			);
 			path = AlarmSection;
 			sourceTree = "<group>";
@@ -318,10 +320,11 @@
 		6F80D244288A43A300C1955E /* CRUDAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				6FAC41E6288B072600FD2A48 /* BackButtonModifier.swift */,
+				6F80D24C288A43A300C1955E /* CRUDAlarmView.swift */,
 				6F80D245288A43A300C1955E /* RepeatAlarmView.swift */,
 				6F80D246288A43A300C1955E /* LabelAlarmView.swift */,
 				6F80D247288A43A300C1955E /* SoundAlarmView */,
-				6F80D24C288A43A300C1955E /* CRUDAlarmView.swift */,
 			);
 			path = CRUDAlarm;
 			sourceTree = "<group>";
@@ -329,8 +332,8 @@
 		6F80D247288A43A300C1955E /* SoundAlarmView */ = {
 			isa = PBXGroup;
 			children = (
-				6F80D248288A43A300C1955E /* ClassicSoundAlarmView.swift */,
 				6F80D249288A43A300C1955E /* SoundAlarmView.swift */,
+				6F80D248288A43A300C1955E /* ClassicSoundAlarmView.swift */,
 				6F80D24A288A43A300C1955E /* VibrationAlarmView.swift */,
 				6F80D24B288A43A300C1955E /* SongAlarmView.swift */,
 			);
@@ -449,13 +452,14 @@
 				6F80D256288A43A300C1955E /* AlarmViewModel.swift in Sources */,
 				6F80D252288A43A300C1955E /* LocalNotificationManager.swift in Sources */,
 				6F80D261288A43A300C1955E /* CustomTimerPickerView.swift in Sources */,
+				6FAC41E7288B072600FD2A48 /* BackButtonModifier.swift in Sources */,
 				6F80D269288A43A300C1955E /* VibrationAlarmView.swift in Sources */,
 				6F80D253288A43A300C1955E /* Persistence.swift in Sources */,
 				6F80D25C288A43A300C1955E /* SoundFooterView.swift in Sources */,
 				6F80D260288A43A300C1955E /* TimerDisplayView.swift in Sources */,
 				6F80D268288A43A300C1955E /* SoundAlarmView.swift in Sources */,
 				6F80D251288A43A300C1955E /* SoundPlayer.swift in Sources */,
-				6F80D259288A43A300C1955E /* AlarmDataModel.swift in Sources */,
+				6F80D259288A43A300C1955E /* AlarmModel.swift in Sources */,
 				6F80D264288A43A300C1955E /* BackgroundRingView.swift in Sources */,
 				6F80D257288A43A300C1955E /* SoundModel.swift in Sources */,
 				6F80D25F288A43A300C1955E /* TimerPickerView.swift in Sources */,

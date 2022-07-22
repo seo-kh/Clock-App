@@ -15,7 +15,14 @@ struct ClassicSoundAlarmView: View {
         List(soundViewModel.classicCounts, id: \.self) {
             num in
             Button {
-                alarmSoundModel.classicNum = num
+                if !alarmSoundModel.isClick || alarmSoundModel.classicNum != num {
+                    play(file: soundViewModel.getClassicName(index: num))
+                    alarmSoundModel.classicNum = num
+                    alarmSoundModel.isClick = true
+                } else {
+                    stop()
+                    alarmSoundModel.isClick = false
+                }
             } label: {
                 HStack {
                     Image(systemName: "checkmark")

@@ -15,7 +15,7 @@ struct Clock_AppApp: App {
     @Environment(\.scenePhase) var scenePhase
     @StateObject var timerViewModel = TimerViewModel()
     @StateObject var soundViewModel = SoundViewModel()
-    @StateObject var alarmSoundModel = AlarmViewModel()
+    @StateObject var alarmViewModel = AlarmViewModel()
     
 
     var body: some Scene {
@@ -37,7 +37,7 @@ struct Clock_AppApp: App {
                         Label("알람", systemImage: "alarm.fill")
                     })
                     .environmentObject(soundViewModel)
-                    .environmentObject(alarmSoundModel)
+                    .environmentObject(alarmViewModel)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .onChange(of: scenePhase) { _ in
                         persistenceController.save()

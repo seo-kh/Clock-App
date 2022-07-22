@@ -10,15 +10,15 @@ import SwiftUI
 struct CRUDAlarmView: View {
     
     // MARK: - PROPERTIES
-    @Binding var crudState: CRUDState?
-    @Binding var editableAlarm: Alarm?
-    
     // SOUND DATA
-    @EnvironmentObject var soundViewModelModel: SoundViewModel
+    @EnvironmentObject var soundViewModel: SoundViewModel
     @EnvironmentObject var alarmViewModel: AlarmViewModel
     
     //: CORE DATA
     @Environment(\.managedObjectContext) var managedObjectContext
+    
+    //: dismiss
+    @Environment(\.dismiss) var dismiss
     
     //: CORE DATA ALARM, PROPERTIES
     
@@ -32,6 +32,7 @@ struct CRUDAlarmView: View {
     var body: some View {
         NavigationView {
             VStack {
+                //: 데이트 피커
                 DatePicker(
                     "Alarm",
                     selection: $time,
@@ -78,10 +79,10 @@ struct CRUDAlarmView: View {
                         Spacer()
                         Toggle(isOn: $notice) {
                             Text("다시 알림").opacity(0)
-                        }.toggleStyle(DefaultToggleStyle())
-                    }
+                        }                    }
                     
-                    if crudState == .edit {
+                    //: 5. 삭제버튼 (편집 모드)
+                    if alarmViewModel.crudState == .edit {
                         Section {
                             Button(role: ButtonRole.destructive, action: deleteAction) {
                                 Text("알람 삭제")
@@ -93,7 +94,10 @@ struct CRUDAlarmView: View {
                     }
                 } //: LIST
             } //: VSTACK
-            .navigationTitle(crudState == .create ? "알람 추가" : "알람 편집")
+            .navigationTitle(
+                alarmViewModel.crudState == .create ?
+                "알람 추가" : "알람 편집"
+            )
             .navigationBarTitleDisplayMode(.inline)
             //: TOOLBAR
             .toolbar {
@@ -102,18 +106,18 @@ struct CRUDAlarmView: View {
                 }
                 
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button(action: crudState == .create ? createAction : updateAction) {Text("저장")}
+                    Button(action: alarmViewModel.crudState == .create ? createAction : updateAction) {Text("저장")}
                 }
             }
         } //: NAVIGATATION
         .onAppear(perform: readAction)
-        .onDisappear { editableAlarm = nil }
+        .onDisappear { alarmViewModel.editableAlarm = nil }
     }
     
     // MARK: - FUNCTIONS
     
     private func cancelAction() {
-        crudState = nil
+        dismiss()
     }
 }
 
@@ -143,7 +147,7 @@ extension CRUDAlarmView {
     ///
     /// 저장된 알람데이터 불러오기, 작동하는 함수
     private func readAction() {
-        if let editableAlarm = editableAlarm {
+        if let editableAlarm = alarmViewModel.editableAlarm {
             self.time = editableAlarm.time ?? .now
             self.repeatDay = editableAlarm.repeatDay ?? .init(repeating: false, count: 7)
             self.label = editableAlarm.label ?? "알람"
@@ -165,7 +169,7 @@ extension CRUDAlarmView {
     ///
     /// 기존 알람 데이터 삭제시, 작동하는 함수
     private func deleteAction() {
-        if let editableAlarm = editableAlarm {
+        if let editableAlarm = alarmViewModel.editableAlarm {
             managedObjectContext.delete(editableAlarm)
         
             do {
@@ -203,13 +207,13 @@ extension CRUDAlarmView {
         switch alarmViewModel.soundNum {
         case -1:
             return "곡"
-        case soundViewModelModel.soundPackLength:
+        case soundViewModel.soundPackLength:
             return "없음"
-        case soundViewModelModel.soundPackLength-1:
+        case soundViewModel.soundPackLength-1:
             if alarmViewModel.classicNum == -1 { return "" }
-            else { return soundViewModelModel.getClassicName(index: alarmViewModel.classicNum)}
+            else { return soundViewModel.getClassicName(index: alarmViewModel.classicNum)}
         default:
-            return soundViewModelModel.getSoundName(index: alarmViewModel.soundNum)
+            return soundViewModel.getSoundName(index: alarmViewModel.soundNum)
         }
     }
     

@@ -15,6 +15,7 @@ struct SoundAlarmView: View {
     @EnvironmentObject var soundViewModel: SoundViewModel
     
     @State private var songSelect: Bool = false
+    @State private var soundOn: Bool = false
     var vibration: String {
         switch alarmViewModel.vibrationNum {
         case -1:
@@ -27,6 +28,7 @@ struct SoundAlarmView: View {
             return alarmViewModel.getVibrationName(index: alarmViewModel.vibrationNum)
         }
     }
+    
     
     // MARK: - BODY
     
@@ -51,6 +53,9 @@ struct SoundAlarmView: View {
                 Button {
                     songSelect = true
                     alarmViewModel.soundNum = -1
+                    
+                    // music stop
+                    stop()
                 } label: {
                     HStack {
                         Image(systemName: "checkmark")
@@ -78,7 +83,14 @@ struct SoundAlarmView: View {
                     
                     // MARK: - SOUND
                     Button {
-                        alarmViewModel.soundNum = num
+                        if !alarmViewModel.isClick || alarmViewModel.soundNum != num {
+                            play(file: soundViewModel.getSoundName(index: num))
+                            alarmViewModel.soundNum = num
+                            alarmViewModel.isClick = true
+                        } else {
+                            stop()
+                            alarmViewModel.isClick = false
+                        }
                     } label: {
                         HStack {
                             Image(systemName: "checkmark")
@@ -94,8 +106,10 @@ struct SoundAlarmView: View {
                     NavigationLink {
                         ClassicSoundAlarmView(soundViewModel: soundViewModel)
                             .onAppear {
+                                stop()
                                 alarmViewModel.soundNum = soundViewModel.soundPackLength-1
                             }
+                            .onDisappear(perform: stop)
                             .environmentObject(alarmViewModel)
                     } label: {
                         HStack {
@@ -119,6 +133,7 @@ struct SoundAlarmView: View {
             // MARK: - 없음
             Button {
                 alarmViewModel.soundNum = soundViewModel.soundPackLength
+                stop()
             } label: {
                 HStack {
                     Image(systemName: "checkmark")
@@ -131,25 +146,11 @@ struct SoundAlarmView: View {
             .tint(.primary)
             
         } //: LIST
-        .listStyle(.insetGrouped)
-        .navigationTitle("사운드")
-        .navigationBarBackButtonHidden(true)
         .fullScreenCover(isPresented: $songSelect, content: {
             SongAlarmView()
         })
-        .toolbar {
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("뒤로")
-                    }
-                }
-                
-            }
-        }
+        .listStyle(.insetGrouped)
+        .modifier(BackButtonModifier(title: "사운드", soundStop: true))
     }
 }
 

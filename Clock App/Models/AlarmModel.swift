@@ -1,5 +1,5 @@
 //
-//  AlarmDataModel.swift
+//  AlarmModel.swift
 //  Clock App
 //
 //  Created by 서광현 on 2022/07/11.
@@ -30,4 +30,12 @@ enum AlarmVibrationEnum: String, Identifiable, CaseIterable {
     case sos = "S.O.S"
     
     var id: String { self.rawValue }
+}
+
+enum CRUDState: Int, Identifiable {
+    case create
+    case edit
+    var id: Int {
+        self.rawValue
+    }
 }

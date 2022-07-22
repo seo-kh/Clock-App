@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct AlarmSettingView: View {
-    @Binding var isSetting: Bool
+    @EnvironmentObject var alarmViewModel: AlarmViewModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             // CANCEL
             Button {
-                isSetting = false
+                alarmViewModel.isSetting = false
             } label: {
                 Text("취소")
             }
@@ -64,12 +64,5 @@ struct AlarmSettingView: View {
             
         } //: VSTACK
         .padding()
-    }
-}
-
-
-struct AlarmSettingView_Previews: PreviewProvider {
-    static var previews: some View {
-        AlarmSettingView(isSetting: .constant(false))
     }
 }

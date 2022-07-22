@@ -13,7 +13,6 @@ struct RepeatAlarmView: View {
     @Binding var repeatDay: [Bool]
     
     var body: some View {
-//        List(AlarmPeriodEnum.allCases) { alarmPeriod in
         List(alarmViewModel.periodLength, id: \.self) { index in
             Button {
                 repeatDay[index].toggle()
@@ -21,27 +20,10 @@ struct RepeatAlarmView: View {
                 HStack{
                     Text(alarmViewModel.getPeriodName(index: index)).foregroundColor(.primary)
                     Spacer()
-                    if repeatDay[index] {
-                        Image(systemName: "checkmark")
-                    }
+                    if repeatDay[index] { Image(systemName: "checkmark") }
                 }
             } //: BUTTON
         } //: LIST
-        .navigationTitle("반복")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("뒤로")
-                    }
-                }
-                
-            }
-        }
+        .modifier(BackButtonModifier(title: "반복"))
     }
 }

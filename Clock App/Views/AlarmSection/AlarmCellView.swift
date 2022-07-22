@@ -11,10 +11,8 @@ struct AlarmCellView: View {
     // MARK: - PROPERTIES
     
     @ObservedObject var alarm: Alarm
-    @Binding var crudState: CRUDState?
-    @Binding var editableAlarm: Alarm?
+    @EnvironmentObject var alarmViewModel: AlarmViewModel
     @Environment(\.editMode) var editMode
-    
     var repeatDays: String {
         let dayCount: Int = alarm.repeatDay?.filter { $0 }.count ?? 0
         guard let label = alarm.label else { return "알람" }
@@ -36,8 +34,8 @@ struct AlarmCellView: View {
     
     var body: some View {
         Button {
-            crudState = .edit
-            editableAlarm = alarm
+            alarmViewModel.crudState = .edit
+            alarmViewModel.editableAlarm = alarm
         } label: {
             VStack(alignment: .leading) {
                 HStack(alignment: .center, spacing: 5) {

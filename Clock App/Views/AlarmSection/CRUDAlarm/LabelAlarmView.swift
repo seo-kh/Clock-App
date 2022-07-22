@@ -58,22 +58,7 @@ struct LabelAlarmView: View {
                     focus = nil
                 }
             }
-            .navigationTitle("레이블")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Image(systemName: "chevron.left")
-                            Text("뒤로")
-                        }
-                    }
-                    
-                }
-            }
+            .modifier(BackButtonModifier(title: "레이블"))
         
     }
 }
