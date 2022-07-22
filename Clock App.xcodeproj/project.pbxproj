@@ -7,128 +7,128 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F17B32F287B1A5800682CD5 /* CRUDAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F17B32E287B1A5700682CD5 /* CRUDAlarmView.swift */; };
-		6F17B331287B263200682CD5 /* AlarmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F17B330287B263200682CD5 /* AlarmCellView.swift */; };
-		6F17B334287B353000682CD5 /* RepeatAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F17B333287B353000682CD5 /* RepeatAlarmView.swift */; };
-		6F17B336287B358E00682CD5 /* AlarmPeriodEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F17B335287B358E00682CD5 /* AlarmPeriodEnum.swift */; };
-		6F17B33A287B373600682CD5 /* LabelAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F17B339287B373600682CD5 /* LabelAlarmView.swift */; };
-		6F2AFEC5281CF30F007305DB /* BackgroundRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2AFEC4281CF30F007305DB /* BackgroundRingView.swift */; };
-		6F5B7C7B2878088A00BDC929 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B7C7A2878088A00BDC929 /* AlarmView.swift */; };
-		6F5B7C7D287815B300BDC929 /* AlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B7C7C287815B300BDC929 /* AlarmSettingView.swift */; };
-		6F710CEE2812965E0058AE66 /* Clock_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F710CED2812965E0058AE66 /* Clock_AppApp.swift */; };
-		6F710CF02812965E0058AE66 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F710CEF2812965E0058AE66 /* TimerView.swift */; };
 		6F710CF2281296600058AE66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F710CF1281296600058AE66 /* Assets.xcassets */; };
 		6F710CF5281296600058AE66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F710CF4281296600058AE66 /* Preview Assets.xcassets */; };
-		6F710CF7281296600058AE66 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F710CF6281296600058AE66 /* Persistence.swift */; };
-		6F710CFA281296600058AE66 /* Clock_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F710CF8281296600058AE66 /* Clock_App.xcdatamodeld */; };
-		6F798908282CF0960086E789 /* CustomTimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F798907282CF0960086E789 /* CustomTimerPickerView.swift */; };
-		6F9ACAB328831D18004AF050 /* VibrationAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ACAB228831D18004AF050 /* VibrationAlarmView.swift */; };
-		6F9ACAB62883245B004AF050 /* SongAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ACAB52883245B004AF050 /* SongAlarmView.swift */; };
-		6FAC50EF281C3C2D00FA6F2B /* ClassicSoundFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC50EE281C3C2D00FA6F2B /* ClassicSoundFooterView.swift */; };
-		6FAC5109281C41D000FA6F2B /* mixkit-warning-alarm-buzzer-991.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F1281C41CE00FA6F2B /* mixkit-warning-alarm-buzzer-991.wav */; };
-		6FAC510A281C41D000FA6F2B /* mixkit-emergency-alert-alarm-1007.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F2281C41CE00FA6F2B /* mixkit-emergency-alert-alarm-1007.wav */; };
-		6FAC510B281C41D000FA6F2B /* mixkit-sound-alert-in-hall-1006.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F3281C41CE00FA6F2B /* mixkit-sound-alert-in-hall-1006.wav */; };
-		6FAC510C281C41D000FA6F2B /* mixkit-facility-alarm-908.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F4281C41CE00FA6F2B /* mixkit-facility-alarm-908.wav */; };
-		6FAC510D281C41D000FA6F2B /* mixkit-alert-alarm-1005.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F5281C41CE00FA6F2B /* mixkit-alert-alarm-1005.wav */; };
-		6FAC510E281C41D000FA6F2B /* mixkit-classic-short-alarm-993.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F6281C41CE00FA6F2B /* mixkit-classic-short-alarm-993.wav */; };
-		6FAC510F281C41D000FA6F2B /* mixkit-critical-alarm-1004.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F7281C41CE00FA6F2B /* mixkit-critical-alarm-1004.wav */; };
-		6FAC5110281C41D000FA6F2B /* mixkit-classic-alarm-995.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F8281C41CE00FA6F2B /* mixkit-classic-alarm-995.wav */; };
-		6FAC5111281C41D000FA6F2B /* mixkit-game-notification-wave-alarm-987.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50F9281C41CE00FA6F2B /* mixkit-game-notification-wave-alarm-987.wav */; };
-		6FAC5112281C41D000FA6F2B /* mixkit-facility-alarm-sound-999.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50FA281C41CE00FA6F2B /* mixkit-facility-alarm-sound-999.wav */; };
-		6FAC5113281C41D000FA6F2B /* mixkit-interface-hint-notification-911.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50FB281C41CE00FA6F2B /* mixkit-interface-hint-notification-911.wav */; };
-		6FAC5114281C41D000FA6F2B /* mixkit-security-facility-breach-alarm-994.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50FC281C41CE00FA6F2B /* mixkit-security-facility-breach-alarm-994.wav */; };
-		6FAC5115281C41D000FA6F2B /* mixkit-space-shooter-alarm-1002.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50FD281C41CE00FA6F2B /* mixkit-space-shooter-alarm-1002.wav */; };
-		6FAC5116281C41D000FA6F2B /* mixkit-alarm-tone-996.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50FE281C41CF00FA6F2B /* mixkit-alarm-tone-996.wav */; };
-		6FAC5117281C41D000FA6F2B /* mixkit-street-public-alarm-997.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC50FF281C41CF00FA6F2B /* mixkit-street-public-alarm-997.wav */; };
-		6FAC5118281C41D000FA6F2B /* mixkit-alarm-clock-beep-988.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5100281C41CF00FA6F2B /* mixkit-alarm-clock-beep-988.wav */; };
-		6FAC5119281C41D000FA6F2B /* mixkit-battleship-alarm-1001.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5101281C41CF00FA6F2B /* mixkit-battleship-alarm-1001.wav */; };
-		6FAC511A281C41D000FA6F2B /* mixkit-retro-game-emergency-alarm-1000.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5102281C41CF00FA6F2B /* mixkit-retro-game-emergency-alarm-1000.wav */; };
-		6FAC511B281C41D000FA6F2B /* mixkit-alarm-digital-clock-beep-989.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5103281C41CF00FA6F2B /* mixkit-alarm-digital-clock-beep-989.wav */; };
-		6FAC511C281C41D000FA6F2B /* mixkit-digital-clock-digital-alarm-buzzer-992.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5104281C41CF00FA6F2B /* mixkit-digital-clock-digital-alarm-buzzer-992.wav */; };
-		6FAC511D281C41D000FA6F2B /* mixkit-morning-clock-alarm-1003.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5105281C41CF00FA6F2B /* mixkit-morning-clock-alarm-1003.wav */; };
-		6FAC511E281C41D000FA6F2B /* mixkit-spaceship-alarm-998.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5106281C41CF00FA6F2B /* mixkit-spaceship-alarm-998.wav */; };
-		6FAC511F281C41D000FA6F2B /* mixkit-scanning-sci-fi-alarm-905.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5107281C41D000FA6F2B /* mixkit-scanning-sci-fi-alarm-905.wav */; };
-		6FAC5120281C41D000FA6F2B /* mixkit-vintage-warning-alarm-990.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC5108281C41D000FA6F2B /* mixkit-vintage-warning-alarm-990.wav */; };
-		6FAC5122281C456400FA6F2B /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC5121281C456400FA6F2B /* SoundPlayer.swift */; };
-		6FD49E8A2813A62000A58385 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E892813A62000A58385 /* Constants.swift */; };
-		6FD49E8D2813AFA900A58385 /* TImerCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E8C2813AFA900A58385 /* TImerCenterView.swift */; };
-		6FD49E8F2813B1EC00A58385 /* TimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E8E2813B1EC00A58385 /* TimerFooterView.swift */; };
-		6FD49E912813B49100A58385 /* TimerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E902813B49100A58385 /* TimerHeaderView.swift */; };
-		6FD49E952813CA4800A58385 /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E942813CA4800A58385 /* TimerPickerView.swift */; };
-		6FD49E99281675E200A58385 /* TimerDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E98281675E200A58385 /* TimerDisplayView.swift */; };
-		6FD49E9D2816B20C00A58385 /* TimerControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */; };
-		6FD49EA02816CBE600A58385 /* TimerRIngView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */; };
-		6FD49EA42816D93300A58385 /* SoundFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49EA32816D93300A58385 /* SoundFooterView.swift */; };
-		6FD49EA72816DCF000A58385 /* SoundData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49EA62816DCF000A58385 /* SoundData.swift */; };
-		6FD49EA92816E32300A58385 /* SoundControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD49EA82816E32300A58385 /* SoundControlModel.swift */; };
-		6FE13A1C281BD96F00411A3F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE13A1B281BD96F00411A3F /* LocalNotificationManager.swift */; };
-		6FE13A1E281BDCC500411A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE13A1D281BDCC500411A3F /* AppDelegate.swift */; };
-		6FF3053C288154C4000B153E /* SoundAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3053B288154C4000B153E /* SoundAlarmView.swift */; };
-		6FF3053E28816D8C000B153E /* ClassicSoundAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3053D28816D8C000B153E /* ClassicSoundAlarmView.swift */; };
-		6FF3054028817AEC000B153E /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3053F28817AEC000B153E /* AlarmViewModel.swift */; };
+		6F80D206288A432B00C1955E /* battle-ship.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1EE288A432B00C1955E /* battle-ship.wav */; };
+		6F80D207288A432B00C1955E /* alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1EF288A432B00C1955E /* alert.wav */; };
+		6F80D208288A432B00C1955E /* morning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F0288A432B00C1955E /* morning.wav */; };
+		6F80D209288A432B00C1955E /* classic-short-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F1288A432B00C1955E /* classic-short-alarm.wav */; };
+		6F80D20A288A432B00C1955E /* critical-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F2288A432B00C1955E /* critical-alarm.wav */; };
+		6F80D20B288A432B00C1955E /* digital-buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F3288A432B00C1955E /* digital-buzzer.wav */; };
+		6F80D20C288A432B00C1955E /* hall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F4288A432B00C1955E /* hall.wav */; };
+		6F80D20D288A432B00C1955E /* facility-alarm2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F5288A432B00C1955E /* facility-alarm2.wav */; };
+		6F80D20E288A432B00C1955E /* emergency.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F6288A432B00C1955E /* emergency.wav */; };
+		6F80D20F288A432B00C1955E /* sci-fi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F7288A432B00C1955E /* sci-fi.wav */; };
+		6F80D210288A432B00C1955E /* warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F8288A432B00C1955E /* warning.wav */; };
+		6F80D211288A432B00C1955E /* street.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F9288A432B00C1955E /* street.wav */; };
+		6F80D212288A432B00C1955E /* spaceship.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FA288A432B00C1955E /* spaceship.wav */; };
+		6F80D213288A432B00C1955E /* game.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FB288A432B00C1955E /* game.wav */; };
+		6F80D214288A432B00C1955E /* space.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FC288A432B00C1955E /* space.wav */; };
+		6F80D215288A432B00C1955E /* retro.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FD288A432B00C1955E /* retro.wav */; };
+		6F80D216288A432B00C1955E /* security.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FE288A432B00C1955E /* security.wav */; };
+		6F80D217288A432B00C1955E /* tone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FF288A432B00C1955E /* tone.wav */; };
+		6F80D218288A432B00C1955E /* facility-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D200288A432B00C1955E /* facility-alarm.wav */; };
+		6F80D219288A432B00C1955E /* hint.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D201288A432B00C1955E /* hint.wav */; };
+		6F80D21A288A432B00C1955E /* classic-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D202288A432B00C1955E /* classic-alarm.wav */; };
+		6F80D21B288A432B00C1955E /* digital-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D203288A432B00C1955E /* digital-alarm.wav */; };
+		6F80D21C288A432B00C1955E /* clock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D204288A432B00C1955E /* clock.wav */; };
+		6F80D21D288A432B00C1955E /* vintage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D205288A432B00C1955E /* vintage.wav */; };
+		6F80D250288A43A300C1955E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D225288A43A300C1955E /* Constants.swift */; };
+		6F80D251288A43A300C1955E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D226288A43A300C1955E /* SoundPlayer.swift */; };
+		6F80D252288A43A300C1955E /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D227288A43A300C1955E /* LocalNotificationManager.swift */; };
+		6F80D253288A43A300C1955E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D229288A43A300C1955E /* Persistence.swift */; };
+		6F80D254288A43A300C1955E /* Clock_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D22A288A43A300C1955E /* Clock_App.xcdatamodeld */; };
+		6F80D255288A43A300C1955E /* SoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D22D288A43A300C1955E /* SoundViewModel.swift */; };
+		6F80D256288A43A300C1955E /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D22E288A43A300C1955E /* AlarmViewModel.swift */; };
+		6F80D257288A43A300C1955E /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D230288A43A300C1955E /* SoundModel.swift */; };
+		6F80D258288A43A300C1955E /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D231288A43A300C1955E /* TimerViewModel.swift */; };
+		6F80D259288A43A300C1955E /* AlarmDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D232288A43A300C1955E /* AlarmDataModel.swift */; };
+		6F80D25A288A43A300C1955E /* TimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D236288A43A300C1955E /* TimerFooterView.swift */; };
+		6F80D25B288A43A300C1955E /* ClassicSoundFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D237288A43A300C1955E /* ClassicSoundFooterView.swift */; };
+		6F80D25C288A43A300C1955E /* SoundFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D238288A43A300C1955E /* SoundFooterView.swift */; };
+		6F80D25D288A43A300C1955E /* TImerCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D23A288A43A300C1955E /* TImerCenterView.swift */; };
+		6F80D25E288A43A300C1955E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D23B288A43A300C1955E /* TimerView.swift */; };
+		6F80D25F288A43A300C1955E /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D23D288A43A300C1955E /* TimerPickerView.swift */; };
+		6F80D260288A43A300C1955E /* TimerDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D23E288A43A300C1955E /* TimerDisplayView.swift */; };
+		6F80D261288A43A300C1955E /* CustomTimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D23F288A43A300C1955E /* CustomTimerPickerView.swift */; };
+		6F80D262288A43A300C1955E /* TimerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D240288A43A300C1955E /* TimerHeaderView.swift */; };
+		6F80D263288A43A300C1955E /* TimerRIngView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D241288A43A300C1955E /* TimerRIngView.swift */; };
+		6F80D264288A43A300C1955E /* BackgroundRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D242288A43A300C1955E /* BackgroundRingView.swift */; };
+		6F80D265288A43A300C1955E /* RepeatAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D245288A43A300C1955E /* RepeatAlarmView.swift */; };
+		6F80D266288A43A300C1955E /* LabelAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D246288A43A300C1955E /* LabelAlarmView.swift */; };
+		6F80D267288A43A300C1955E /* ClassicSoundAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D248288A43A300C1955E /* ClassicSoundAlarmView.swift */; };
+		6F80D268288A43A300C1955E /* SoundAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D249288A43A300C1955E /* SoundAlarmView.swift */; };
+		6F80D269288A43A300C1955E /* VibrationAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24A288A43A300C1955E /* VibrationAlarmView.swift */; };
+		6F80D26A288A43A300C1955E /* SongAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24B288A43A300C1955E /* SongAlarmView.swift */; };
+		6F80D26B288A43A300C1955E /* CRUDAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24C288A43A300C1955E /* CRUDAlarmView.swift */; };
+		6F80D26C288A43A300C1955E /* AlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24D288A43A300C1955E /* AlarmSettingView.swift */; };
+		6F80D26D288A43A300C1955E /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24E288A43A300C1955E /* AlarmView.swift */; };
+		6F80D26E288A43A300C1955E /* AlarmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D24F288A43A300C1955E /* AlarmCellView.swift */; };
+		6FEEFA9F288A450F0055CD00 /* Clock_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEFA9E288A450F0055CD00 /* Clock_App.swift */; };
+		6FEEFAA1288A45390055CD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEFAA0288A45390055CD00 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6F17B32E287B1A5700682CD5 /* CRUDAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDAlarmView.swift; sourceTree = "<group>"; };
-		6F17B330287B263200682CD5 /* AlarmCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCellView.swift; sourceTree = "<group>"; };
-		6F17B333287B353000682CD5 /* RepeatAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatAlarmView.swift; sourceTree = "<group>"; };
-		6F17B335287B358E00682CD5 /* AlarmPeriodEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPeriodEnum.swift; sourceTree = "<group>"; };
-		6F17B339287B373600682CD5 /* LabelAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAlarmView.swift; sourceTree = "<group>"; };
-		6F2AFEC4281CF30F007305DB /* BackgroundRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRingView.swift; sourceTree = "<group>"; };
-		6F5B7C7A2878088A00BDC929 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
-		6F5B7C7C287815B300BDC929 /* AlarmSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSettingView.swift; sourceTree = "<group>"; };
 		6F710CEA2812965E0058AE66 /* Clock App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clock App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F710CED2812965E0058AE66 /* Clock_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_AppApp.swift; sourceTree = "<group>"; };
-		6F710CEF2812965E0058AE66 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		6F710CF1281296600058AE66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F710CF4281296600058AE66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6F710CF6281296600058AE66 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		6F710CF9281296600058AE66 /* Clock_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clock_App.xcdatamodel; sourceTree = "<group>"; };
-		6F798907282CF0960086E789 /* CustomTimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerPickerView.swift; sourceTree = "<group>"; };
-		6F9ACAB228831D18004AF050 /* VibrationAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationAlarmView.swift; sourceTree = "<group>"; };
-		6F9ACAB52883245B004AF050 /* SongAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongAlarmView.swift; sourceTree = "<group>"; };
-		6FAC50EE281C3C2D00FA6F2B /* ClassicSoundFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicSoundFooterView.swift; sourceTree = "<group>"; };
-		6FAC50F1281C41CE00FA6F2B /* mixkit-warning-alarm-buzzer-991.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-warning-alarm-buzzer-991.wav"; sourceTree = "<group>"; };
-		6FAC50F2281C41CE00FA6F2B /* mixkit-emergency-alert-alarm-1007.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-emergency-alert-alarm-1007.wav"; sourceTree = "<group>"; };
-		6FAC50F3281C41CE00FA6F2B /* mixkit-sound-alert-in-hall-1006.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-sound-alert-in-hall-1006.wav"; sourceTree = "<group>"; };
-		6FAC50F4281C41CE00FA6F2B /* mixkit-facility-alarm-908.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-facility-alarm-908.wav"; sourceTree = "<group>"; };
-		6FAC50F5281C41CE00FA6F2B /* mixkit-alert-alarm-1005.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-alert-alarm-1005.wav"; sourceTree = "<group>"; };
-		6FAC50F6281C41CE00FA6F2B /* mixkit-classic-short-alarm-993.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-classic-short-alarm-993.wav"; sourceTree = "<group>"; };
-		6FAC50F7281C41CE00FA6F2B /* mixkit-critical-alarm-1004.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-critical-alarm-1004.wav"; sourceTree = "<group>"; };
-		6FAC50F8281C41CE00FA6F2B /* mixkit-classic-alarm-995.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-classic-alarm-995.wav"; sourceTree = "<group>"; };
-		6FAC50F9281C41CE00FA6F2B /* mixkit-game-notification-wave-alarm-987.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-game-notification-wave-alarm-987.wav"; sourceTree = "<group>"; };
-		6FAC50FA281C41CE00FA6F2B /* mixkit-facility-alarm-sound-999.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-facility-alarm-sound-999.wav"; sourceTree = "<group>"; };
-		6FAC50FB281C41CE00FA6F2B /* mixkit-interface-hint-notification-911.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-interface-hint-notification-911.wav"; sourceTree = "<group>"; };
-		6FAC50FC281C41CE00FA6F2B /* mixkit-security-facility-breach-alarm-994.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-security-facility-breach-alarm-994.wav"; sourceTree = "<group>"; };
-		6FAC50FD281C41CE00FA6F2B /* mixkit-space-shooter-alarm-1002.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-space-shooter-alarm-1002.wav"; sourceTree = "<group>"; };
-		6FAC50FE281C41CF00FA6F2B /* mixkit-alarm-tone-996.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-alarm-tone-996.wav"; sourceTree = "<group>"; };
-		6FAC50FF281C41CF00FA6F2B /* mixkit-street-public-alarm-997.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-street-public-alarm-997.wav"; sourceTree = "<group>"; };
-		6FAC5100281C41CF00FA6F2B /* mixkit-alarm-clock-beep-988.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-alarm-clock-beep-988.wav"; sourceTree = "<group>"; };
-		6FAC5101281C41CF00FA6F2B /* mixkit-battleship-alarm-1001.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-battleship-alarm-1001.wav"; sourceTree = "<group>"; };
-		6FAC5102281C41CF00FA6F2B /* mixkit-retro-game-emergency-alarm-1000.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-retro-game-emergency-alarm-1000.wav"; sourceTree = "<group>"; };
-		6FAC5103281C41CF00FA6F2B /* mixkit-alarm-digital-clock-beep-989.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-alarm-digital-clock-beep-989.wav"; sourceTree = "<group>"; };
-		6FAC5104281C41CF00FA6F2B /* mixkit-digital-clock-digital-alarm-buzzer-992.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-digital-clock-digital-alarm-buzzer-992.wav"; sourceTree = "<group>"; };
-		6FAC5105281C41CF00FA6F2B /* mixkit-morning-clock-alarm-1003.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-morning-clock-alarm-1003.wav"; sourceTree = "<group>"; };
-		6FAC5106281C41CF00FA6F2B /* mixkit-spaceship-alarm-998.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-spaceship-alarm-998.wav"; sourceTree = "<group>"; };
-		6FAC5107281C41D000FA6F2B /* mixkit-scanning-sci-fi-alarm-905.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-scanning-sci-fi-alarm-905.wav"; sourceTree = "<group>"; };
-		6FAC5108281C41D000FA6F2B /* mixkit-vintage-warning-alarm-990.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-vintage-warning-alarm-990.wav"; sourceTree = "<group>"; };
-		6FAC5121281C456400FA6F2B /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		6FD49E892813A62000A58385 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6FD49E8C2813AFA900A58385 /* TImerCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TImerCenterView.swift; sourceTree = "<group>"; };
-		6FD49E8E2813B1EC00A58385 /* TimerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFooterView.swift; sourceTree = "<group>"; };
-		6FD49E902813B49100A58385 /* TimerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHeaderView.swift; sourceTree = "<group>"; };
-		6FD49E942813CA4800A58385 /* TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
-		6FD49E98281675E200A58385 /* TimerDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplayView.swift; sourceTree = "<group>"; };
-		6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControlModel.swift; sourceTree = "<group>"; };
-		6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRIngView.swift; sourceTree = "<group>"; };
-		6FD49EA32816D93300A58385 /* SoundFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFooterView.swift; sourceTree = "<group>"; };
-		6FD49EA62816DCF000A58385 /* SoundData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundData.swift; sourceTree = "<group>"; };
-		6FD49EA82816E32300A58385 /* SoundControlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundControlModel.swift; sourceTree = "<group>"; };
-		6FE13A1B281BD96F00411A3F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		6FE13A1D281BDCC500411A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6FF3053B288154C4000B153E /* SoundAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundAlarmView.swift; sourceTree = "<group>"; };
-		6FF3053D28816D8C000B153E /* ClassicSoundAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicSoundAlarmView.swift; sourceTree = "<group>"; };
-		6FF3053F28817AEC000B153E /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
+		6F80D1EE288A432B00C1955E /* battle-ship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "battle-ship.wav"; sourceTree = "<group>"; };
+		6F80D1EF288A432B00C1955E /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
+		6F80D1F0288A432B00C1955E /* morning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = morning.wav; sourceTree = "<group>"; };
+		6F80D1F1288A432B00C1955E /* classic-short-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "classic-short-alarm.wav"; sourceTree = "<group>"; };
+		6F80D1F2288A432B00C1955E /* critical-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "critical-alarm.wav"; sourceTree = "<group>"; };
+		6F80D1F3288A432B00C1955E /* digital-buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "digital-buzzer.wav"; sourceTree = "<group>"; };
+		6F80D1F4288A432B00C1955E /* hall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hall.wav; sourceTree = "<group>"; };
+		6F80D1F5288A432B00C1955E /* facility-alarm2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "facility-alarm2.wav"; sourceTree = "<group>"; };
+		6F80D1F6288A432B00C1955E /* emergency.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = emergency.wav; sourceTree = "<group>"; };
+		6F80D1F7288A432B00C1955E /* sci-fi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "sci-fi.wav"; sourceTree = "<group>"; };
+		6F80D1F8288A432B00C1955E /* warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = warning.wav; sourceTree = "<group>"; };
+		6F80D1F9288A432B00C1955E /* street.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = street.wav; sourceTree = "<group>"; };
+		6F80D1FA288A432B00C1955E /* spaceship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spaceship.wav; sourceTree = "<group>"; };
+		6F80D1FB288A432B00C1955E /* game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game.wav; sourceTree = "<group>"; };
+		6F80D1FC288A432B00C1955E /* space.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = space.wav; sourceTree = "<group>"; };
+		6F80D1FD288A432B00C1955E /* retro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = retro.wav; sourceTree = "<group>"; };
+		6F80D1FE288A432B00C1955E /* security.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = security.wav; sourceTree = "<group>"; };
+		6F80D1FF288A432B00C1955E /* tone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tone.wav; sourceTree = "<group>"; };
+		6F80D200288A432B00C1955E /* facility-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "facility-alarm.wav"; sourceTree = "<group>"; };
+		6F80D201288A432B00C1955E /* hint.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hint.wav; sourceTree = "<group>"; };
+		6F80D202288A432B00C1955E /* classic-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "classic-alarm.wav"; sourceTree = "<group>"; };
+		6F80D203288A432B00C1955E /* digital-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "digital-alarm.wav"; sourceTree = "<group>"; };
+		6F80D204288A432B00C1955E /* clock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clock.wav; sourceTree = "<group>"; };
+		6F80D205288A432B00C1955E /* vintage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = vintage.wav; sourceTree = "<group>"; };
+		6F80D225288A43A300C1955E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6F80D226288A43A300C1955E /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		6F80D227288A43A300C1955E /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		6F80D229288A43A300C1955E /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		6F80D22B288A43A300C1955E /* Clock_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clock_App.xcdatamodel; sourceTree = "<group>"; };
+		6F80D22D288A43A300C1955E /* SoundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewModel.swift; sourceTree = "<group>"; };
+		6F80D22E288A43A300C1955E /* AlarmViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
+		6F80D230288A43A300C1955E /* SoundModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
+		6F80D231288A43A300C1955E /* TimerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		6F80D232288A43A300C1955E /* AlarmDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDataModel.swift; sourceTree = "<group>"; };
+		6F80D236288A43A300C1955E /* TimerFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerFooterView.swift; sourceTree = "<group>"; };
+		6F80D237288A43A300C1955E /* ClassicSoundFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicSoundFooterView.swift; sourceTree = "<group>"; };
+		6F80D238288A43A300C1955E /* SoundFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFooterView.swift; sourceTree = "<group>"; };
+		6F80D23A288A43A300C1955E /* TImerCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TImerCenterView.swift; sourceTree = "<group>"; };
+		6F80D23B288A43A300C1955E /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		6F80D23D288A43A300C1955E /* TimerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
+		6F80D23E288A43A300C1955E /* TimerDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerDisplayView.swift; sourceTree = "<group>"; };
+		6F80D23F288A43A300C1955E /* CustomTimerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimerPickerView.swift; sourceTree = "<group>"; };
+		6F80D240288A43A300C1955E /* TimerHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerHeaderView.swift; sourceTree = "<group>"; };
+		6F80D241288A43A300C1955E /* TimerRIngView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerRIngView.swift; sourceTree = "<group>"; };
+		6F80D242288A43A300C1955E /* BackgroundRingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundRingView.swift; sourceTree = "<group>"; };
+		6F80D245288A43A300C1955E /* RepeatAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatAlarmView.swift; sourceTree = "<group>"; };
+		6F80D246288A43A300C1955E /* LabelAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAlarmView.swift; sourceTree = "<group>"; };
+		6F80D248288A43A300C1955E /* ClassicSoundAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicSoundAlarmView.swift; sourceTree = "<group>"; };
+		6F80D249288A43A300C1955E /* SoundAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundAlarmView.swift; sourceTree = "<group>"; };
+		6F80D24A288A43A300C1955E /* VibrationAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrationAlarmView.swift; sourceTree = "<group>"; };
+		6F80D24B288A43A300C1955E /* SongAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongAlarmView.swift; sourceTree = "<group>"; };
+		6F80D24C288A43A300C1955E /* CRUDAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRUDAlarmView.swift; sourceTree = "<group>"; };
+		6F80D24D288A43A300C1955E /* AlarmSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSettingView.swift; sourceTree = "<group>"; };
+		6F80D24E288A43A300C1955E /* AlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		6F80D24F288A43A300C1955E /* AlarmCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCellView.swift; sourceTree = "<group>"; };
+		6FEEFA9E288A450F0055CD00 /* Clock_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_App.swift; sourceTree = "<group>"; };
+		6FEEFAA0288A45390055CD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,57 +142,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F17B332287B34C500682CD5 /* AlarmSection */ = {
-			isa = PBXGroup;
-			children = (
-				6F5B7C7A2878088A00BDC929 /* AlarmView.swift */,
-				6F17B330287B263200682CD5 /* AlarmCellView.swift */,
-				6F5B7C7C287815B300BDC929 /* AlarmSettingView.swift */,
-				6F17B338287B372500682CD5 /* CRUDAlarm */,
-			);
-			path = AlarmSection;
-			sourceTree = "<group>";
-		};
-		6F17B337287B363000682CD5 /* AlarmModel */ = {
-			isa = PBXGroup;
-			children = (
-				6F17B335287B358E00682CD5 /* AlarmPeriodEnum.swift */,
-				6FF3053F28817AEC000B153E /* AlarmViewModel.swift */,
-			);
-			path = AlarmModel;
-			sourceTree = "<group>";
-		};
-		6F17B338287B372500682CD5 /* CRUDAlarm */ = {
-			isa = PBXGroup;
-			children = (
-				6F17B32E287B1A5700682CD5 /* CRUDAlarmView.swift */,
-				6F9ACAB42883241A004AF050 /* SoundAlarmView */,
-				6F17B333287B353000682CD5 /* RepeatAlarmView.swift */,
-				6F17B339287B373600682CD5 /* LabelAlarmView.swift */,
-			);
-			path = CRUDAlarm;
-			sourceTree = "<group>";
-		};
-		6F2AFEC3281CF2ED007305DB /* App */ = {
-			isa = PBXGroup;
-			children = (
-				6F710CED2812965E0058AE66 /* Clock_AppApp.swift */,
-				6FE13A1D281BDCC500411A3F /* AppDelegate.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		6F5B7C792878083D00BDC929 /* TimerSection */ = {
-			isa = PBXGroup;
-			children = (
-				6F710CEF2812965E0058AE66 /* TimerView.swift */,
-				6FD49EA12816D8F900A58385 /* Header */,
-				6FD49EA22816D90900A58385 /* Center */,
-				6FE13A20281BE02E00411A3F /* Footer */,
-			);
-			path = TimerSection;
-			sourceTree = "<group>";
-		};
 		6F710CE12812965E0058AE66 = {
 			isa = PBXGroup;
 			children = (
@@ -212,12 +161,13 @@
 		6F710CEC2812965E0058AE66 /* Clock App */ = {
 			isa = PBXGroup;
 			children = (
-				6FAC50F0281C418A00FA6F2B /* Sound */,
-				6F2AFEC3281CF2ED007305DB /* App */,
-				6FD49E882813A61300A58385 /* Helpers */,
-				6FD49E9E2816B21500A58385 /* Model */,
-				6FD49E8B2813AA0900A58385 /* View */,
-				6FD49E872813A5FF00A58385 /* Data */,
+				6FEEFA9D288A45000055CD00 /* App */,
+				6F80D228288A43A300C1955E /* Data */,
+				6F80D224288A43A300C1955E /* Helpers */,
+				6F80D22F288A43A300C1955E /* Models */,
+				6F80D22C288A43A300C1955E /* ViewModels */,
+				6F80D233288A43A300C1955E /* Views */,
+				6F80D1ED288A432B00C1955E /* Sound */,
 				6F710CF3281296600058AE66 /* Preview Content */,
 				6F710CF1281296600058AE66 /* Assets.xcassets */,
 			);
@@ -232,124 +182,168 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6F9ACAB42883241A004AF050 /* SoundAlarmView */ = {
+		6F80D1ED288A432B00C1955E /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				6FF3053B288154C4000B153E /* SoundAlarmView.swift */,
-				6F9ACAB52883245B004AF050 /* SongAlarmView.swift */,
-				6F9ACAB228831D18004AF050 /* VibrationAlarmView.swift */,
-				6FF3053D28816D8C000B153E /* ClassicSoundAlarmView.swift */,
+				6F80D1EE288A432B00C1955E /* battle-ship.wav */,
+				6F80D1EF288A432B00C1955E /* alert.wav */,
+				6F80D1F0288A432B00C1955E /* morning.wav */,
+				6F80D1F1288A432B00C1955E /* classic-short-alarm.wav */,
+				6F80D1F2288A432B00C1955E /* critical-alarm.wav */,
+				6F80D1F3288A432B00C1955E /* digital-buzzer.wav */,
+				6F80D1F4288A432B00C1955E /* hall.wav */,
+				6F80D1F5288A432B00C1955E /* facility-alarm2.wav */,
+				6F80D1F6288A432B00C1955E /* emergency.wav */,
+				6F80D1F7288A432B00C1955E /* sci-fi.wav */,
+				6F80D1F8288A432B00C1955E /* warning.wav */,
+				6F80D1F9288A432B00C1955E /* street.wav */,
+				6F80D1FA288A432B00C1955E /* spaceship.wav */,
+				6F80D1FB288A432B00C1955E /* game.wav */,
+				6F80D1FC288A432B00C1955E /* space.wav */,
+				6F80D1FD288A432B00C1955E /* retro.wav */,
+				6F80D1FE288A432B00C1955E /* security.wav */,
+				6F80D1FF288A432B00C1955E /* tone.wav */,
+				6F80D200288A432B00C1955E /* facility-alarm.wav */,
+				6F80D201288A432B00C1955E /* hint.wav */,
+				6F80D202288A432B00C1955E /* classic-alarm.wav */,
+				6F80D203288A432B00C1955E /* digital-alarm.wav */,
+				6F80D204288A432B00C1955E /* clock.wav */,
+				6F80D205288A432B00C1955E /* vintage.wav */,
 			);
-			path = SoundAlarmView;
+			name = Sound;
+			path = "../../../Desktop/Clock App/Sound";
 			sourceTree = "<group>";
 		};
-		6FAC50F0281C418A00FA6F2B /* Sound */ = {
+		6F80D224288A43A300C1955E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				6FAC5100281C41CF00FA6F2B /* mixkit-alarm-clock-beep-988.wav */,
-				6FAC5103281C41CF00FA6F2B /* mixkit-alarm-digital-clock-beep-989.wav */,
-				6FAC50FE281C41CF00FA6F2B /* mixkit-alarm-tone-996.wav */,
-				6FAC50F5281C41CE00FA6F2B /* mixkit-alert-alarm-1005.wav */,
-				6FAC5101281C41CF00FA6F2B /* mixkit-battleship-alarm-1001.wav */,
-				6FAC50F8281C41CE00FA6F2B /* mixkit-classic-alarm-995.wav */,
-				6FAC50F6281C41CE00FA6F2B /* mixkit-classic-short-alarm-993.wav */,
-				6FAC50F7281C41CE00FA6F2B /* mixkit-critical-alarm-1004.wav */,
-				6FAC5104281C41CF00FA6F2B /* mixkit-digital-clock-digital-alarm-buzzer-992.wav */,
-				6FAC50F2281C41CE00FA6F2B /* mixkit-emergency-alert-alarm-1007.wav */,
-				6FAC50F4281C41CE00FA6F2B /* mixkit-facility-alarm-908.wav */,
-				6FAC50FA281C41CE00FA6F2B /* mixkit-facility-alarm-sound-999.wav */,
-				6FAC50F9281C41CE00FA6F2B /* mixkit-game-notification-wave-alarm-987.wav */,
-				6FAC50FB281C41CE00FA6F2B /* mixkit-interface-hint-notification-911.wav */,
-				6FAC5105281C41CF00FA6F2B /* mixkit-morning-clock-alarm-1003.wav */,
-				6FAC5102281C41CF00FA6F2B /* mixkit-retro-game-emergency-alarm-1000.wav */,
-				6FAC5107281C41D000FA6F2B /* mixkit-scanning-sci-fi-alarm-905.wav */,
-				6FAC50FC281C41CE00FA6F2B /* mixkit-security-facility-breach-alarm-994.wav */,
-				6FAC50F3281C41CE00FA6F2B /* mixkit-sound-alert-in-hall-1006.wav */,
-				6FAC50FD281C41CE00FA6F2B /* mixkit-space-shooter-alarm-1002.wav */,
-				6FAC5106281C41CF00FA6F2B /* mixkit-spaceship-alarm-998.wav */,
-				6FAC50FF281C41CF00FA6F2B /* mixkit-street-public-alarm-997.wav */,
-				6FAC5108281C41D000FA6F2B /* mixkit-vintage-warning-alarm-990.wav */,
-				6FAC50F1281C41CE00FA6F2B /* mixkit-warning-alarm-buzzer-991.wav */,
-			);
-			path = Sound;
-			sourceTree = "<group>";
-		};
-		6FD49E872813A5FF00A58385 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				6F710CF6281296600058AE66 /* Persistence.swift */,
-				6F710CF8281296600058AE66 /* Clock_App.xcdatamodeld */,
-				6FD49EA62816DCF000A58385 /* SoundData.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		6FD49E882813A61300A58385 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				6FD49E892813A62000A58385 /* Constants.swift */,
-				6FE13A1B281BD96F00411A3F /* LocalNotificationManager.swift */,
-				6FAC5121281C456400FA6F2B /* SoundPlayer.swift */,
+				6F80D225288A43A300C1955E /* Constants.swift */,
+				6F80D226288A43A300C1955E /* SoundPlayer.swift */,
+				6F80D227288A43A300C1955E /* LocalNotificationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		6FD49E8B2813AA0900A58385 /* View */ = {
+		6F80D228288A43A300C1955E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				6F5B7C792878083D00BDC929 /* TimerSection */,
-				6F17B332287B34C500682CD5 /* AlarmSection */,
+				6F80D229288A43A300C1955E /* Persistence.swift */,
+				6F80D22A288A43A300C1955E /* Clock_App.xcdatamodeld */,
 			);
-			path = View;
+			name = Data;
+			path = "../../../Desktop/Clock App/Data";
 			sourceTree = "<group>";
 		};
-		6FD49E9E2816B21500A58385 /* Model */ = {
+		6F80D22C288A43A300C1955E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				6FE13A1F281BDF6600411A3F /* TimerModel */,
-				6F17B337287B363000682CD5 /* AlarmModel */,
+				6F80D231288A43A300C1955E /* TimerViewModel.swift */,
+				6F80D22D288A43A300C1955E /* SoundViewModel.swift */,
+				6F80D22E288A43A300C1955E /* AlarmViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		6FD49EA12816D8F900A58385 /* Header */ = {
+		6F80D22F288A43A300C1955E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6FD49E902813B49100A58385 /* TimerHeaderView.swift */,
-				6FD49E942813CA4800A58385 /* TimerPickerView.swift */,
-				6FD49E98281675E200A58385 /* TimerDisplayView.swift */,
-				6FD49E9F2816CBE600A58385 /* TimerRIngView.swift */,
-				6F2AFEC4281CF30F007305DB /* BackgroundRingView.swift */,
-				6F798907282CF0960086E789 /* CustomTimerPickerView.swift */,
+				6F80D230288A43A300C1955E /* SoundModel.swift */,
+				6F80D232288A43A300C1955E /* AlarmDataModel.swift */,
 			);
-			path = Header;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		6FD49EA22816D90900A58385 /* Center */ = {
+		6F80D233288A43A300C1955E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6FD49E8C2813AFA900A58385 /* TImerCenterView.swift */,
+				6F80D234288A43A300C1955E /* TimerSection */,
+				6F80D243288A43A300C1955E /* AlarmSection */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6F80D234288A43A300C1955E /* TimerSection */ = {
+			isa = PBXGroup;
+			children = (
+				6F80D235288A43A300C1955E /* Footer */,
+				6F80D239288A43A300C1955E /* Center */,
+				6F80D23B288A43A300C1955E /* TimerView.swift */,
+				6F80D23C288A43A300C1955E /* Header */,
+			);
+			path = TimerSection;
+			sourceTree = "<group>";
+		};
+		6F80D235288A43A300C1955E /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				6F80D236288A43A300C1955E /* TimerFooterView.swift */,
+				6F80D237288A43A300C1955E /* ClassicSoundFooterView.swift */,
+				6F80D238288A43A300C1955E /* SoundFooterView.swift */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		6F80D239288A43A300C1955E /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				6F80D23A288A43A300C1955E /* TImerCenterView.swift */,
 			);
 			path = Center;
 			sourceTree = "<group>";
 		};
-		6FE13A1F281BDF6600411A3F /* TimerModel */ = {
+		6F80D23C288A43A300C1955E /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				6FD49E9C2816B20C00A58385 /* TimerControlModel.swift */,
-				6FD49EA82816E32300A58385 /* SoundControlModel.swift */,
+				6F80D23D288A43A300C1955E /* TimerPickerView.swift */,
+				6F80D23E288A43A300C1955E /* TimerDisplayView.swift */,
+				6F80D23F288A43A300C1955E /* CustomTimerPickerView.swift */,
+				6F80D240288A43A300C1955E /* TimerHeaderView.swift */,
+				6F80D241288A43A300C1955E /* TimerRIngView.swift */,
+				6F80D242288A43A300C1955E /* BackgroundRingView.swift */,
 			);
-			path = TimerModel;
+			path = Header;
 			sourceTree = "<group>";
 		};
-		6FE13A20281BE02E00411A3F /* Footer */ = {
+		6F80D243288A43A300C1955E /* AlarmSection */ = {
 			isa = PBXGroup;
 			children = (
-				6FD49E8E2813B1EC00A58385 /* TimerFooterView.swift */,
-				6FD49EA32816D93300A58385 /* SoundFooterView.swift */,
-				6FAC50EE281C3C2D00FA6F2B /* ClassicSoundFooterView.swift */,
+				6F80D244288A43A300C1955E /* CRUDAlarm */,
+				6F80D24D288A43A300C1955E /* AlarmSettingView.swift */,
+				6F80D24E288A43A300C1955E /* AlarmView.swift */,
+				6F80D24F288A43A300C1955E /* AlarmCellView.swift */,
 			);
-			path = Footer;
+			path = AlarmSection;
+			sourceTree = "<group>";
+		};
+		6F80D244288A43A300C1955E /* CRUDAlarm */ = {
+			isa = PBXGroup;
+			children = (
+				6F80D245288A43A300C1955E /* RepeatAlarmView.swift */,
+				6F80D246288A43A300C1955E /* LabelAlarmView.swift */,
+				6F80D247288A43A300C1955E /* SoundAlarmView */,
+				6F80D24C288A43A300C1955E /* CRUDAlarmView.swift */,
+			);
+			path = CRUDAlarm;
+			sourceTree = "<group>";
+		};
+		6F80D247288A43A300C1955E /* SoundAlarmView */ = {
+			isa = PBXGroup;
+			children = (
+				6F80D248288A43A300C1955E /* ClassicSoundAlarmView.swift */,
+				6F80D249288A43A300C1955E /* SoundAlarmView.swift */,
+				6F80D24A288A43A300C1955E /* VibrationAlarmView.swift */,
+				6F80D24B288A43A300C1955E /* SongAlarmView.swift */,
+			);
+			path = SoundAlarmView;
+			sourceTree = "<group>";
+		};
+		6FEEFA9D288A45000055CD00 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6FEEFA9E288A450F0055CD00 /* Clock_App.swift */,
+				6FEEFAA0288A45390055CD00 /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,32 +404,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FAC510D281C41D000FA6F2B /* mixkit-alert-alarm-1005.wav in Resources */,
-				6FAC5111281C41D000FA6F2B /* mixkit-game-notification-wave-alarm-987.wav in Resources */,
+				6F80D20D288A432B00C1955E /* facility-alarm2.wav in Resources */,
+				6F80D21C288A432B00C1955E /* clock.wav in Resources */,
 				6F710CF5281296600058AE66 /* Preview Assets.xcassets in Resources */,
-				6FAC510C281C41D000FA6F2B /* mixkit-facility-alarm-908.wav in Resources */,
+				6F80D210288A432B00C1955E /* warning.wav in Resources */,
+				6F80D212288A432B00C1955E /* spaceship.wav in Resources */,
+				6F80D209288A432B00C1955E /* classic-short-alarm.wav in Resources */,
 				6F710CF2281296600058AE66 /* Assets.xcassets in Resources */,
-				6FAC511F281C41D000FA6F2B /* mixkit-scanning-sci-fi-alarm-905.wav in Resources */,
-				6FAC5114281C41D000FA6F2B /* mixkit-security-facility-breach-alarm-994.wav in Resources */,
-				6FAC510E281C41D000FA6F2B /* mixkit-classic-short-alarm-993.wav in Resources */,
-				6FAC5110281C41D000FA6F2B /* mixkit-classic-alarm-995.wav in Resources */,
-				6FAC5117281C41D000FA6F2B /* mixkit-street-public-alarm-997.wav in Resources */,
-				6FAC5112281C41D000FA6F2B /* mixkit-facility-alarm-sound-999.wav in Resources */,
-				6FAC5120281C41D000FA6F2B /* mixkit-vintage-warning-alarm-990.wav in Resources */,
-				6FAC5109281C41D000FA6F2B /* mixkit-warning-alarm-buzzer-991.wav in Resources */,
-				6FAC511D281C41D000FA6F2B /* mixkit-morning-clock-alarm-1003.wav in Resources */,
-				6FAC5118281C41D000FA6F2B /* mixkit-alarm-clock-beep-988.wav in Resources */,
-				6FAC510A281C41D000FA6F2B /* mixkit-emergency-alert-alarm-1007.wav in Resources */,
-				6FAC5115281C41D000FA6F2B /* mixkit-space-shooter-alarm-1002.wav in Resources */,
-				6FAC511C281C41D000FA6F2B /* mixkit-digital-clock-digital-alarm-buzzer-992.wav in Resources */,
-				6FAC5119281C41D000FA6F2B /* mixkit-battleship-alarm-1001.wav in Resources */,
-				6FAC510F281C41D000FA6F2B /* mixkit-critical-alarm-1004.wav in Resources */,
-				6FAC511A281C41D000FA6F2B /* mixkit-retro-game-emergency-alarm-1000.wav in Resources */,
-				6FAC5116281C41D000FA6F2B /* mixkit-alarm-tone-996.wav in Resources */,
-				6FAC510B281C41D000FA6F2B /* mixkit-sound-alert-in-hall-1006.wav in Resources */,
-				6FAC5113281C41D000FA6F2B /* mixkit-interface-hint-notification-911.wav in Resources */,
-				6FAC511E281C41D000FA6F2B /* mixkit-spaceship-alarm-998.wav in Resources */,
-				6FAC511B281C41D000FA6F2B /* mixkit-alarm-digital-clock-beep-989.wav in Resources */,
+				6F80D219288A432B00C1955E /* hint.wav in Resources */,
+				6F80D207288A432B00C1955E /* alert.wav in Resources */,
+				6F80D211288A432B00C1955E /* street.wav in Resources */,
+				6F80D206288A432B00C1955E /* battle-ship.wav in Resources */,
+				6F80D216288A432B00C1955E /* security.wav in Resources */,
+				6F80D20F288A432B00C1955E /* sci-fi.wav in Resources */,
+				6F80D218288A432B00C1955E /* facility-alarm.wav in Resources */,
+				6F80D20C288A432B00C1955E /* hall.wav in Resources */,
+				6F80D208288A432B00C1955E /* morning.wav in Resources */,
+				6F80D20E288A432B00C1955E /* emergency.wav in Resources */,
+				6F80D21D288A432B00C1955E /* vintage.wav in Resources */,
+				6F80D21A288A432B00C1955E /* classic-alarm.wav in Resources */,
+				6F80D214288A432B00C1955E /* space.wav in Resources */,
+				6F80D217288A432B00C1955E /* tone.wav in Resources */,
+				6F80D215288A432B00C1955E /* retro.wav in Resources */,
+				6F80D21B288A432B00C1955E /* digital-alarm.wav in Resources */,
+				6F80D213288A432B00C1955E /* game.wav in Resources */,
+				6F80D20B288A432B00C1955E /* digital-buzzer.wav in Resources */,
+				6F80D20A288A432B00C1955E /* critical-alarm.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,39 +440,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F17B331287B263200682CD5 /* AlarmCellView.swift in Sources */,
-				6FD49EA92816E32300A58385 /* SoundControlModel.swift in Sources */,
-				6FD49E952813CA4800A58385 /* TimerPickerView.swift in Sources */,
-				6F17B32F287B1A5800682CD5 /* CRUDAlarmView.swift in Sources */,
-				6FE13A1C281BD96F00411A3F /* LocalNotificationManager.swift in Sources */,
-				6FD49E8A2813A62000A58385 /* Constants.swift in Sources */,
-				6F2AFEC5281CF30F007305DB /* BackgroundRingView.swift in Sources */,
-				6FD49EA02816CBE600A58385 /* TimerRIngView.swift in Sources */,
-				6F17B33A287B373600682CD5 /* LabelAlarmView.swift in Sources */,
-				6F5B7C7B2878088A00BDC929 /* AlarmView.swift in Sources */,
-				6FF3053C288154C4000B153E /* SoundAlarmView.swift in Sources */,
-				6FD49E99281675E200A58385 /* TimerDisplayView.swift in Sources */,
-				6FD49E8F2813B1EC00A58385 /* TimerFooterView.swift in Sources */,
-				6FD49EA42816D93300A58385 /* SoundFooterView.swift in Sources */,
-				6F17B334287B353000682CD5 /* RepeatAlarmView.swift in Sources */,
-				6FD49E8D2813AFA900A58385 /* TImerCenterView.swift in Sources */,
-				6F710CF7281296600058AE66 /* Persistence.swift in Sources */,
-				6FAC5122281C456400FA6F2B /* SoundPlayer.swift in Sources */,
-				6F710CF02812965E0058AE66 /* TimerView.swift in Sources */,
-				6FD49EA72816DCF000A58385 /* SoundData.swift in Sources */,
-				6FE13A1E281BDCC500411A3F /* AppDelegate.swift in Sources */,
-				6F710CFA281296600058AE66 /* Clock_App.xcdatamodeld in Sources */,
-				6FD49E9D2816B20C00A58385 /* TimerControlModel.swift in Sources */,
-				6FF3054028817AEC000B153E /* AlarmViewModel.swift in Sources */,
-				6F798908282CF0960086E789 /* CustomTimerPickerView.swift in Sources */,
-				6F710CEE2812965E0058AE66 /* Clock_AppApp.swift in Sources */,
-				6F9ACAB62883245B004AF050 /* SongAlarmView.swift in Sources */,
-				6FD49E912813B49100A58385 /* TimerHeaderView.swift in Sources */,
-				6F9ACAB328831D18004AF050 /* VibrationAlarmView.swift in Sources */,
-				6F17B336287B358E00682CD5 /* AlarmPeriodEnum.swift in Sources */,
-				6FAC50EF281C3C2D00FA6F2B /* ClassicSoundFooterView.swift in Sources */,
-				6F5B7C7D287815B300BDC929 /* AlarmSettingView.swift in Sources */,
-				6FF3053E28816D8C000B153E /* ClassicSoundAlarmView.swift in Sources */,
+				6FEEFAA1288A45390055CD00 /* AppDelegate.swift in Sources */,
+				6F80D266288A43A300C1955E /* LabelAlarmView.swift in Sources */,
+				6F80D25E288A43A300C1955E /* TimerView.swift in Sources */,
+				6F80D25B288A43A300C1955E /* ClassicSoundFooterView.swift in Sources */,
+				6F80D26C288A43A300C1955E /* AlarmSettingView.swift in Sources */,
+				6F80D254288A43A300C1955E /* Clock_App.xcdatamodeld in Sources */,
+				6F80D256288A43A300C1955E /* AlarmViewModel.swift in Sources */,
+				6F80D252288A43A300C1955E /* LocalNotificationManager.swift in Sources */,
+				6F80D261288A43A300C1955E /* CustomTimerPickerView.swift in Sources */,
+				6F80D269288A43A300C1955E /* VibrationAlarmView.swift in Sources */,
+				6F80D253288A43A300C1955E /* Persistence.swift in Sources */,
+				6F80D25C288A43A300C1955E /* SoundFooterView.swift in Sources */,
+				6F80D260288A43A300C1955E /* TimerDisplayView.swift in Sources */,
+				6F80D268288A43A300C1955E /* SoundAlarmView.swift in Sources */,
+				6F80D251288A43A300C1955E /* SoundPlayer.swift in Sources */,
+				6F80D259288A43A300C1955E /* AlarmDataModel.swift in Sources */,
+				6F80D264288A43A300C1955E /* BackgroundRingView.swift in Sources */,
+				6F80D257288A43A300C1955E /* SoundModel.swift in Sources */,
+				6F80D25F288A43A300C1955E /* TimerPickerView.swift in Sources */,
+				6F80D258288A43A300C1955E /* TimerViewModel.swift in Sources */,
+				6F80D26A288A43A300C1955E /* SongAlarmView.swift in Sources */,
+				6F80D263288A43A300C1955E /* TimerRIngView.swift in Sources */,
+				6F80D267288A43A300C1955E /* ClassicSoundAlarmView.swift in Sources */,
+				6FEEFA9F288A450F0055CD00 /* Clock_App.swift in Sources */,
+				6F80D26D288A43A300C1955E /* AlarmView.swift in Sources */,
+				6F80D25A288A43A300C1955E /* TimerFooterView.swift in Sources */,
+				6F80D265288A43A300C1955E /* RepeatAlarmView.swift in Sources */,
+				6F80D26E288A43A300C1955E /* AlarmCellView.swift in Sources */,
+				6F80D25D288A43A300C1955E /* TImerCenterView.swift in Sources */,
+				6F80D26B288A43A300C1955E /* CRUDAlarmView.swift in Sources */,
+				6F80D262288A43A300C1955E /* TimerHeaderView.swift in Sources */,
+				6F80D255288A43A300C1955E /* SoundViewModel.swift in Sources */,
+				6F80D250288A43A300C1955E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,12 +677,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6F710CF8281296600058AE66 /* Clock_App.xcdatamodeld */ = {
+		6F80D22A288A43A300C1955E /* Clock_App.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6F710CF9281296600058AE66 /* Clock_App.xcdatamodel */,
+				6F80D22B288A43A300C1955E /* Clock_App.xcdatamodel */,
 			);
-			currentVersion = 6F710CF9281296600058AE66 /* Clock_App.xcdatamodel */;
+			currentVersion = 6F80D22B288A43A300C1955E /* Clock_App.xcdatamodel */;
 			path = Clock_App.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
