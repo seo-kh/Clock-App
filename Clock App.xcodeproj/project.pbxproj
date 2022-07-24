@@ -7,37 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F01275D288CE254000EB72A /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F01275B288CE254000EB72A /* Main.xcdatamodeld */; };
+		6F01275F288CE2D8000EB72A /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F01275E288CE2D8000EB72A /* Persistance.swift */; };
+		6F01277B288CE459000EB72A /* emergency.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012761288CE457000EB72A /* emergency.mp3 */; };
+		6F01277C288CE459000EB72A /* over simplified alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012762288CE458000EB72A /* over simplified alarm.mp3 */; };
+		6F01277D288CE459000EB72A /* tic-tac.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012763288CE458000EB72A /* tic-tac.mp3 */; };
+		6F01277E288CE459000EB72A /* nuclear alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012764288CE458000EB72A /* nuclear alarm.mp3 */; };
+		6F01277F288CE459000EB72A /* military alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012765288CE458000EB72A /* military alarm.mp3 */; };
+		6F012780288CE459000EB72A /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012766288CE458000EB72A /* siren.mp3 */; };
+		6F012781288CE459000EB72A /* car or home.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012767288CE458000EB72A /* car or home.mp3 */; };
+		6F012782288CE459000EB72A /* german ambulance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012768288CE458000EB72A /* german ambulance.mp3 */; };
+		6F012783288CE459000EB72A /* smart phone vibration.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012769288CE458000EB72A /* smart phone vibration.mp3 */; };
+		6F012784288CE459000EB72A /* clock strick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F01276A288CE458000EB72A /* clock strick.mp3 */; };
+		6F012785288CE459000EB72A /* no3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F01276B288CE458000EB72A /* no3.mp3 */; };
+		6F012786288CE459000EB72A /* destruct sequence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F01276C288CE458000EB72A /* destruct sequence.mp3 */; };
+		6F012788288CE459000EB72A /* beep beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F01276E288CE458000EB72A /* beep beep.mp3 */; };
+		6F012789288CE459000EB72A /* beep warning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F01276F288CE458000EB72A /* beep warning.mp3 */; };
+		6F01278A288CE459000EB72A /* clock short.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012770288CE459000EB72A /* clock short.mp3 */; };
+		6F01278B288CE459000EB72A /* futuristic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012771288CE459000EB72A /* futuristic.mp3 */; };
+		6F01278C288CE459000EB72A /* machine error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012772288CE459000EB72A /* machine error.mp3 */; };
+		6F01278D288CE459000EB72A /* dark sitar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012773288CE459000EB72A /* dark sitar.mp3 */; };
+		6F01278E288CE459000EB72A /* clock alarm1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012774288CE459000EB72A /* clock alarm1.mp3 */; };
+		6F01278F288CE459000EB72A /* psycho.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012775288CE459000EB72A /* psycho.mp3 */; };
+		6F012790288CE459000EB72A /* clock ticking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012776288CE459000EB72A /* clock ticking.mp3 */; };
+		6F012791288CE459000EB72A /* police fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012777288CE459000EB72A /* police fire.mp3 */; };
+		6F012792288CE459000EB72A /* clock alarm2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012778288CE459000EB72A /* clock alarm2.mp3 */; };
+		6F012793288CE459000EB72A /* cinematic alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F012779288CE459000EB72A /* cinematic alarm.mp3 */; };
+		6F012794288CE459000EB72A /* off-hook.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F01277A288CE459000EB72A /* off-hook.mp3 */; };
 		6F710CF2281296600058AE66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F710CF1281296600058AE66 /* Assets.xcassets */; };
 		6F710CF5281296600058AE66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F710CF4281296600058AE66 /* Preview Assets.xcassets */; };
-		6F80D206288A432B00C1955E /* battle-ship.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1EE288A432B00C1955E /* battle-ship.wav */; };
-		6F80D207288A432B00C1955E /* alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1EF288A432B00C1955E /* alert.wav */; };
-		6F80D208288A432B00C1955E /* morning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F0288A432B00C1955E /* morning.wav */; };
-		6F80D209288A432B00C1955E /* classic-short-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F1288A432B00C1955E /* classic-short-alarm.wav */; };
-		6F80D20A288A432B00C1955E /* critical-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F2288A432B00C1955E /* critical-alarm.wav */; };
-		6F80D20B288A432B00C1955E /* digital-buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F3288A432B00C1955E /* digital-buzzer.wav */; };
-		6F80D20C288A432B00C1955E /* hall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F4288A432B00C1955E /* hall.wav */; };
-		6F80D20D288A432B00C1955E /* facility-alarm2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F5288A432B00C1955E /* facility-alarm2.wav */; };
-		6F80D20E288A432B00C1955E /* emergency.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F6288A432B00C1955E /* emergency.wav */; };
-		6F80D20F288A432B00C1955E /* sci-fi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F7288A432B00C1955E /* sci-fi.wav */; };
-		6F80D210288A432B00C1955E /* warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F8288A432B00C1955E /* warning.wav */; };
-		6F80D211288A432B00C1955E /* street.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1F9288A432B00C1955E /* street.wav */; };
-		6F80D212288A432B00C1955E /* spaceship.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FA288A432B00C1955E /* spaceship.wav */; };
-		6F80D213288A432B00C1955E /* game.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FB288A432B00C1955E /* game.wav */; };
-		6F80D214288A432B00C1955E /* space.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FC288A432B00C1955E /* space.wav */; };
-		6F80D215288A432B00C1955E /* retro.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FD288A432B00C1955E /* retro.wav */; };
-		6F80D216288A432B00C1955E /* security.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FE288A432B00C1955E /* security.wav */; };
-		6F80D217288A432B00C1955E /* tone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D1FF288A432B00C1955E /* tone.wav */; };
-		6F80D218288A432B00C1955E /* facility-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D200288A432B00C1955E /* facility-alarm.wav */; };
-		6F80D219288A432B00C1955E /* hint.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D201288A432B00C1955E /* hint.wav */; };
-		6F80D21A288A432B00C1955E /* classic-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D202288A432B00C1955E /* classic-alarm.wav */; };
-		6F80D21B288A432B00C1955E /* digital-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D203288A432B00C1955E /* digital-alarm.wav */; };
-		6F80D21C288A432B00C1955E /* clock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D204288A432B00C1955E /* clock.wav */; };
-		6F80D21D288A432B00C1955E /* vintage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6F80D205288A432B00C1955E /* vintage.wav */; };
 		6F80D250288A43A300C1955E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D225288A43A300C1955E /* Constants.swift */; };
 		6F80D251288A43A300C1955E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D226288A43A300C1955E /* SoundPlayer.swift */; };
 		6F80D252288A43A300C1955E /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D227288A43A300C1955E /* LocalNotificationManager.swift */; };
-		6F80D253288A43A300C1955E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D229288A43A300C1955E /* Persistence.swift */; };
-		6F80D254288A43A300C1955E /* Clock_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D22A288A43A300C1955E /* Clock_App.xcdatamodeld */; };
 		6F80D255288A43A300C1955E /* SoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D22D288A43A300C1955E /* SoundViewModel.swift */; };
 		6F80D256288A43A300C1955E /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D22E288A43A300C1955E /* AlarmViewModel.swift */; };
 		6F80D257288A43A300C1955E /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80D230288A43A300C1955E /* SoundModel.swift */; };
@@ -70,38 +71,39 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F01275C288CE254000EB72A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6F01275E288CE2D8000EB72A /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		6F012761288CE457000EB72A /* emergency.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = emergency.mp3; sourceTree = "<group>"; };
+		6F012762288CE458000EB72A /* over simplified alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "over simplified alarm.mp3"; sourceTree = "<group>"; };
+		6F012763288CE458000EB72A /* tic-tac.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "tic-tac.mp3"; sourceTree = "<group>"; };
+		6F012764288CE458000EB72A /* nuclear alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "nuclear alarm.mp3"; sourceTree = "<group>"; };
+		6F012765288CE458000EB72A /* military alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "military alarm.mp3"; sourceTree = "<group>"; };
+		6F012766288CE458000EB72A /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
+		6F012767288CE458000EB72A /* car or home.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "car or home.mp3"; sourceTree = "<group>"; };
+		6F012768288CE458000EB72A /* german ambulance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "german ambulance.mp3"; sourceTree = "<group>"; };
+		6F012769288CE458000EB72A /* smart phone vibration.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "smart phone vibration.mp3"; sourceTree = "<group>"; };
+		6F01276A288CE458000EB72A /* clock strick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "clock strick.mp3"; sourceTree = "<group>"; };
+		6F01276B288CE458000EB72A /* no3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = no3.mp3; sourceTree = "<group>"; };
+		6F01276C288CE458000EB72A /* destruct sequence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "destruct sequence.mp3"; sourceTree = "<group>"; };
+		6F01276E288CE458000EB72A /* beep beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep beep.mp3"; sourceTree = "<group>"; };
+		6F01276F288CE458000EB72A /* beep warning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep warning.mp3"; sourceTree = "<group>"; };
+		6F012770288CE459000EB72A /* clock short.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "clock short.mp3"; sourceTree = "<group>"; };
+		6F012771288CE459000EB72A /* futuristic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = futuristic.mp3; sourceTree = "<group>"; };
+		6F012772288CE459000EB72A /* machine error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "machine error.mp3"; sourceTree = "<group>"; };
+		6F012773288CE459000EB72A /* dark sitar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "dark sitar.mp3"; sourceTree = "<group>"; };
+		6F012774288CE459000EB72A /* clock alarm1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "clock alarm1.mp3"; sourceTree = "<group>"; };
+		6F012775288CE459000EB72A /* psycho.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = psycho.mp3; sourceTree = "<group>"; };
+		6F012776288CE459000EB72A /* clock ticking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "clock ticking.mp3"; sourceTree = "<group>"; };
+		6F012777288CE459000EB72A /* police fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "police fire.mp3"; sourceTree = "<group>"; };
+		6F012778288CE459000EB72A /* clock alarm2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "clock alarm2.mp3"; sourceTree = "<group>"; };
+		6F012779288CE459000EB72A /* cinematic alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cinematic alarm.mp3"; sourceTree = "<group>"; };
+		6F01277A288CE459000EB72A /* off-hook.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "off-hook.mp3"; sourceTree = "<group>"; };
 		6F710CEA2812965E0058AE66 /* Clock App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clock App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F710CF1281296600058AE66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F710CF4281296600058AE66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6F80D1EE288A432B00C1955E /* battle-ship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "battle-ship.wav"; sourceTree = "<group>"; };
-		6F80D1EF288A432B00C1955E /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
-		6F80D1F0288A432B00C1955E /* morning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = morning.wav; sourceTree = "<group>"; };
-		6F80D1F1288A432B00C1955E /* classic-short-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "classic-short-alarm.wav"; sourceTree = "<group>"; };
-		6F80D1F2288A432B00C1955E /* critical-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "critical-alarm.wav"; sourceTree = "<group>"; };
-		6F80D1F3288A432B00C1955E /* digital-buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "digital-buzzer.wav"; sourceTree = "<group>"; };
-		6F80D1F4288A432B00C1955E /* hall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hall.wav; sourceTree = "<group>"; };
-		6F80D1F5288A432B00C1955E /* facility-alarm2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "facility-alarm2.wav"; sourceTree = "<group>"; };
-		6F80D1F6288A432B00C1955E /* emergency.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = emergency.wav; sourceTree = "<group>"; };
-		6F80D1F7288A432B00C1955E /* sci-fi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "sci-fi.wav"; sourceTree = "<group>"; };
-		6F80D1F8288A432B00C1955E /* warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = warning.wav; sourceTree = "<group>"; };
-		6F80D1F9288A432B00C1955E /* street.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = street.wav; sourceTree = "<group>"; };
-		6F80D1FA288A432B00C1955E /* spaceship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spaceship.wav; sourceTree = "<group>"; };
-		6F80D1FB288A432B00C1955E /* game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game.wav; sourceTree = "<group>"; };
-		6F80D1FC288A432B00C1955E /* space.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = space.wav; sourceTree = "<group>"; };
-		6F80D1FD288A432B00C1955E /* retro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = retro.wav; sourceTree = "<group>"; };
-		6F80D1FE288A432B00C1955E /* security.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = security.wav; sourceTree = "<group>"; };
-		6F80D1FF288A432B00C1955E /* tone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tone.wav; sourceTree = "<group>"; };
-		6F80D200288A432B00C1955E /* facility-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "facility-alarm.wav"; sourceTree = "<group>"; };
-		6F80D201288A432B00C1955E /* hint.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hint.wav; sourceTree = "<group>"; };
-		6F80D202288A432B00C1955E /* classic-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "classic-alarm.wav"; sourceTree = "<group>"; };
-		6F80D203288A432B00C1955E /* digital-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "digital-alarm.wav"; sourceTree = "<group>"; };
-		6F80D204288A432B00C1955E /* clock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clock.wav; sourceTree = "<group>"; };
-		6F80D205288A432B00C1955E /* vintage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = vintage.wav; sourceTree = "<group>"; };
 		6F80D225288A43A300C1955E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6F80D226288A43A300C1955E /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		6F80D227288A43A300C1955E /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		6F80D229288A43A300C1955E /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		6F80D22B288A43A300C1955E /* Clock_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clock_App.xcdatamodel; sourceTree = "<group>"; };
 		6F80D22D288A43A300C1955E /* SoundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewModel.swift; sourceTree = "<group>"; };
 		6F80D22E288A43A300C1955E /* AlarmViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
 		6F80D230288A43A300C1955E /* SoundModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
@@ -144,6 +146,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F01275A288CE22D000EB72A /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				6F01275B288CE254000EB72A /* Main.xcdatamodeld */,
+				6F01275E288CE2D8000EB72A /* Persistance.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		6F012760288CE441000EB72A /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				6F012766288CE458000EB72A /* siren.mp3 */,
+				6F012767288CE458000EB72A /* car or home.mp3 */,
+				6F012770288CE459000EB72A /* clock short.mp3 */,
+				6F012776288CE459000EB72A /* clock ticking.mp3 */,
+				6F01276B288CE458000EB72A /* no3.mp3 */,
+				6F012777288CE459000EB72A /* police fire.mp3 */,
+				6F01276E288CE458000EB72A /* beep beep.mp3 */,
+				6F01276F288CE458000EB72A /* beep warning.mp3 */,
+				6F012779288CE459000EB72A /* cinematic alarm.mp3 */,
+				6F012774288CE459000EB72A /* clock alarm1.mp3 */,
+				6F012778288CE459000EB72A /* clock alarm2.mp3 */,
+				6F012773288CE459000EB72A /* dark sitar.mp3 */,
+				6F012761288CE457000EB72A /* emergency.mp3 */,
+				6F012771288CE459000EB72A /* futuristic.mp3 */,
+				6F012768288CE458000EB72A /* german ambulance.mp3 */,
+				6F012772288CE459000EB72A /* machine error.mp3 */,
+				6F012765288CE458000EB72A /* military alarm.mp3 */,
+				6F012764288CE458000EB72A /* nuclear alarm.mp3 */,
+				6F01277A288CE459000EB72A /* off-hook.mp3 */,
+				6F012762288CE458000EB72A /* over simplified alarm.mp3 */,
+				6F012775288CE459000EB72A /* psycho.mp3 */,
+				6F01276C288CE458000EB72A /* destruct sequence.mp3 */,
+				6F012769288CE458000EB72A /* smart phone vibration.mp3 */,
+				6F01276A288CE458000EB72A /* clock strick.mp3 */,
+				6F012763288CE458000EB72A /* tic-tac.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		6F710CE12812965E0058AE66 = {
 			isa = PBXGroup;
 			children = (
@@ -163,13 +206,13 @@
 		6F710CEC2812965E0058AE66 /* Clock App */ = {
 			isa = PBXGroup;
 			children = (
+				6F012760288CE441000EB72A /* Sound */,
+				6F01275A288CE22D000EB72A /* Core Data */,
 				6FEEFA9D288A45000055CD00 /* App */,
-				6F80D228288A43A300C1955E /* CoreData */,
 				6F80D224288A43A300C1955E /* Helpers */,
 				6F80D22F288A43A300C1955E /* Models */,
 				6F80D22C288A43A300C1955E /* ViewModels */,
 				6F80D233288A43A300C1955E /* Views */,
-				6F80D1ED288A432B00C1955E /* Sound */,
 				6F710CF3281296600058AE66 /* Preview Content */,
 				6F710CF1281296600058AE66 /* Assets.xcassets */,
 			);
@@ -184,38 +227,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6F80D1ED288A432B00C1955E /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				6F80D1EE288A432B00C1955E /* battle-ship.wav */,
-				6F80D1EF288A432B00C1955E /* alert.wav */,
-				6F80D1F0288A432B00C1955E /* morning.wav */,
-				6F80D1F1288A432B00C1955E /* classic-short-alarm.wav */,
-				6F80D1F2288A432B00C1955E /* critical-alarm.wav */,
-				6F80D1F3288A432B00C1955E /* digital-buzzer.wav */,
-				6F80D1F4288A432B00C1955E /* hall.wav */,
-				6F80D1F5288A432B00C1955E /* facility-alarm2.wav */,
-				6F80D1F6288A432B00C1955E /* emergency.wav */,
-				6F80D1F7288A432B00C1955E /* sci-fi.wav */,
-				6F80D1F8288A432B00C1955E /* warning.wav */,
-				6F80D1F9288A432B00C1955E /* street.wav */,
-				6F80D1FA288A432B00C1955E /* spaceship.wav */,
-				6F80D1FB288A432B00C1955E /* game.wav */,
-				6F80D1FC288A432B00C1955E /* space.wav */,
-				6F80D1FD288A432B00C1955E /* retro.wav */,
-				6F80D1FE288A432B00C1955E /* security.wav */,
-				6F80D1FF288A432B00C1955E /* tone.wav */,
-				6F80D200288A432B00C1955E /* facility-alarm.wav */,
-				6F80D201288A432B00C1955E /* hint.wav */,
-				6F80D202288A432B00C1955E /* classic-alarm.wav */,
-				6F80D203288A432B00C1955E /* digital-alarm.wav */,
-				6F80D204288A432B00C1955E /* clock.wav */,
-				6F80D205288A432B00C1955E /* vintage.wav */,
-			);
-			name = Sound;
-			path = "../../../Desktop/Clock App/Sound";
-			sourceTree = "<group>";
-		};
 		6F80D224288A43A300C1955E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,16 +235,6 @@
 				6F80D227288A43A300C1955E /* LocalNotificationManager.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		6F80D228288A43A300C1955E /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				6F80D229288A43A300C1955E /* Persistence.swift */,
-				6F80D22A288A43A300C1955E /* Clock_App.xcdatamodeld */,
-			);
-			name = CoreData;
-			path = "../../../Desktop/Clock App/CoreData";
 			sourceTree = "<group>";
 		};
 		6F80D22C288A43A300C1955E /* ViewModels */ = {
@@ -407,32 +408,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F80D20D288A432B00C1955E /* facility-alarm2.wav in Resources */,
-				6F80D21C288A432B00C1955E /* clock.wav in Resources */,
+				6F012790288CE459000EB72A /* clock ticking.mp3 in Resources */,
 				6F710CF5281296600058AE66 /* Preview Assets.xcassets in Resources */,
-				6F80D210288A432B00C1955E /* warning.wav in Resources */,
-				6F80D212288A432B00C1955E /* spaceship.wav in Resources */,
-				6F80D209288A432B00C1955E /* classic-short-alarm.wav in Resources */,
+				6F012792288CE459000EB72A /* clock alarm2.mp3 in Resources */,
+				6F01277B288CE459000EB72A /* emergency.mp3 in Resources */,
+				6F01278B288CE459000EB72A /* futuristic.mp3 in Resources */,
+				6F012782288CE459000EB72A /* german ambulance.mp3 in Resources */,
+				6F012793288CE459000EB72A /* cinematic alarm.mp3 in Resources */,
+				6F012794288CE459000EB72A /* off-hook.mp3 in Resources */,
+				6F01277E288CE459000EB72A /* nuclear alarm.mp3 in Resources */,
+				6F01278C288CE459000EB72A /* machine error.mp3 in Resources */,
 				6F710CF2281296600058AE66 /* Assets.xcassets in Resources */,
-				6F80D219288A432B00C1955E /* hint.wav in Resources */,
-				6F80D207288A432B00C1955E /* alert.wav in Resources */,
-				6F80D211288A432B00C1955E /* street.wav in Resources */,
-				6F80D206288A432B00C1955E /* battle-ship.wav in Resources */,
-				6F80D216288A432B00C1955E /* security.wav in Resources */,
-				6F80D20F288A432B00C1955E /* sci-fi.wav in Resources */,
-				6F80D218288A432B00C1955E /* facility-alarm.wav in Resources */,
-				6F80D20C288A432B00C1955E /* hall.wav in Resources */,
-				6F80D208288A432B00C1955E /* morning.wav in Resources */,
-				6F80D20E288A432B00C1955E /* emergency.wav in Resources */,
-				6F80D21D288A432B00C1955E /* vintage.wav in Resources */,
-				6F80D21A288A432B00C1955E /* classic-alarm.wav in Resources */,
-				6F80D214288A432B00C1955E /* space.wav in Resources */,
-				6F80D217288A432B00C1955E /* tone.wav in Resources */,
-				6F80D215288A432B00C1955E /* retro.wav in Resources */,
-				6F80D21B288A432B00C1955E /* digital-alarm.wav in Resources */,
-				6F80D213288A432B00C1955E /* game.wav in Resources */,
-				6F80D20B288A432B00C1955E /* digital-buzzer.wav in Resources */,
-				6F80D20A288A432B00C1955E /* critical-alarm.wav in Resources */,
+				6F01277C288CE459000EB72A /* over simplified alarm.mp3 in Resources */,
+				6F012791288CE459000EB72A /* police fire.mp3 in Resources */,
+				6F012789288CE459000EB72A /* beep warning.mp3 in Resources */,
+				6F01278E288CE459000EB72A /* clock alarm1.mp3 in Resources */,
+				6F012786288CE459000EB72A /* destruct sequence.mp3 in Resources */,
+				6F01278F288CE459000EB72A /* psycho.mp3 in Resources */,
+				6F01277F288CE459000EB72A /* military alarm.mp3 in Resources */,
+				6F012780288CE459000EB72A /* siren.mp3 in Resources */,
+				6F012781288CE459000EB72A /* car or home.mp3 in Resources */,
+				6F01278D288CE459000EB72A /* dark sitar.mp3 in Resources */,
+				6F012783288CE459000EB72A /* smart phone vibration.mp3 in Resources */,
+				6F012785288CE459000EB72A /* no3.mp3 in Resources */,
+				6F012784288CE459000EB72A /* clock strick.mp3 in Resources */,
+				6F01277D288CE459000EB72A /* tic-tac.mp3 in Resources */,
+				6F01278A288CE459000EB72A /* clock short.mp3 in Resources */,
+				6F012788288CE459000EB72A /* beep beep.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,13 +450,11 @@
 				6F80D25E288A43A300C1955E /* TimerView.swift in Sources */,
 				6F80D25B288A43A300C1955E /* ClassicSoundFooterView.swift in Sources */,
 				6F80D26C288A43A300C1955E /* AlarmSettingView.swift in Sources */,
-				6F80D254288A43A300C1955E /* Clock_App.xcdatamodeld in Sources */,
 				6F80D256288A43A300C1955E /* AlarmViewModel.swift in Sources */,
 				6F80D252288A43A300C1955E /* LocalNotificationManager.swift in Sources */,
 				6F80D261288A43A300C1955E /* CustomTimerPickerView.swift in Sources */,
 				6FAC41E7288B072600FD2A48 /* BackButtonModifier.swift in Sources */,
 				6F80D269288A43A300C1955E /* VibrationAlarmView.swift in Sources */,
-				6F80D253288A43A300C1955E /* Persistence.swift in Sources */,
 				6F80D25C288A43A300C1955E /* SoundFooterView.swift in Sources */,
 				6F80D260288A43A300C1955E /* TimerDisplayView.swift in Sources */,
 				6F80D268288A43A300C1955E /* SoundAlarmView.swift in Sources */,
@@ -465,8 +465,10 @@
 				6F80D25F288A43A300C1955E /* TimerPickerView.swift in Sources */,
 				6F80D258288A43A300C1955E /* TimerViewModel.swift in Sources */,
 				6F80D26A288A43A300C1955E /* SongAlarmView.swift in Sources */,
+				6F01275D288CE254000EB72A /* Main.xcdatamodeld in Sources */,
 				6F80D263288A43A300C1955E /* TimerRIngView.swift in Sources */,
 				6F80D267288A43A300C1955E /* ClassicSoundAlarmView.swift in Sources */,
+				6F01275F288CE2D8000EB72A /* Persistance.swift in Sources */,
 				6FEEFA9F288A450F0055CD00 /* Clock_App.swift in Sources */,
 				6F80D26D288A43A300C1955E /* AlarmView.swift in Sources */,
 				6F80D25A288A43A300C1955E /* TimerFooterView.swift in Sources */,
@@ -681,13 +683,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6F80D22A288A43A300C1955E /* Clock_App.xcdatamodeld */ = {
+		6F01275B288CE254000EB72A /* Main.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6F80D22B288A43A300C1955E /* Clock_App.xcdatamodel */,
+				6F01275C288CE254000EB72A /* Model.xcdatamodel */,
 			);
-			currentVersion = 6F80D22B288A43A300C1955E /* Clock_App.xcdatamodel */;
-			path = Clock_App.xcdatamodeld;
+			currentVersion = 6F01275C288CE254000EB72A /* Model.xcdatamodel */;
+			path = Main.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

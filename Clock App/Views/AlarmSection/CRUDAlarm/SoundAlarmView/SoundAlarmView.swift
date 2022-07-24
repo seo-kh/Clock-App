@@ -147,7 +147,9 @@ struct SoundAlarmView: View {
             
         } //: LIST
         .fullScreenCover(isPresented: $songSelect, content: {
-            SongAlarmView()
+            NavigationView {
+                SongAlarmView()
+            }
         })
         .listStyle(.insetGrouped)
         .modifier(BackButtonModifier(title: "사운드", soundStop: true))

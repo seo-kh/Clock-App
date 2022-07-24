@@ -12,10 +12,11 @@ var audioPlayer: AVAudioPlayer?
 
 func play(file: String?) {
     if let fileString = file,
-       let url = Bundle.main.url(forResource: fileString, withExtension: ".wav") {
+       let url = Bundle.main.url(forResource: fileString, withExtension: ".mp3") {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.prepareToPlay()
+            audioPlayer?.numberOfLoops = 5
             audioPlayer?.play()
         } catch {
             print(error.localizedDescription)

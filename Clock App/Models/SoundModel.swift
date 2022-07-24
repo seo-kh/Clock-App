@@ -10,33 +10,35 @@ import SwiftUI
 enum SoundModel: String, Identifiable, CaseIterable {
     var id: String { return self.rawValue }
     
-    case clock = "clock"
-    case digitalAlarm = "digital-alarm"
-    case tone = "tone"
-    case alert = "alert"
-    case battleShip = "battle-ship"
-    case classicAlarm = "classic-alarm"
-    case classicShortAlarm = "classic-short-alarm"
-    case criticalAlarm = "critical-alarm"
-    case digitalBuzzer = "digital-buzzer"
+    case siren = "siren"
+    case carOrHome = "car or home"
+    case clockShort = "clock short"
+    case clockTicking = "clock ticking"
+    case no3 = "no3"
+    case policeFire = "police fire"
+    case beepBeep = "beep beep"
+    case beepWarning = "beep warning"
+    case cinematicAlarm = "cinematic alarm"
+    case clockAlarm1 = "clock alarm1"
+    case clockAlarm2 = "clock alarm2"
+    case darkSitar = "dark sitar"
     case emergency = "emergency"
-    case facilityAlarm = "facility-alarm"
-    case facilityAlarm2 = "facility-alarm2"
-    case hall = "hall"
-    case space = "space"
-    case spaceShip = "spaceship"
-    case street = "street"
-    case vintage = "vintage"
+    case futuristic = "futuristic"
+    case germanAmbulance = "german ambulance"
+    case machineError = "machine error"
+    case militaryAlarm = "military alarm"
 }
 
 enum ClassicSoundModel: String, Identifiable, CaseIterable {
     var id: String { return self.rawValue }
     
-    case warning = "warning"
-    case game = "game"
-    case hint = "hint"
-    case morning = "morning"
-    case retro = "retro"
-    case sciFi = "sci-fi"
-    case security = "security"
+    case nuclearAlarm = "nuclear alarm"
+    case offHook = "off-hook"
+    case oversimplifiedAlarm = "over simplified alarm"
+    case psycho = "psycho"
+    case destructSequence = "destruct sequence"
+    case smartphoneVibration = "smart phone vibration"
+    case clockStrick = "clock strick"
+    case ticTac = "tic-tac"
+    
 }

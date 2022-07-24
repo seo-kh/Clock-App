@@ -12,6 +12,35 @@ struct SongAlarmView: View {
     @State private var song: String = ""
     
     var body: some View {
+        Group {
+            if song.isEmpty {
+                musicApp()
+            } else {
+                List {
+                    Text(song)
+                }
+                .listStyle(.plain)
+            }
+        }
+        .navigationTitle("보관함")
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("취소")
+                }
+
+            }
+        })
+        .searchable(text: $song, placement: SearchFieldPlacement.navigationBarDrawer(displayMode: .always), prompt: "보관함")
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
+    }
+}
+
+extension SongAlarmView {
+    func musicApp() -> some View {
         VStack {
             Text("음악 앱에서 노래를 다운로드하십시오.")
                 .font(.title2)
@@ -30,18 +59,7 @@ struct SongAlarmView: View {
             })
             .buttonStyle(.borderedProminent)
             .padding(.top, 2)
-            
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .overlay(alignment: .topTrailing, content: {
-            Button {
-                dismiss()
-            } label: {
-                Text("취소")
-            }
-
-        })
-        .padding()
     }
 }
 
